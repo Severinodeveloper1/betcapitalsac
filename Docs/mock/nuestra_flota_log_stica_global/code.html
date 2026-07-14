@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#f7f9fb",
+                    "on-surface-variant": "#454650",
+                    "on-surface": "#191c1e",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#eff1f3",
+                    "tertiary-fixed": "#ffdeae",
+                    "outline-variant": "#c6c5d1",
+                    "surface-gray": "#EDF2F7",
+                    "primary": "#000000",
+                    "secondary": "#006877",
+                    "background": "#f7f9fb",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#35437c",
+                    "ocean-deep": "#00124C",
+                    "surface-variant": "#e0e3e5",
+                    "surface-container-highest": "#e0e3e5",
+                    "inverse-primary": "#b7c4ff",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-fixed": "#001f25",
+                    "on-tertiary-fixed-variant": "#604100",
+                    "on-secondary-container": "#005f6d",
+                    "transit-blue": "#0D52D2",
+                    "secondary-fixed-dim": "#00daf8",
+                    "tertiary-fixed-dim": "#ffba3e",
+                    "tertiary-container": "#281900",
+                    "on-primary-fixed": "#03154f",
+                    "on-primary-container": "#7381be",
+                    "on-tertiary-fixed": "#281900",
+                    "secondary-container": "#00e0ff",
+                    "on-primary": "#ffffff",
+                    "electric-cyan": "#00E0FF",
+                    "on-secondary-fixed-variant": "#004e5a",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#d8dadc",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "secondary-fixed": "#a5eeff",
+                    "surface-container": "#eceef0",
+                    "caution-gold": "#EAA82C",
+                    "on-tertiary-container": "#b07900",
+                    "on-error": "#ffffff",
+                    "primary-container": "#03154f",
+                    "tertiary": "#000000",
+                    "primary-fixed": "#dde1ff",
+                    "surface": "#f7f9fb",
+                    "on-background": "#191c1e",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#4d5b95",
+                    "outline": "#767681",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2d3133"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "gutter-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "container-max-width": "1280px",
+                    "gutter-desktop": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Hanken Grotesk"],
+                    "title-md": ["Hanken Grotesk"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 224, 255, 0.1);
+        }
+        .bg-pattern {
+            background-image: radial-gradient(circle at 2px 2px, #e0e3e5 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .logo-watermark {
+            opacity: 0.03;
+            pointer-events: none;
+            position: absolute;
+            z-index: 0;
+            filter: grayscale(100%);
+        }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest dark:bg-ocean-deep border-b border-outline-variant dark:border-ocean-deep shadow-sm fixed w-full top-0 z-50">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max-width mx-auto">
+<div class="font-headline-lg text-headline-lg font-bold text-ocean-deep dark:text-electric-cyan flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+                LOGISTICA GLOBAL
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-transit-blue transition-colors duration-200 font-body-md" href="#">Servicios</a>
+<a class="text-transit-blue dark:text-electric-cyan font-bold border-b-2 border-transit-blue transition-colors duration-200 font-body-md" href="#">Flota</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-transit-blue transition-colors duration-200 font-body-md" href="#">Rutas</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-transit-blue transition-colors duration-200 font-body-md" href="#">Clientes</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-transit-blue transition-colors duration-200 font-body-md" href="#">Nosotros</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="bg-ocean-deep text-on-primary px-6 py-2.5 rounded-lg font-title-md transition-transform active:scale-95 shadow-md hover:bg-transit-blue transition-colors">
+                    Cotizar Ahora
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-20 relative">
+<!-- Decorative Watermark Background -->
+<img alt="Background Watermark" class="logo-watermark top-20 -left-20 w-[600px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuRxbKE4zJjs_jgQzVT-UwPvbNh-5GIt4xl8y_l1YwsXRobIibonGNy_j5sTiZV3pMBVH80oWXcELXPN-W_FwxhdyQ8bozxxyzpUptm8x7oE4vIbtqWkn_-qjw_-mcCqwiX4FuyLHPJgrAwUqFjjvz_CzkuMayd-jSUfGoPZqFh6VzVatL_8SBXbVMqIfRBRJg957plQZYMFuCn_j4bmq4mUyIdNW7WG4jSG-9_l5wOB0N7qPo44mkY4DG3OxPIxNCXNQrURF-Qnq7"/>
+<img alt="Background Watermark" class="logo-watermark bottom-20 -right-20 w-[400px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuRxbKE4zJjs_jgQzVT-UwPvbNh-5GIt4xl8y_l1YwsXRobIibonGNy_j5sTiZV3pMBVH80oWXcELXPN-W_FwxhdyQ8bozxxyzpUptm8x7oE4vIbtqWkn_-qjw_-mcCqwiX4FuyLHPJgrAwUqFjjvz_CzkuMayd-jSUfGoPZqFh6VzVatL_8SBXbVMqIfRBRJg957plQZYMFuCn_j4bmq4mUyIdNW7WG4jSG-9_l5wOB0N7qPo44mkY4DG3OxPIxNCXNQrURF-Qnq7"/>
+<!-- Hero Section -->
+<section class="px-margin-desktop max-w-container-max-width mx-auto mb-16 relative">
+<div class="max-w-3xl">
+<span class="text-transit-blue font-label-sm uppercase tracking-widest mb-4 block">Excelencia en Transporte</span>
+<h1 class="font-display-lg text-display-lg text-ocean-deep mb-6">Nuestra Flota de Alto Rendimiento</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">
+                    Contamos con una infraestructura vehicular moderna y diversificada, diseñada para enfrentar los desafíos logísticos más exigentes con precisión quirúrgica y seguridad garantizada.
+                </p>
+</div>
+</section>
+<!-- Fleet Grid -->
+<section class="px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop">
+<!-- Category Sidebar -->
+<aside class="md:col-span-3 space-y-6">
+<div class="bg-surface-container p-6 rounded-xl border border-outline-variant">
+<h3 class="font-title-md text-ocean-deep mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">filter_list</span>
+                        Categorías
+                    </h3>
+<ul class="space-y-2">
+<li>
+<button class="w-full text-left px-4 py-2 rounded-lg bg-ocean-deep text-on-primary font-title-md transition-all">Todos los Vehículos</button>
+</li>
+<li>
+<button class="w-full text-left px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all">Tráileres de Carga Pesada</button>
+</li>
+<li>
+<button class="w-full text-left px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all">Camiones 10 TN</button>
+</li>
+<li>
+<button class="w-full text-left px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all">Furgones Urbanos</button>
+</li>
+</ul>
+</div>
+<div class="bg-primary-container p-6 rounded-xl text-on-primary relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-title-md mb-2">¿Necesitas capacidad especial?</h4>
+<p class="font-label-sm opacity-80 mb-4">Gestionamos cargas sobredimensionadas y refrigeradas.</p>
+<button class="text-electric-cyan font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                            Consultar <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-20">
+<span class="material-symbols-outlined text-8xl">precision_manufacturing</span>
+</div>
+</div>
+</aside>
+<!-- Fleet Cards Grid -->
+<div class="md:col-span-9 grid grid-cols-1 lg:grid-cols-2 gap-gutter-desktop">
+<!-- Card 1: Trailer -->
+<div class="bg-white rounded-xl border border-surface-variant overflow-hidden group hover:shadow-xl transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional high-angle photograph of a massive blue heavy-duty trailer truck parked on a clean concrete asphalt surface. The lighting is bright and crisp, highlighting the metallic chrome details and the sleek aerodynamic design of the cabin. The background is a minimalist industrial logistics hub with clear blue skies, reflecting a modern corporate aesthetic with Ocean Deep and Electric Cyan accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNiW6ff37nCSVdMkRb5KYWlhQJJcroVGyuOJgP_5B4NKXwnLljafuLlKCE3uqtEj9AZPSKC8-fbQv8MBuTAigaf7RHQqMVs65kiHMKnp5tAj77pdCiGNPPbqDKgwMC7rf-q_A6ikV__BmgljhVwfprSCDOoZm8Tgiyz4cU2WRUFqvoHwFzMp3JMu3yiOoFL96ftglyvWLQ-GCUk1c9RwcQaU3VxIQboRWck2Bfabo0KHfQKhzL3WkYUL3Emeym5w2PG5X47FU96_kR"/>
+<div class="absolute top-4 right-4 bg-caution-gold text-ocean-deep font-label-sm px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                            ALTA CAPACIDAD
+                        </div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-lg text-ocean-deep">Tráiler Volvo FH16</h3>
+<p class="text-transit-blue font-label-sm">Carga Pesada / Internacional</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-gray p-3 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-ocean-deep">weight</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Capacidad</p>
+<p class="font-title-md text-ocean-deep leading-tight">32 TN</p>
+</div>
+</div>
+<div class="bg-surface-gray p-3 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-ocean-deep">straighten</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Dimensiones</p>
+<p class="font-title-md text-ocean-deep leading-tight">13.6m L</p>
+</div>
+</div>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-body-md border-b border-surface-variant pb-2">
+<span class="text-on-surface-variant">Tipo de Carga</span>
+<span class="font-bold">Contenedores, Granel</span>
+</div>
+<div class="flex justify-between text-body-md border-b border-surface-variant pb-2">
+<span class="text-on-surface-variant">Rastreo GPS</span>
+<span class="text-transit-blue font-bold flex items-center gap-1">Activo <span class="w-2 h-2 bg-transit-blue rounded-full"></span></span>
+</div>
+</div>
+<button class="w-full py-3 border-2 border-ocean-deep text-ocean-deep font-bold rounded-lg hover:bg-ocean-deep hover:text-white transition-all">Ver Ficha Técnica</button>
+</div>
+</div>
+<!-- Card 2: 10 TN Truck -->
+<div class="bg-white rounded-xl border border-surface-variant overflow-hidden group hover:shadow-xl transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, studio-lit commercial photograph of a white 10-ton medium-duty truck, perfect for urban distribution. The truck features a sleek cargo box and modern cabin. Set against a light gray minimalist background that emphasizes reliability and precision. The visual style is polished, using corporate blue tones for shadows and a sharp focus on the vehicle details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcyYuLQH-dcM2tbGxWkth6vOhDA9poybTNjyb5m97OSgIgeTsO7kA5qhnuqKkHPmrLZpIqkOX1up7EDRqKn1b0KMMQuhTVQWpyzyf_13AS_TxheArTbMrElUcSSzlNxwYToL3ktWOdpWZV9_HZerchWoQNuoWTOVMTkXRFLL6ay75Z_cwdTjorEjn3zpgaqkY_zwILfKuYt7RmnEY3guLFo_yZTT1jXy8HbY-GpGsxt_CvmFtkNvU_DnWoMxUz4jX-yvT6rPqujuiD"/>
+<div class="absolute top-4 right-4 bg-transit-blue text-white font-label-sm px-3 py-1 rounded-full">INTERPROVINCIAL</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-lg text-ocean-deep">Camión Isuzu FVR</h3>
+<p class="text-transit-blue font-label-sm">Distribución Regional</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-gray p-3 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-ocean-deep">weight</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Capacidad</p>
+<p class="font-title-md text-ocean-deep leading-tight">10 TN</p>
+</div>
+</div>
+<div class="bg-surface-gray p-3 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-ocean-deep">straighten</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Volumen</p>
+<p class="font-title-md text-ocean-deep leading-tight">45 m³</p>
+</div>
+</div>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-body-md border-b border-surface-variant pb-2">
+<span class="text-on-surface-variant">Sistema Frenado</span>
+<span class="font-bold">ABS Neumático</span>
+</div>
+<div class="flex justify-between text-body-md border-b border-surface-variant pb-2">
+<span class="text-on-surface-variant">Norma Emisión</span>
+<span class="text-ocean-deep font-bold">Euro V</span>
+</div>
+</div>
+<button class="w-full py-3 border-2 border-ocean-deep text-ocean-deep font-bold rounded-lg hover:bg-ocean-deep hover:text-white transition-all">Ver Ficha Técnica</button>
+</div>
+</div>
+<!-- Card 3: Furgon -->
+<div class="bg-white rounded-xl border border-surface-variant overflow-hidden group hover:shadow-xl transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A dynamic shot of a modern metallic silver delivery van moving swiftly through a contemporary city street during the golden hour. The lighting creates beautiful reflections on the van's aerodynamic body. The motion is captured with a slight motion blur in the background while the van remains in sharp focus, representing speed and efficiency in urban logistics. High-end photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvRdscW_sjUq3fJnpa3P40nDT-baEdRr2hNY8KDnmXTs0jaGFPLVEcu2IXFvm-9dDyWtDNIqlmjGpDuY1fth85BYjFlykMaTLZkg6E0kH9G4PY9UwJX8cqRLC4UgvJlOYCTmPSvQYuxtx4x7kz7z7ObghAOTrqi5EyaJJ-HmDzRyTC8iUivblcKEPmTgCS4bfv24DNNBdwxxNoH3s-S_hM8AOa7WJpX9KOViSXKrgOjcCuynCX84yYVg169VEs4mmaqGAHxIV8JID_"/>
+<div class="absolute top-4 right-4 bg-electric-cyan text-ocean-deep font-label-sm px-3 py-1 rounded-full">URBANO / EXPRESS</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-lg text-ocean-deep">Furgón Mercedes Sprinter</h3>
+<p class="text-transit-blue font-label-sm">Logística de Última Milla</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-gray p-3 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-ocean-deep">weight</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Capacidad</p>
+<p class="font-title-md text-ocean-deep leading-tight">3.5 TN</p>
+</div>
+</div>
+<div class="bg-surface-gray p-3 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-ocean-deep">view_in_ar</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Carga</p>
+<p class="font-title-md text-ocean-deep leading-tight">14 m³</p>
+</div>
+</div>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-body-md border-b border-surface-variant pb-2">
+<span class="text-on-surface-variant">Acceso Urban</span>
+<span class="font-bold">Total (Zonas Restringidas)</span>
+</div>
+<div class="flex justify-between text-body-md border-b border-surface-variant pb-2">
+<span class="text-on-surface-variant">Seguridad</span>
+<span class="text-ocean-deep font-bold">Cierre Centralizado</span>
+</div>
+</div>
+<button class="w-full py-3 border-2 border-ocean-deep text-ocean-deep font-bold rounded-lg hover:bg-ocean-deep hover:text-white transition-all">Ver Ficha Técnica</button>
+</div>
+</div>
+<!-- Card 4: Specialized -->
+<div class="bg-ocean-deep rounded-xl border border-ocean-deep overflow-hidden group hover:shadow-2xl transition-all duration-300 relative">
+<div class="absolute inset-0 bg-pattern opacity-10"></div>
+<div class="h-full flex flex-col justify-center items-center p-12 text-center relative z-10">
+<span class="material-symbols-outlined text-6xl text-electric-cyan mb-6">support_agent</span>
+<h3 class="font-headline-lg text-white mb-4">¿Necesitas una Flota Personalizada?</h3>
+<p class="text-surface-variant mb-8">Diseñamos soluciones de transporte dedicadas para operaciones de gran escala y contratos a largo plazo.</p>
+<button class="bg-electric-cyan text-ocean-deep font-bold px-8 py-4 rounded-full hover:bg-white transition-all flex items-center gap-2">
+                            Contactar un Especialista
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specs Summary -->
+<section class="mt-20 px-margin-desktop max-w-container-max-width mx-auto">
+<div class="glass-card p-10 rounded-2xl border-l-8 border-transit-blue">
+<h2 class="font-display-lg text-ocean-deep mb-10">Estándares Técnicos Globales</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-transit-blue text-4xl">verified_user</span>
+<h4 class="font-title-md text-ocean-deep">Mantenimiento Predictivo</h4>
+<p class="text-on-surface-variant">Nuestra flota se somete a diagnósticos digitales semanales para asegurar el 99.8% de disponibilidad operativa.</p>
+</div>
+<div class="space-y-4">
+<span class="material-symbols-outlined text-transit-blue text-4xl">eco</span>
+<h4 class="font-title-md text-ocean-deep">Eficiencia Sostenible</h4>
+<p class="text-on-surface-variant">Implementamos tecnología de reducción de emisiones y telemetría avanzada para optimizar rutas y consumo.</p>
+</div>
+<div class="space-y-4">
+<span class="material-symbols-outlined text-transit-blue text-4xl">lock</span>
+<h4 class="font-title-md text-ocean-deep">Blindaje y Seguridad</h4>
+<p class="text-on-surface-variant">Cada unidad cuenta con protocolos de seguridad activa y pasiva, además de monitoreo 24/7 en tiempo real.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-ocean-deep dark:bg-primary-container text-on-primary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop px-margin-desktop py-12 max-w-container-max-width mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-title-md text-title-md text-electric-cyan mb-4">LOGISTICA GLOBAL</div>
+<p class="font-body-md opacity-70">Liderando el camino de la logística moderna con precisión y confianza.</p>
+</div>
+<div>
+<h4 class="font-title-md mb-6 text-white">Navegación</h4>
+<ul class="space-y-3">
+<li><a class="text-surface-variant hover:text-electric-cyan underline transition-all" href="#">Servicios</a></li>
+<li><a class="text-electric-cyan font-bold" href="#">Flota</a></li>
+<li><a class="text-surface-variant hover:text-electric-cyan underline transition-all" href="#">Rutas</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-md mb-6 text-white">Legal</h4>
+<ul class="space-y-3">
+<li><a class="text-surface-variant hover:text-electric-cyan underline transition-all" href="#">Términos de Servicio</a></li>
+<li><a class="text-surface-variant hover:text-electric-cyan underline transition-all" href="#">Política de Privacidad</a></li>
+<li><a class="text-surface-variant hover:text-electric-cyan underline transition-all" href="#">Libro de Reclamaciones</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-md mb-6 text-white">Soporte</h4>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-electric-cyan">call</span>
+<span class="text-surface-variant">+51 (01) 456-7890</span>
+</div>
+<button class="w-full py-2 border border-electric-cyan text-electric-cyan rounded hover:bg-electric-cyan hover:text-ocean-deep transition-all">
+                    Contacto Directo
+                </button>
+</div>
+</div>
+<div class="border-t border-white/10 py-6 px-margin-desktop max-w-container-max-width mx-auto text-center font-body-md opacity-50">
+            © 2024 Logística Global. Todos los derechos reservados.
+        </div>
+</footer>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('.material-symbols-outlined').style.transform = 'scale(1.1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('.material-symbols-outlined').style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

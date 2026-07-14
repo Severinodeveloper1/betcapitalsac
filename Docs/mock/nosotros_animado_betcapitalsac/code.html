@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nosotros | BETCAPITALSAC</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#191c1e",
+                    "secondary-container": "#d5e0f7",
+                    "on-secondary-fixed": "#111c2c",
+                    "on-primary-fixed": "#001b3c",
+                    "secondary-fixed-dim": "#bcc7dd",
+                    "outline": "#737780",
+                    "primary-fixed": "#d5e3ff",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "background": "#f7f9fb",
+                    "surface-tint": "#3a5f94",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-variant": "#e0e3e5",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "on-primary-container": "#799dd6",
+                    "secondary": "#545f72",
+                    "tertiary-fixed-dim": "#98cbff",
+                    "on-secondary-container": "#586377",
+                    "on-background": "#191c1e",
+                    "primary": "#001e40",
+                    "surface-container": "#eceef0",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#f7f9fb",
+                    "surface": "#f7f9fb",
+                    "tertiary-container": "#003659",
+                    "on-secondary-fixed-variant": "#3c475a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#003366",
+                    "surface-dim": "#d8dadc",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#a7c8ff",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#d8e3fa",
+                    "inverse-surface": "#2d3133",
+                    "inverse-on-surface": "#eff1f3",
+                    "outline-variant": "#c3c6d1",
+                    "tertiary-fixed": "#cfe5ff",
+                    "tertiary": "#002038",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f2f4f6",
+                    "on-tertiary-fixed": "#001d33",
+                    "on-tertiary-fixed-variant": "#004a77",
+                    "on-tertiary-container": "#00a2fe",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#43474f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "margin": "32px",
+                    "md": "24px",
+                    "gutter": "24px",
+                    "base": "4px",
+                    "sm": "16px",
+                    "xs": "8px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "label-bold": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-xl": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .timeline-track::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        background: #c3c6d1;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+      #timeline-progress {
+        position: absolute;
+        width: 3px;
+        background: #001e40;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        height: 0;
+        transition: height 0.1s linear;
+      }
+      @media (max-width: 768px) {
+        .timeline-track::after, #timeline-progress {
+          left: 16px;
+          transform: none;
+        }
+      }
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .scroll-reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .hero-gradient {
+        background: linear-gradient(180deg, rgba(0, 30, 64, 0.4) 0%, rgba(0, 30, 64, 0.85) 100%);
+      }
+      .hero-image-zoom {
+        animation: slowZoom 20s ease-in-out infinite alternate;
+      }
+      @keyframes slowZoom {
+        from { transform: scale(1.05); }
+        to { transform: scale(1.2); }
+      }
+      @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+      .shimmer-btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transform: translateX(-100%);
+        transition: 0.5s;
+      }
+      .shimmer-btn:hover::after {
+        animation: shimmer 1.5s infinite;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .scroll-reveal, .hero-image-zoom, .shimmer-btn::after {
+          animation: none !important;
+          transition: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased overflow-x-hidden">
+<header class="bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-[110]">
+<nav class="flex justify-between items-center w-full px-margin py-xs max-w-[1440px] mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">
+            BETCAPITALSAC
+        </div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-bold text-label-bold" href="#">Inicio</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-bold text-label-bold" href="#">Nosotros</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-bold text-label-bold" href="#">Servicios</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-bold text-label-bold" href="#">Proyectos</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-bold text-label-bold" href="#">Contacto</a>
+</div>
+<button class="bg-primary text-on-primary px-sm py-xs font-label-bold text-label-bold rounded-lg hover:bg-primary/90 transition-all shadow-sm relative overflow-hidden shimmer-btn">
+            Cotizar
+        </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[700px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center hero-image-zoom" data-alt="A wide-angle cinematic shot of a modern fleet of heavy-duty freight trucks lined up in a pristine logistics hub during the golden hour." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCp9taJPV3KMiK_vu0nVnMoZrY109zHM7NCkjJjR3x9-rT7glIUekcibBYlaesDKJUP_qswCdEu3Pm4Zn6wb-2l6Z9-DNAmwH26faannaJEI68zG2gyQoPKj41jXZnAnBCP-5w4EPmeyiYHIb2M8XneIL87UPBs3LHNA13dtddEsNkbRGqp7cuVvZ_NsHATc8gQG-E_qVGMmCm8ay82vFYa4WpB5B81969v__SZ55MTPkv8AT-wsI-JDDZf2pzOJJ3613QU21tcHXOm')"></div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 text-center px-margin max-w-5xl scroll-reveal visible">
+<h1 class="font-headline-xl text-5xl md:text-7xl text-white mb-md tracking-tight leading-tight">
+                Más que Logística, <br/>Impulsamos tu <span class="text-primary-fixed-dim inline-block decoration-primary-fixed-dim/30 underline decoration-4 underline-offset-8">Crecimiento</span>
+</h1>
+<p class="font-body-lg text-xl md:text-2xl text-surface-variant/90 max-w-3xl mx-auto font-light">
+                Desde 2022, BETCAPITALSAC redefine el transporte pesado en el Perú con integridad, precisión técnica y un compromiso inquebrantable con la excelencia operativa.
+            </p>
+</div>
+</section>
+<!-- Our Identity Bento -->
+<section class="py-xl px-margin max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Mission Card -->
+<div class="md:col-span-5 bg-surface-container-lowest border border-outline-variant p-lg flex flex-col justify-between hover:shadow-xl transition-all duration-500 scroll-reveal group/card">
+<div>
+<div class="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mb-lg transition-transform group-hover/card:-translate-y-1">
+<span class="material-symbols-outlined text-primary text-4xl">track_changes</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-md">Misión</h3>
+<p class="text-on-surface-variant font-body-lg leading-relaxed">
+                        Proveer soluciones de transporte y logística integral que optimicen la cadena de suministro de nuestros clientes mediante tecnología de vanguardia y un capital humano altamente capacitado.
+                    </p>
+</div>
+</div>
+<!-- Main Image Card -->
+<div class="md:col-span-7 h-[450px] relative overflow-hidden group scroll-reveal rounded-xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" data-alt="A high-end portrait of a professional management team in a modern boardroom." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLv-qYyP5Av8rgu9z-DvhAxqBVi602ImsUd21tGWAtL8uzgMqS3nnZ6V7CCB1eiwTewO9T8jCW5AU0rgSwD0FydeouJTO8ighHXfJWwAhgQe7Rq6ZDsFygEOWq2uwjP7RqWkOSWSnlxUhsIV_0CtvM2PbmLH2mMTBirXs6QPvB61n1BouJ7Mw8_NqxdRhk8ZTZ7fcWHSXI8bcl-mzzJ7gjbDHPGryUS8zeJfcYuoiDSugFEXpjpFJpfRjyLKLuHyjDkSqUMRF8iyTJ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-lg">
+<span class="inline-block px-3 py-1 bg-primary-fixed-dim text-on-primary-fixed font-label-bold text-xs uppercase tracking-widest mb-sm rounded-sm">Nuestro Equipo</span>
+<h4 class="text-white font-headline-lg text-3xl">Liderazgo con Visión Estratégica</h4>
+</div>
+</div>
+<!-- Vision Card -->
+<div class="md:col-span-6 bg-primary text-on-primary p-lg flex flex-col justify-center scroll-reveal rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 group/vision">
+<div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-lg transition-transform group-hover/vision:-translate-y-1">
+<span class="material-symbols-outlined text-primary-fixed text-4xl">visibility</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-md">Visión</h3>
+<p class="font-body-lg text-white/90 leading-relaxed">
+                    Ser reconocidos para el 2027 como la empresa líder en soluciones logísticas de alta tonelaje en la región, siendo el socio estratégico preferido por nuestra confiabilidad, seguridad y sostenibilidad ambiental.
+                </p>
+</div>
+<!-- Values Card -->
+<div class="md:col-span-6 bg-surface-container-high border border-outline-variant p-lg scroll-reveal rounded-xl">
+<div class="flex items-center gap-sm mb-lg">
+<div class="w-[2px] h-8 bg-primary"></div>
+<h3 class="font-headline-lg text-headline-lg text-primary">Valores Corporativos</h3>
+</div>
+<div class="grid grid-cols-2 gap-y-lg gap-x-md">
+<div class="flex items-start gap-md group hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shrink-0 shadow-sm group-hover:bg-primary group-hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">verified</span>
+</div>
+<div>
+<p class="font-label-bold text-primary mb-1">Integridad</p>
+<p class="text-xs text-on-surface-variant leading-tight">Actuamos con transparencia en cada kilómetro.</p>
+</div>
+</div>
+<div class="flex items-start gap-md group hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shrink-0 shadow-sm group-hover:bg-primary group-hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">precision_manufacturing</span>
+</div>
+<div>
+<p class="font-label-bold text-primary mb-1">Precisión</p>
+<p class="text-xs text-on-surface-variant leading-tight">Cada carga llega exacta y en el tiempo pactado.</p>
+</div>
+</div>
+<div class="flex items-start gap-md group hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shrink-0 shadow-sm group-hover:bg-primary group-hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">shield_with_heart</span>
+</div>
+<div>
+<p class="font-label-bold text-primary mb-1">Seguridad</p>
+<p class="text-xs text-on-surface-variant leading-tight">Protección total de activos y bienestar humano.</p>
+</div>
+</div>
+<div class="flex items-start gap-md group hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shrink-0 shadow-sm group-hover:bg-primary group-hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">groups</span>
+</div>
+<div>
+<p class="font-label-bold text-primary mb-1">Compromiso</p>
+<p class="text-xs text-on-surface-variant leading-tight">Somos el motor que impulsa el éxito de su empresa.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="bg-surface-container-lowest py-xl overflow-hidden" id="timeline-section">
+<div class="max-w-[1440px] mx-auto px-margin">
+<div class="text-center mb-xl scroll-reveal">
+<span class="text-primary font-label-bold tracking-[0.2em] uppercase text-xs">Historia en Movimiento</span>
+<h2 class="font-headline-xl text-headline-lg text-primary mt-2 mb-xs">Nuestra Trayectoria</h2>
+<div class="w-20 h-1 bg-primary/20 mx-auto mt-4"></div>
+</div>
+<div class="relative timeline-track pb-lg">
+<div id="timeline-progress"></div>
+<!-- 2022 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between mb-24 w-full group scroll-reveal milestone" data-year="2022">
+<div class="w-full md:w-[45%] text-center md:text-right mb-sm md:mb-0 transition-all duration-500 group-[.active]:scale-105">
+<div class="inline-block px-4 py-1 bg-primary text-white font-headline-md rounded-full mb-md shadow-lg">2022</div>
+<h4 class="font-headline-md text-primary mb-sm">Fundación y Lanzamiento</h4>
+<p class="text-on-surface-variant font-body-md leading-relaxed">Fundación de BETCAPITALSAC en Lima. Iniciamos operaciones con una flota de 5 unidades especializadas de última generación.</p>
+</div>
+<div class="z-20 w-4 h-4 bg-white border-4 border-primary rounded-full flex items-center justify-center shrink-0 transition-all duration-500 group-[.active]:bg-primary group-[.active]:scale-150"></div>
+<div class="w-full md:w-[45%] mt-sm md:mt-0">
+<div class="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 group-[.active]:shadow-2xl">
+<div class="h-60 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Grand opening of BETCAPITALSAC in 2022" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAf1BcMzwpUikMWR22KoOZUyo5wD4RTjrfk_VSYVKD3-LXtRXttQx7Xpw88LCXiBzbpPoXXBR3puxyRmOx2u9fdaBwXUQB9zXgX1dwFiztyyP82_GP8wKHe4B7qW78dr_KM3xdH7WtO9LwSPhjaxkz_-pQmIHid4WwNqICprB51wfZwdPHKniuPs2D8-3YjvIFWxrWqrlmf9yd8EZLQwsKYqk5Sg11rhvVBLlvh5yJGHFI118mvP8FUIpgVFzaNFIgXPIJQZhlX3Q_t')"></div>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+</div>
+</div>
+<!-- 2023 -->
+<div class="relative flex flex-col md:flex-row-reverse items-center justify-between mb-24 w-full group scroll-reveal milestone" data-year="2023">
+<div class="w-full md:w-[45%] text-center md:text-left mb-sm md:mb-0 transition-all duration-500 group-[.active]:scale-105">
+<div class="inline-block px-4 py-1 bg-primary text-white font-headline-md rounded-full mb-md shadow-lg">2023</div>
+<h4 class="font-headline-md text-primary mb-sm">Expansión Estratégica</h4>
+<p class="text-on-surface-variant font-body-md leading-relaxed">Expansión regional. Apertura de rutas críticas hacia el sur del país y obtención de las primeras certificaciones ISO de calidad operativa.</p>
+</div>
+<div class="z-20 w-4 h-4 bg-white border-4 border-primary rounded-full flex items-center justify-center shrink-0 transition-all duration-500 group-[.active]:bg-primary group-[.active]:scale-150"></div>
+<div class="w-full md:w-[45%] mt-sm md:mt-0">
+<div class="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 group-[.active]:shadow-2xl">
+<div class="h-60 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Logistics network expansion in Peru" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWQGUN3tyzSnsk-ulCtZZdpo0F2IpYIIMaDuLhwkzymfMi_1hjAB7Z5rl7ueHvc77KIpPRzTOM3FkgzEA1l_ebd5AR8FllGpXewoc-JA8fqFD4Ejgtygc9bH0yzXdyqRon48lQDYf4ZPLU79QCBn8aCLB5Mqjn3j80OekZlArLevFsfMlB7XiZllsBIC8BHUH5mgfuxFPl7JZ6To2AcKKtnVK0X2D1Mtgtmd7Qz2gZtOlJDqO7-PNV3Zmq5ycMpiByuFqX2FELqOoY')"></div>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+</div>
+</div>
+<!-- 2024 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between w-full group scroll-reveal milestone" data-year="2024">
+<div class="w-full md:w-[45%] text-center md:text-right mb-sm md:mb-0 transition-all duration-500 group-[.active]:scale-105">
+<div class="inline-block px-4 py-1 bg-primary text-white font-headline-md rounded-full mb-md shadow-lg">2024</div>
+<h4 class="font-headline-md text-primary mb-sm">Innovación Tecnológica</h4>
+<p class="text-on-surface-variant font-body-md leading-relaxed">Liderazgo en innovación. Implementación de tracking en tiempo real potenciado por IA y ampliación de flota a 25 unidades de transporte.</p>
+</div>
+<div class="z-20 w-4 h-4 bg-white border-4 border-primary rounded-full flex items-center justify-center shrink-0 transition-all duration-500 group-[.active]:bg-primary group-[.active]:scale-150"></div>
+<div class="w-full md:w-[45%] mt-sm md:mt-0">
+<div class="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 group-[.active]:shadow-2xl">
+<div class="h-60 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="High-tech logistics tracking dashboard" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBO9EMF1hwrjkmSu1FIv_WH8GHgj37HYT7_F57je_bGro1SgOoqm2vC02Pn19lbXX-lm4n2QIxWides5V5EqX0QQpARtGVX69ISq6CCPrjwjDMx0VV2gtfTIoPJB4IHtCdFNKY8ylteCv0vtAWkMnI_b2-oWTgF6ZztacKt3KHlcavfJ0UKvWaxWGrurt_3dble0iGMfs6k4Zlo31w7O6MtnRhuZGTedNb8Ak28swauVx8kMmvCIRdxAslrfg682HNFmF2YnV3Tkqk1')"></div>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Transparency & Quality Section -->
+<section class="py-xl bg-surface-container-low border-y border-outline-variant">
+<div class="max-w-[1440px] mx-auto px-margin">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-xl gap-md scroll-reveal">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-4xl text-primary mb-sm">Infraestructura y Transparencia</h2>
+<p class="text-on-surface-variant font-body-lg">Operaciones continuas 24/7 con soporte tecnológico de última generación para garantizar la seguridad de su inversión.</p>
+</div>
+<div class="flex gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-xs font-label-bold text-primary uppercase tracking-widest">Estado: Operativo 24/7</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="group scroll-reveal">
+<div class="relative h-[350px] mb-md overflow-hidden rounded-2xl shadow-md border border-white">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="BETCAPITALSAC Central Offices" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcNeNrOlQyCjpHIfQ9H0jMos5Yw2Ma1UdqPznqZWkmueu8Nv_kKl1nLezPJ4GhglCjrjpksdq0NPa6CbIJwjOYQ-xIV7HpOriZNBlWFlZs1GqKWfc04_lsn4KeYf3M4V6A90ROKwDvj1ON-kxfJ85ddpxgu9GO-u-ATnGQD14G5B9hIDqQFeqsazqS-y14LESVeYcohnme4Tp5PSBDqyjHfS8sVbJ09bWGy7piMENfYzjRVugAqhu24BmUzz_ip7dY9HyFirRK25FX')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="px-2">
+<h4 class="font-headline-md text-primary mb-2 flex items-center gap-xs">
+<span class="material-symbols-outlined text-xl">hub</span> Oficinas Centrales
+                        </h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Espacios diseñados para la eficiencia máxima y la coordinación de operaciones logísticas 24/7 en tiempo real.</p>
+</div>
+</div>
+<div class="group scroll-reveal" style="transition-delay: 150ms;">
+<div class="relative h-[350px] mb-md overflow-hidden rounded-2xl shadow-md border border-white">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Preventive Maintenance Workshop" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAIYOvhhw4FoBFS3rDpSY9Uzq99iv-9R2J94repzYuOBVRnVkxt7nl2ReT_7hQlsxd9l5yrpzGIjY7TnoSrLI0VcKXqSFS6WnrigV32otxwrIPAygllKOaieSDq3QsbiJErkpcqmWWRnt_9ujjAg4MFttxkNIpnPXAhLiuzSLapYR62O3WacAnmKBGucYqMp6ZQKdRusau5OXH7Owal3PmtHC0r-wE2dt3La93UVQb1Q4QLr4PRIz0qWto8pHQO55NFydxkYUeqi2Qd')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="px-2">
+<h4 class="font-headline-md text-primary mb-2 flex items-center gap-xs">
+<span class="material-symbols-outlined text-xl">build_circle</span> Mantenimiento Preventivo
+                        </h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Protocolos rigurosos y talleres propios que garantizan que nuestra flota esté siempre en condiciones óptimas de seguridad.</p>
+</div>
+</div>
+<div class="group scroll-reveal" style="transition-delay: 300ms;">
+<div class="relative h-[350px] mb-md overflow-hidden rounded-2xl shadow-md border border-white">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Data Culture and KPI Analytics" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9dbKuayHGqTRvl3DtOUF48uWOZD5__tPWZiVGxGe3FHurk9pIczrBEo9r0exwwQQvaWmSLd5EdpFnm_gjqZ-vPeV7DxbbM_ryztyQ4-EH7rffFq89dcBYbNXxD9-ZE8BBPZjqOoEPEhwfQYkBWKOlPhMYq_ejHlIGzi2djGjuWr3s307RDaw7rQZ9HtdyOCyhcYJwx47ZSQ0VlcNyc4FzRPuhZSl5qKsid-agn-fpa6lUM27f14L1GCMyuGq2gkyUAsVXlt6IobfN')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="px-2">
+<h4 class="font-headline-md text-primary mb-2 flex items-center gap-xs">
+<span class="material-symbols-outlined text-xl">analytics</span> Cultura de Datos
+                        </h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Tomamos decisiones estratégicas basadas en métricas reales de rendimiento para asegurar su total tranquilidad operativa.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- SideNavBar (WhatsApp Support) -->
+<div class="fixed bottom-8 right-8 z-[100]">
+<a class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group relative" href="#">
+<span class="material-symbols-outlined text-3xl">chat</span>
+<div class="absolute right-full mr-4 bg-primary text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none font-label-bold shadow-lg">
+            Atención Rápida
+        </div>
+</a>
+</div>
+<!-- Footer -->
+<footer class="bg-primary text-white mt-xl">
+<div class="grid grid-cols-12 gap-gutter px-margin py-xl w-full max-w-[1440px] mx-auto">
+<div class="col-span-12 md:col-span-4 mb-lg md:mb-0 scroll-reveal">
+<div class="font-headline-lg text-headline-lg font-bold mb-md text-primary-fixed-dim">BETCAPITALSAC</div>
+<p class="text-surface-variant font-body-md opacity-80 max-w-xs leading-relaxed">Líderes en transporte de carga pesada y soluciones logísticas eficientes en todo el territorio peruano.</p>
+</div>
+<div class="col-span-6 md:col-span-2 scroll-reveal" style="transition-delay: 100ms;">
+<h5 class="font-label-bold text-primary-fixed-dim mb-lg uppercase tracking-widest text-xs">Empresa</h5>
+<ul class="space-y-sm">
+<li><a class="text-body-md opacity-70 hover:opacity-100 hover:text-primary-fixed-dim hover:pl-2 transition-all duration-300 inline-block" href="#">Nosotros</a></li>
+<li><a class="text-body-md opacity-70 hover:opacity-100 hover:text-primary-fixed-dim hover:pl-2 transition-all duration-300 inline-block" href="#">Servicios</a></li>
+<li><a class="text-body-md opacity-70 hover:opacity-100 hover:text-primary-fixed-dim hover:pl-2 transition-all duration-300 inline-block" href="#">Proyectos</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-2 scroll-reveal" style="transition-delay: 200ms;">
+<h5 class="font-label-bold text-primary-fixed-dim mb-lg uppercase tracking-widest text-xs">Soporte</h5>
+<ul class="space-y-sm">
+<li><a class="text-body-md opacity-70 hover:opacity-100 hover:text-primary-fixed-dim hover:pl-2 transition-all duration-300 inline-block" href="#">Contacto</a></li>
+<li><a class="text-body-md opacity-70 hover:opacity-100 hover:text-primary-fixed-dim hover:pl-2 transition-all duration-300 inline-block" href="#">Libro de Reclamaciones</a></li>
+<li><a class="text-body-md opacity-70 hover:opacity-100 hover:text-primary-fixed-dim hover:pl-2 transition-all duration-300 inline-block" href="#">Términos</a></li>
+</ul>
+</div>
+<div class="col-span-12 md:col-span-4 scroll-reveal" style="transition-delay: 300ms;">
+<h5 class="font-label-bold text-primary-fixed-dim mb-lg uppercase tracking-widest text-xs">Boletín Corporativo</h5>
+<div class="flex gap-xs mt-4">
+<input class="bg-white/10 border border-white/20 text-white px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-primary-fixed-dim rounded-lg placeholder:text-white/40 transition-all" placeholder="Su correo electrónico" type="email"/>
+<button class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-3 font-label-bold rounded-lg hover:brightness-110 active:scale-95 transition-all">OK</button>
+</div>
+</div>
+<div class="col-span-12 mt-xl pt-lg border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-md">
+<p class="text-sm opacity-60">© 2024 BETCAPITALSAC. Todos los derechos reservados.</p>
+<div class="flex gap-lg">
+<span class="material-symbols-outlined opacity-60 cursor-pointer hover:opacity-100 hover:text-primary-fixed-dim hover:scale-110 transition-all duration-300">public</span>
+<span class="material-symbols-outlined opacity-60 cursor-pointer hover:opacity-100 hover:text-primary-fixed-dim hover:scale-110 transition-all duration-300">link</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+    // Timeline Progress and Highlighting
+    const timelineSection = document.getElementById('timeline-section');
+    const progressBar = document.getElementById('timeline-progress');
+    const milestones = document.querySelectorAll('.milestone');
+
+    window.addEventListener('scroll', () => {
+        const rect = timelineSection.getBoundingClientRect();
+        const winHeight = window.innerHeight;
+        
+        // Calculate progress line
+        if (rect.top < winHeight && rect.bottom > 0) {
+            const total = rect.height;
+            const progress = Math.max(0, Math.min(100, ( (winHeight/2 - rect.top) / total) * 100));
+            progressBar.style.height = `${progress}%`;
+        }
+
+        // Highlight milestones
+        milestones.forEach(milestone => {
+            const mRect = milestone.getBoundingClientRect();
+            if (mRect.top < winHeight * 0.6 && mRect.bottom > winHeight * 0.4) {
+                milestone.classList.add('active');
+            } else {
+                milestone.classList.remove('active');
+            }
+        });
+    });
+</script>
+</body></html>

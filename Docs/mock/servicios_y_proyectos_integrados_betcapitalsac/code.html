@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "on-surface": "#191c1e",
+                            "secondary-container": "#d5e0f7",
+                            "on-secondary-fixed": "#111c2c",
+                            "on-primary-fixed": "#001b3c",
+                            "secondary-fixed-dim": "#bcc7dd",
+                            "outline": "#737780",
+                            "primary-fixed": "#d5e3ff",
+                            "primary-fixed-dim": "#a7c8ff",
+                            "background": "#f7f9fb",
+                            "surface-tint": "#3a5f94",
+                            "surface-container-highest": "#e0e3e5",
+                            "surface-variant": "#e0e3e5",
+                            "on-primary-fixed-variant": "#1f477b",
+                            "on-primary-container": "#799dd6",
+                            "secondary": "#545f72",
+                            "tertiary-fixed-dim": "#98cbff",
+                            "on-secondary-container": "#586377",
+                            "on-background": "#191c1e",
+                            "primary": "#001e40",
+                            "surface-container": "#eceef0",
+                            "surface-container-high": "#e6e8ea",
+                            "on-secondary": "#ffffff",
+                            "surface-bright": "#f7f9fb",
+                            "surface": "#f7f9fb",
+                            "tertiary-container": "#003659",
+                            "on-secondary-fixed-variant": "#3c475a",
+                            "surface-container-lowest": "#ffffff",
+                            "on-error-container": "#93000a",
+                            "primary-container": "#003366",
+                            "surface-dim": "#d8dadc",
+                            "on-tertiary": "#ffffff",
+                            "inverse-primary": "#a7c8ff",
+                            "error": "#ba1a1a",
+                            "secondary-fixed": "#d8e3fa",
+                            "inverse-surface": "#2d3133",
+                            "inverse-on-surface": "#eff1f3",
+                            "outline-variant": "#c3c6d1",
+                            "tertiary-fixed": "#cfe5ff",
+                            "tertiary": "#002038",
+                            "error-container": "#ffdad6",
+                            "on-primary": "#ffffff",
+                            "surface-container-low": "#f2f4f6",
+                            "on-tertiary-fixed": "#001d33",
+                            "on-tertiary-fixed-variant": "#004a77",
+                            "on-tertiary-container": "#00a2fe",
+                            "on-error": "#ffffff",
+                            "on-surface-variant": "#43474f"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                        },
+                        "spacing": {
+                            "xl": "80px",
+                            "margin": "32px",
+                            "md": "24px",
+                            "gutter": "24px",
+                            "base": "4px",
+                            "sm": "16px",
+                            "xs": "8px",
+                            "lg": "48px"
+                        },
+                        "fontFamily": {
+                            "headline-md": ["Hanken Grotesk"],
+                            "label-sm": ["Hanken Grotesk"],
+                            "label-bold": ["Hanken Grotesk"],
+                            "body-lg": ["Hanken Grotesk"],
+                            "headline-xl": ["Hanken Grotesk"],
+                            "headline-lg-mobile": ["Hanken Grotesk"],
+                            "headline-lg": ["Hanken Grotesk"],
+                            "body-md": ["Hanken Grotesk"]
+                        },
+                        "fontSize": {
+                            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                            "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                            "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                            "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                            "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- Top Navigation -->
+<header class="bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-50">
+<nav class="flex justify-between items-center w-full px-margin py-xs max-w-[1440px] mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">BETCAPITALSAC</div>
+<div class="hidden md:flex items-center gap-md">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Inicio</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Nosotros</a>
+<a class="font-label-bold text-label-bold text-primary border-b-2 border-primary pb-1" href="#">Servicios</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Trabaja con Nosotros</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Certificaciones</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Proyectos</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Contacto</a>
+<button class="bg-primary-container text-on-primary-fixed px-6 py-2 rounded font-label-bold text-label-bold hover:opacity-90 transition-opacity">Cotizar</button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main class="w-full">
+<!-- Main Intro Hero -->
+<section class="px-margin py-xl bg-surface-container-low border-b border-outline-variant">
+<div class="max-w-[1440px] mx-auto">
+<div class="max-w-4xl">
+<span class="text-primary font-label-bold uppercase tracking-wider mb-4 block">Portafolio Especializado</span>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-6">Soluciones Logísticas Integrales de Alto Tonelaje</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        Nuestra infraestructura está diseñada para soportar las exigencias más críticas de la cadena de suministro nacional, operando con precisión industrial y seguridad garantizada.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Service 1: Containers -->
+<section class="relative" id="contenedores">
+<div class="relative h-[80vh] min-h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCpYTlTCyi84LUICebTtP3tLH6DnUby-K87BhtgSTnPeHvRkoXXEwkDg3PyWhrksMAnMIOoClILX8__JDWw3G3IM1nICxitL0YW6cFJ_tNAonHk4Epk_us3IUaFWYU42Usq4DyPrODOKNoNFTWgjixj1lqvJvwUmny5U0WCrNkgLU7eU7UewNa50qqtxu806JQAWd8FVyF-f5JqUq0TDM_Iw3QfQ77cQ31FXec5DIXpfC665QU31s0sOjhDLq6I5rPi6_Bn095Ie4Ht');"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent"></div>
+<div class="relative w-full max-w-[1440px] mx-auto px-margin">
+<div class="max-w-xl bg-on-surface/40 backdrop-blur-xl border border-surface-container-lowest/20 p-lg rounded-xl text-surface-container-lowest shadow-2xl">
+<div class="flex items-center gap-xs mb-sm">
+<span class="material-symbols-outlined text-primary-fixed text-4xl">dock</span>
+<span class="font-label-bold text-label-bold uppercase tracking-widest text-primary-fixed">Callao Strategic Hub</span>
+</div>
+<h2 class="font-headline-xl text-headline-lg mb-md">Retiro y Depósito de Contenedores</h2>
+<p class="font-body-lg text-body-md opacity-90 mb-lg">
+                            Realizamos operaciones homologadas en DP World y APM Terminals. Gestionamos el flujo de contenedores con tiempos optimizados y monitoreo en tiempo real, asegurando la continuidad de sus importaciones y exportaciones.
+                        </p>
+<div class="flex flex-wrap gap-sm">
+<button class="bg-primary-fixed text-primary px-lg py-3 rounded font-label-bold hover:bg-white transition-colors">Solicitar Cotización</button>
+<button class="bg-transparent border border-white/50 text-white px-lg py-3 rounded font-label-bold hover:bg-white/10 transition-colors inline-flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                                Ficha Técnica
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Evidence Gallery -->
+<div class="bg-white py-lg border-b border-outline-variant">
+<div class="max-w-[1440px] mx-auto px-margin">
+<h4 class="font-label-bold text-label-sm uppercase tracking-widest text-secondary mb-md">Evidencia de Operaciones</h4>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+<img alt="Operación Puerto" class="aspect-video object-cover rounded shadow-sm grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpYTlTCyi84LUICebTtP3tLH6DnUby-K87BhtgSTnPeHvRkoXXEwkDg3PyWhrksMAnMIOoClILX8__JDWw3G3IM1nICxitL0YW6cFJ_tNAonHk4Epk_us3IUaFWYU42Usq4DyPrODOKNoNFTWgjixj1lqvJvwUmny5U0WCrNkgLU7eU7UewNa50qqtxu806JQAWd8FVyF-f5JqUq0TDM_Iw3QfQ77cQ31FXec5DIXpfC665QU31s0sOjhDLq6I5rPi6_Bn095Ie4Ht"/>
+<img alt="Contenedores Stack" class="aspect-video object-cover rounded shadow-sm grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh1X0MM6Y7HUpFcMqnd4qTGj_H2JmQRwJCX7UjM7CeEGVYaqZV4jd4KrwyuMidEYRD_bRgE6bEp6sSk6-TQZp21czPMpo6bQRkBif82rFDESp6ByzL5iqlwLenvtaa5y1A-L7RCaHUt4nR5Qx1ubzBLFCpDoWB1fRJJ9E152LwiE1avLtbxeFMaUIRmBxxsPj0ABB3kILXKfUbRrqOktz8EiLEDxAlPBwNm6rD_JgvOhx8tG5W2NO8w5sUNCIVZyDMmykZWxWBud1u"/>
+<img alt="Grúa Puerto" class="aspect-video object-cover rounded shadow-sm grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAa_qVFLH7Jv-tF-ergJNQiNs9jNf1aswZkwEXUN5ZGo4dXVf-coGbOc694hjwQhF6aM1ihP1j1hYMS2BjAFokkN5wBrRh5cBwxBMFEndIR9c2kYovP-Yz21POdSkiOHws-PXDZe2gViLK_KgN5VyT57Kgh_KAEnMIcCip1jUm6QaZbnK8rm72hdzgYcs6KM4gE1a6CgUFSHGSS1rJGCeZs5mTFB7Nbl0KlaHxpc70_GAdTcqy1GZF9il3OjFo7vp_AXd8BX2fN2-8"/>
+<img alt="Logística" class="aspect-video object-cover rounded shadow-sm grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzIMpWHq5FfFdj4J8sZ0CW-e6U3vfdyH3KhbYDVjQgkrcOuBhoeJU5LYjdAtGjOX1CwStk5YMgPhKmszwVk9u_8889SdmUeFmsucMzCtG3pe3y1id43xL6pIm_R3WZo5IqMVIyan3wfGZiUaz01NyAhc4hBdlLlpeSQaW2syfaxFtSXD8YbHUgTIBVaMUW9rRV_TdJ7FoPfZSZrfsjw9Cp3ObVDyfF_C5m2hGkpDMyHEr-EQju6Cwh53fH-kRsV9YJFKUrZ7T9_YyA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Service 2: National Transport -->
+<section class="relative" id="transporte">
+<div class="relative h-[80vh] min-h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvVUmXySLd7vMUhmSSYM1bPpNZJpWBe0f7TeA-qu74wVWdF2Eidi0rOpwE67seP1Jra6TjHeqYSjY7B8ZHzq0OHnZvyRvEe_32d8Sh5Ismdyt8t27qSeqWIm8tESNIlikh5Zd7mk2418KEzIslRdtvkk8K5FS4J6BX38_tonmvLO_nwTrVkxWJxCR7wL0e9iJmzuqIYaZU2z_hrrZCoqpkNi1s0FbTe7XNyq7l3nzMRPborQTvB3YOTrZPdeY1OcLSsWnTKs1gxeAK');"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent"></div>
+<div class="relative w-full max-w-[1440px] mx-auto px-margin">
+<div class="max-w-xl bg-on-surface/40 backdrop-blur-xl border border-surface-container-lowest/20 p-lg rounded-xl text-surface-container-lowest shadow-2xl">
+<div class="flex items-center gap-xs mb-sm">
+<span class="material-symbols-outlined text-primary-fixed text-4xl">local_shipping</span>
+<span class="font-label-bold text-label-bold uppercase tracking-widest text-primary-fixed">Cobertura Nacional</span>
+</div>
+<h2 class="font-headline-xl text-headline-lg mb-md">Transporte Nacional de Carga Pesada</h2>
+<p class="font-body-lg text-body-md opacity-90 mb-lg">
+                            Especialistas en gran tonelaje (25-40 TN). Contamos con una flota moderna equipada con GPS y conductores certificados, cubriendo rutas críticas en todo el territorio nacional con cumplimiento estricto de horarios.
+                        </p>
+<div class="flex flex-wrap gap-sm">
+<button class="bg-primary-fixed text-primary px-lg py-3 rounded font-label-bold hover:bg-white transition-colors">Cotizar Ruta</button>
+<button class="bg-transparent border border-white/50 text-white px-lg py-3 rounded font-label-bold hover:bg-white/10 transition-colors inline-flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                                Brochure Flota
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Evidence Gallery -->
+<div class="bg-white py-lg border-b border-outline-variant">
+<div class="max-w-[1440px] mx-auto px-margin">
+<h4 class="font-label-bold text-label-sm uppercase tracking-widest text-secondary mb-md">Proyectos Recientes</h4>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+<img alt="Ruta Carretera" class="aspect-video object-cover rounded shadow-sm grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6x74qd_3ZkmqsBPE_AowDahKJVwJ05BoGfTeZ088t5SzcaDlJDobzeWPJpv49fw5WR_XBEiD80sMzwk6aHPi03JzdVtD_v5Oha61ZA0qxyzF0RBR4HuuHUCcZKoDxidpzZgPfLzySZJaTa2rGBVdCkoGCRxczLv6w8X8y_bIlcQy5UNGbSMPgqMGWBcxCTGey3mzJ39lEsFJGGkj5KdkmEBvOh26AcfYnSdYPiCpW0k_vXgp0S7K0h7it6SmLhtNgOjY0JLmbeSBA"/>
+<img alt="Camión BetCapital" class="aspect-video object-cover rounded shadow-sm grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvVUmXySLd7vMUhmSSYM1bPpNZJpWBe0f7TeA-qu74wVWdF2Eidi0rOpwE67seP1Jra6TjHeqYSjY7B8ZHzq0OHnZvyRvEe_32d8Sh5Ismdyt8t27qSeqWIm8tESNIlikh5Zd7mk2418KEzIslRdtvkk8K5FS4J6BX38_tonmvLO_nwTrVkxWJxCR7wL0e9iJmzuqIYaZU2z_hrrZCoqpkNi1s0FbTe7XNyq7l3nzMRPborQTvB3YOTrZPdeY1OcLSsWnTKs1gxeAK"/>
+<img alt="Logística Almacén" class="aspect-video object-cover rounded shadow-sm grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFz-AZRf0_r-Z7_7VKoBzgiujW-EtjoOzUT6ICkV_BrWX6v6q6hBqWYvzXgoR15Eb4TWXwVb7wpO39wkMXJjJ7hrTJ-JGnHvJh-I2LFuwekR1NQpMRGFsRX_Lc5Ts2iG03ZJQ4G0_DCzH8Tmx0I8kM2YdeEJiFUfoKdFesZPG0UjONJXsyZhfgbRPcdSNjzDQ2fUmZ5_jl4A9OWiEpWvIn846sXSyEFdr0LuQUVLjQq_yzcoAo0uccEFarSv4USvJc8oXLWAFEOWfV"/>
+<img alt="Entrega Carga" class="aspect-video object-cover rounded shadow-sm grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQW13ZhH2vbV0Cnw4RBqnDxvqnW0ar3biPx0YSTeiIIwS_52O_3dVOSwbOvMC3rtZH6tLAIsvvYeb9rTOcoViA1YF_8kXH8cHOEWjCdOobjpKbgWMTPayeNKhfA3-yv1dtn7BW4ApQQSvw9R0Zc2IG_FJmxqXEzXUOcTJ66k45TEiTBaNHioVgrseZ_Z_28orQk-kP2raaL9TeDy9DOBuVEiSk9tcIOXrjAKST2oFP1fPrxM1WH1_ZiCtdHlYDBGynpUGF7PirD3PJ"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Service 3: Accounting Support -->
+<section class="relative" id="contabilidad">
+<div class="relative h-[80vh] min-h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWK8q_d--byuw1vw-mszFujBOqm_C0WTA9wqZcryH_bcElx8ovk2bMpnpDBbctftTL5HSYhJFf6IrVsHEmMXb8c6ZqGeKb5aexKhPKCIgVhdhzzyPnIUXOYvBv-8NWdeIDfn7uNr1a7-dLZrJff3w3iPZNrur2etj-nWzgDj8a3gV4g3ptWVl20zbHsQJe5oZGwFc_dvdMBd3abT66DeqFFPO6P025Y1Lk_WT8W1uFYl6CIT2xV1-FhZ_-uriKli5yUc-KvCyRUE4O');"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent"></div>
+<div class="relative w-full max-w-[1440px] mx-auto px-margin">
+<div class="max-w-xl bg-on-surface/40 backdrop-blur-xl border border-surface-container-lowest/20 p-lg rounded-xl text-surface-container-lowest shadow-2xl">
+<div class="flex items-center gap-xs mb-sm">
+<span class="material-symbols-outlined text-primary-fixed text-4xl">account_balance_wallet</span>
+<span class="font-label-bold text-label-bold uppercase tracking-widest text-primary-fixed">Business Intelligence</span>
+</div>
+<h2 class="font-headline-xl text-headline-lg mb-md">Soporte Contable Estratégico</h2>
+<p class="font-body-lg text-body-md opacity-90 mb-lg">
+                            Asesoría tributaria especializada exclusivamente en el sector logístico. Optimizamos la gestión de detracciones (SPOT), declaraciones ante SUNAT y planificación financiera para empresas transportistas que buscan solidez y cumplimiento.
+                        </p>
+<div class="flex flex-wrap gap-sm">
+<button class="bg-primary-fixed text-primary px-lg py-3 rounded font-label-bold hover:bg-white transition-colors">Agendar Consultoría</button>
+<button class="bg-transparent border border-white/50 text-white px-lg py-3 rounded font-label-bold hover:bg-white/10 transition-colors inline-flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                Ver Soluciones
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Evidence Gallery (Represented by clean professional spaces/docs) -->
+<div class="bg-white py-lg">
+<div class="max-w-[1440px] mx-auto px-margin">
+<h4 class="font-label-bold text-label-sm uppercase tracking-widest text-secondary mb-md">Gestión Corporativa</h4>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+<img alt="Consultoría" class="aspect-video object-cover rounded shadow-sm grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwXlX7fHhdUhWlrJ8W7hbAuqppwjnhx6uE5vhj9nC-2E_Q02aTNjZPs8hfNadRPFAHdv0ARDa2D0raX0n_Q_m0GG24Z3BBoagtcKqfnaWd_aMEmo1MuIl8h9SGdX8EwD0c5j8bWvSogySeWDHLz06R70fX5xlOVf9IRu1ziKmdrolMEkisiPZf5z5if44Xl99EessOmr1UeCfKuSwSmaW2JPqhRnT_t9FmuOgYsqZkm7Y7YN0Q7J1dc5srhI7kBOZxaL3GxQU9PikK"/>
+<img alt="Contabilidad" class="aspect-video object-cover rounded shadow-sm grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0J4gEkcQQTFChKe_C7LL64xfW3txknXpIxShhxwEepgXU88321XH0I8c0uXRUd4xd3gjtOmW5gAdbQf3Uvu6G-EfnQqNATBt_I6FoufBi7TWmFAvBFpCi1KBpFPw4KosblSwYTy95BWHpx71hG2pYtvwvXmFl3czbt37TRC2t7VQhdYNlAwnGTQVpwkDalZ7Q3bwZru_pG0t3b1MBoljyKPIhYlZTP3EIzekISQ5_RDhjNatdbRrGL0sxjFQof6CagaxZrFUYQuyt"/>
+<img alt="Documentación" class="aspect-video object-cover rounded shadow-sm grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArqYS7AwI5-D7lbfw7Ps1wObPHsppY-_PowblqCdhsR1wO14_i7ZHZr4pnhDqj4vtNuDcvBCeLsx4NIO4DjFyDQweJA9lfnXq8tgtQ6MYD6GQNFlIHDBMubAiW1ts4z54Uyn1koEpzRmaubZ6EpG6QDvg8ie86hp0Fc6jZlTn3yag1lX7rWexPujYHkSLf2yK8-UOa_ZQd3VAXrm4ahQg1FlgFm4EwSaYh0iodT4rAvSPVuO-ehhLbgpOFLOvpQxS76600QMi5PjKC"/>
+<img alt="Profesionalismo" class="aspect-video object-cover rounded shadow-sm grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBch6j1EtJNYejhjbXqfFpGtr_brhZ8T0pZdWqwwpoM_rgAaKLtZJkQe7iRCyDPi7EviRcuZu0aVhGODbHgxl0eNz-aJIUFWfWmG-H3zdy5eNQBnruH3QVyspdOw6a-K16uk_efTsiQuRbsZHYlYlnB8noYsc9PraEJYS6Jy0lKK0l2kniv4fbx2PTScOKltPVk-bvtUasvB08kZSjmVa4CvRgE79JuijIQU2n2i8_U9D2c8IpRWTH5NZahy3PXJrj7THNdBDQ7qRVd"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Side Navigation (WhatsApp Support) -->
+<div class="fixed bottom-8 right-8 z-[100]">
+<a class="bg-tertiary-container text-on-tertiary-container rounded-full p-4 shadow-lg hover:scale-110 transition-transform duration-300 flex items-center gap-2 group" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-bold text-label-bold hidden group-hover:inline">Atención Rápida</span>
+</a>
+</div>
+<!-- Footer -->
+<footer class="bg-on-surface border-t border-outline">
+<div class="grid grid-cols-12 gap-gutter px-margin py-lg w-full max-w-[1440px] mx-auto text-surface-container-lowest">
+<div class="col-span-12 lg:col-span-4">
+<div class="font-headline-lg text-headline-lg font-bold mb-md">BETCAPITALSAC</div>
+<p class="body-md opacity-70 max-w-xs">Logística pesada y soluciones corporativas con integridad y eficiencia en todo el Perú.</p>
+</div>
+<div class="col-span-6 lg:col-span-2">
+<h5 class="font-label-bold text-label-bold mb-md uppercase tracking-widest text-primary-fixed">Empresa</h5>
+<ul class="space-y-xs opacity-80 text-label-sm">
+<li><a class="hover:text-primary-fixed-dim transition-colors" href="#">Sobre Nosotros</a></li>
+<li><a class="hover:text-primary-fixed-dim transition-colors" href="#">Servicios</a></li>
+<li><a class="hover:text-primary-fixed-dim transition-colors" href="#">Proyectos</a></li>
+</ul>
+</div>
+<div class="col-span-6 lg:col-span-2">
+<h5 class="font-label-bold text-label-bold mb-md uppercase tracking-widest text-primary-fixed">Legal</h5>
+<ul class="space-y-xs opacity-80 text-label-sm">
+<li><a class="hover:text-primary-fixed-dim transition-colors" href="#">Privacidad</a></li>
+<li><a class="hover:text-primary-fixed-dim transition-colors" href="#">Términos</a></li>
+<li><a class="hover:text-primary-fixed-dim transition-colors" href="#">Libro de Reclamaciones</a></li>
+</ul>
+</div>
+<div class="col-span-12 lg:col-span-4">
+<h5 class="font-label-bold text-label-bold mb-md uppercase tracking-widest text-primary-fixed">Contacto</h5>
+<div class="flex items-center gap-xs mb-xs opacity-80 text-label-sm">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Av. Logística 123, Callao, Lima</span>
+</div>
+<div class="flex items-center gap-xs opacity-80 text-label-sm">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+<span>contacto@betcapitalsac.com</span>
+</div>
+</div>
+<div class="col-span-12 border-t border-outline/30 mt-lg pt-md flex justify-between items-center text-label-sm opacity-50">
+<span>© 2024 BETCAPITALSAC. Todos los derechos reservados.</span>
+<div class="flex gap-md">
+<a class="hover:underline" href="#">Privacidad</a>
+<a class="hover:underline" href="#">Mapa del Sitio</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
