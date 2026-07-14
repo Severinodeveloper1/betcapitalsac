@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'YIRA INVERSIONES'),
+    'name' => env('APP_NAME', 'BET CAPITAL SAC'),
 
     /*
     |--------------------------------------------------------------------------

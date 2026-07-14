@@ -27,8 +27,8 @@ class UserForm
                 TextInput::make('password')
                     ->label('Contraseña')
                     ->password()
-                    ->dehydrated(fn ($state) => filled($state))
-                    ->required(fn (string $context): bool => $context === 'create')
+                    ->dehydrated(fn($state) => filled($state))
+                    ->required(fn(string $context): bool => $context === 'create')
                     ->maxLength(255),
                 Select::make('roles')
                     ->label('Roles')
@@ -36,6 +36,6 @@ class UserForm
                     ->multiple()
                     ->preload()
                     ->searchable(),
-            ]);
+            ])->columns(1);
     }
 }

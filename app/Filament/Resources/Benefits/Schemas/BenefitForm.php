@@ -4,7 +4,7 @@ namespace App\Filament\Resources\Benefits\Schemas;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\Section;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class BenefitForm
@@ -34,6 +34,6 @@ class BenefitForm
                             ->default(0),
                     ])
                     ->columns(2),
-            ]);
+            ])->columns(1);
     }
 }

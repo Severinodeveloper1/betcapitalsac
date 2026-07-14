@@ -4,7 +4,7 @@ namespace App\Filament\Resources\Certifications\Schemas;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Section;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class CertificationForm
@@ -48,6 +48,6 @@ class CertificationForm
                             ->default(0),
                     ])
                     ->columns(3),
-            ]);
+            ])->columns(1);
     }
 }

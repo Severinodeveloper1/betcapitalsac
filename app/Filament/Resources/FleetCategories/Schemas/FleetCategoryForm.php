@@ -24,6 +24,6 @@ class FleetCategoryForm
                 Toggle::make('is_active')
                     ->label('Activo')
                     ->default(true),
-            ]);
+            ])->columns(1);
     }
 }

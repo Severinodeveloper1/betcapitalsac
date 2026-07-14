@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\Pages\Schemas;
 
-use Filament\Forms\Components\Section;
+use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -53,16 +53,16 @@ class PageForm
                             ->columnSpanFull(),
                         TextInput::make('hero_cta_text')
                             ->label('Texto de Botón CTA')
-                            ->visible(fn ($record) => $record?->slug === 'inicio'),
+                            ->visible(fn($record) => $record?->slug === 'inicio'),
                         TextInput::make('hero_cta_url')
                             ->label('Enlace de Botón CTA')
-                            ->visible(fn ($record) => $record?->slug === 'inicio'),
+                            ->visible(fn($record) => $record?->slug === 'inicio'),
                     ])
                     ->columns(2),
 
                 // Secciones específicas de la página de Inicio
                 Section::make('Sección Homologación y Excelencia')
-                    ->visible(fn ($record) => $record?->slug === 'inicio')
+                    ->visible(fn($record) => $record?->slug === 'inicio')
                     ->schema([
                         Toggle::make('section_data.empresa_homologada')
                             ->label('Mostrar distintivo de Empresa Homologada')
@@ -98,7 +98,7 @@ class PageForm
 
                 // Secciones específicas de la página Nosotros
                 Section::make('Identidad Corporativa (Misión & Visión)')
-                    ->visible(fn ($record) => $record?->slug === 'nosotros')
+                    ->visible(fn($record) => $record?->slug === 'nosotros')
                     ->schema([
                         Section::make('Misión')
                             ->schema([
@@ -130,7 +130,7 @@ class PageForm
                     ->columns(2),
 
                 Section::make('Liderazgo y Equipo')
-                    ->visible(fn ($record) => $record?->slug === 'nosotros')
+                    ->visible(fn($record) => $record?->slug === 'nosotros')
                     ->schema([
                         TextInput::make('section_data.team_title')
                             ->label('Título de Sección')
@@ -147,6 +147,6 @@ class PageForm
                             ->directory('pages')
                             ->columnSpanFull(),
                     ]),
-            ]);
+            ])->columns(1);
     }
 }

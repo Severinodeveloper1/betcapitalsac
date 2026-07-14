@@ -5,7 +5,7 @@ namespace App\Filament\Resources\DriverApplications\Schemas;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Section;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class DriverApplicationForm
@@ -60,6 +60,6 @@ class DriverApplicationForm
                             ->rows(4),
                     ])
                     ->columns(1),
-            ]);
+            ])->columns(1);
     }
 }

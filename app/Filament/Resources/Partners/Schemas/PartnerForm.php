@@ -4,7 +4,7 @@ namespace App\Filament\Resources\Partners\Schemas;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Section;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class PartnerForm
@@ -33,6 +33,6 @@ class PartnerForm
                             ->default(0),
                     ])
                     ->columns(2),
-            ]);
+            ])->columns(1);
     }
 }

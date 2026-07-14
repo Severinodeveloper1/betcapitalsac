@@ -14,62 +14,61 @@ class RolePolicy
     
     public function viewAny(AuthUser $authUser): bool
     {
-        return $authUser->can('ViewAny:Role');
+        return $authUser->hasRole('super_admin') || $authUser->hasPermissionTo('ViewAny:Role');
     }
 
     public function view(AuthUser $authUser, Role $role): bool
     {
-        return $authUser->can('View:Role');
+        return $authUser->hasRole('super_admin') || $authUser->hasPermissionTo('View:Role');
     }
 
     public function create(AuthUser $authUser): bool
     {
-        return $authUser->can('Create:Role');
+        return $authUser->hasRole('super_admin') || $authUser->hasPermissionTo('Create:Role');
     }
 
     public function update(AuthUser $authUser, Role $role): bool
     {
-        return $authUser->can('Update:Role');
+        return $authUser->hasRole('super_admin') || $authUser->hasPermissionTo('Update:Role');
     }
 
     public function delete(AuthUser $authUser, Role $role): bool
     {
-        return $authUser->can('Delete:Role');
+        return $authUser->hasRole('super_admin') || $authUser->hasPermissionTo('Delete:Role');
     }
 
     public function deleteAny(AuthUser $authUser): bool
     {
-        return $authUser->can('DeleteAny:Role');
+        return $authUser->hasRole('super_admin') || $authUser->hasPermissionTo('DeleteAny:Role');
     }
 
     public function restore(AuthUser $authUser, Role $role): bool
     {
-        return $authUser->can('Restore:Role');
+        return $authUser->hasRole('super_admin') || $authUser->hasPermissionTo('Restore:Role');
     }
 
     public function forceDelete(AuthUser $authUser, Role $role): bool
     {
-        return $authUser->can('ForceDelete:Role');
+        return $authUser->hasRole('super_admin') || $authUser->hasPermissionTo('ForceDelete:Role');
     }
 
     public function forceDeleteAny(AuthUser $authUser): bool
     {
-        return $authUser->can('ForceDeleteAny:Role');
+        return $authUser->hasRole('super_admin') || $authUser->hasPermissionTo('ForceDeleteAny:Role');
     }
 
     public function restoreAny(AuthUser $authUser): bool
     {
-        return $authUser->can('RestoreAny:Role');
+        return $authUser->hasRole('super_admin') || $authUser->hasPermissionTo('RestoreAny:Role');
     }
 
     public function replicate(AuthUser $authUser, Role $role): bool
     {
-        return $authUser->can('Replicate:Role');
+        return $authUser->hasRole('super_admin') || $authUser->hasPermissionTo('Replicate:Role');
     }
 
     public function reorder(AuthUser $authUser): bool
     {
-        return $authUser->can('Reorder:Role');
+        return $authUser->hasRole('super_admin') || $authUser->hasPermissionTo('Reorder:Role');
     }
-
 }

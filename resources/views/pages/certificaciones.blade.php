@@ -4,44 +4,51 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="bg-primary text-white py-16">
-    <div class="max-w-[1440px] mx-auto px-margin text-center">
-        <h1 class="font-display-lg text-4xl md:text-5xl font-bold mb-4">Garantía de Calidad y Portafolio</h1>
-        <p class="font-body-lg text-surface-variant max-w-2xl mx-auto text-slate-300">
+<section class="bg-ocean-deep text-white py-16">
+    <div class="max-w-[1440px] mx-auto px-margin text-center scroll-reveal zoom-in visible">
+        <span class="text-electric-cyan font-label-sm text-label-sm uppercase tracking-widest block mb-2 font-semibold">Garantía Corporativa</span>
+        <h1 class="font-display-lg text-display-lg text-white">Certificaciones y Operaciones</h1>
+        <p class="font-body-lg text-body-lg text-surface-container-highest max-w-2xl mx-auto opacity-80 pt-2">
             Acreditaciones internacionales y registro visual de nuestras operaciones logísticas de alta complejidad en todo el Perú.
         </p>
     </div>
 </section>
 
-<!-- Certificaciones & Repositorio -->
+<!-- Certificaciones -->
 @if($certifications->count() > 0)
-    <section class="py-xl px-margin max-w-[1440px] mx-auto py-16">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-lg gap-sm pb-6 border-b border-slate-200 mb-8">
-            <div>
-                <span class="text-primary font-label-bold text-label-bold uppercase tracking-widest block mb-xs text-xs font-bold">Garantía de Calidad</span>
-                <h2 class="font-headline-lg text-headline-lg text-on-surface text-3xl font-bold">Certificaciones y Documentación</h2>
+    <section class="px-margin max-w-[1440px] mx-auto py-16">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 pb-6 border-b border-outline-variant scroll-reveal">
+            <div class="space-y-2 w-full md:w-1/2">
+                <span class="text-transit-blue font-label-sm text-label-sm uppercase tracking-widest font-semibold">Acreditación</span>
+                <h2 class="font-headline-lg text-headline-lg text-ocean-deep">Homologaciones del Sector</h2>
             </div>
-            <p class="font-body-md text-body-md text-on-surface-variant max-w-md text-sm text-slate-600">
-                Acceda a nuestro repositorio oficial de documentos. Mantenemos nuestros estándares actualizados para garantizar la seguridad de su carga.
+            <p class="font-body-md text-body-md text-on-surface-variant w-full md:w-1/2 lg:max-w-md text-sm leading-relaxed">
+                Mantenemos nuestros estándares operativos auditados y certificados para garantizar la seguridad de su carga en puertos y almacenes nacionales.
             </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter gap-6">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             @foreach($certifications as $cert)
-                <div class="bg-surface-container-lowest border border-outline-variant p-sm flex flex-col hover:border-primary transition-all duration-300 group rounded-lg p-4 bg-white hover:shadow-md">
-                    <div class="aspect-[3/4] bg-surface-container-high mb-sm overflow-hidden relative bg-slate-100 rounded-sm mb-4">
+                <div class="bg-surface-container-lowest border border-outline-variant p-4 flex flex-col hover:border-transit-blue transition-all duration-300 group rounded-sm scroll-reveal zoom-in">
+                    <div class="aspect-[3/4] bg-surface-container-low overflow-hidden relative rounded-sm mb-4">
                         @if(!empty($cert->image))
                             <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="{{ $cert->image }}" alt="{{ $cert->title }}"/>
                         @endif
+                        <div class="absolute inset-0 bg-ocean-deep/5 mix-blend-multiply pointer-events-none"></div>
                     </div>
-                    <h3 class="font-label-bold text-label-bold text-on-surface font-bold text-sm mb-1">{{ $cert->title }}</h3>
-                    <p class="font-label-sm text-label-sm text-on-surface-variant text-xs text-slate-500 mb-2">{{ $cert->validity }}</p>
-                    <p class="font-label-sm text-label-sm text-on-surface-variant text-xs text-slate-600 mb-4 line-clamp-3">{{ $cert->description }}</p>
+                    <div class="space-y-2">
+                        <h3 class="font-label-bold text-label-bold text-ocean-deep font-bold">{{ $cert->title }}</h3>
+                        <p class="font-label-sm text-xs text-transit-blue font-semibold">{{ $cert->validity }}</p>
+                        <p class="font-body-md text-xs text-on-surface-variant line-clamp-3">
+                            {{ $cert->description }}
+                        </p>
+                    </div>
                     
                     @if(!empty($cert->pdf_file))
-                        <button onclick="window.open('{{ asset('storage/' . $cert->pdf_file) }}', '_blank')" class="mt-auto flex items-center justify-center gap-xs bg-slate-100 text-primary py-xs font-label-bold text-label-bold rounded hover:bg-primary hover:text-white transition-all text-xs font-bold py-2 w-full">
-                            <span class="material-symbols-outlined text-[18px] mr-1">download</span>
-                            Descargar PDF
-                        </button>
+                        <a href="{{ asset('storage/' . $cert->pdf_file) }}" target="_blank" class="mt-4 flex items-center justify-center gap-2 bg-surface-container-low text-transit-blue py-2 rounded-sm font-label-bold text-label-bold hover:bg-transit-blue hover:text-white transition-all duration-300 text-xs font-bold w-full">
+                            <span class="material-symbols-outlined text-[18px]">download</span>
+                            Descargar Documento
+                        </a>
                     @endif
                 </div>
             @endforeach
@@ -49,16 +56,16 @@
     </section>
 @endif
 
-<!-- Proyectos Masonry Gallery -->
+<!-- Proyectos Portafolio -->
 @if($projects->count() > 0)
-    <section class="py-xl bg-on-surface text-surface-container-lowest overflow-hidden bg-slate-900 py-16 text-white">
+    <section class="bg-ocean-deep text-white overflow-hidden py-16">
         <div class="px-margin max-w-[1440px] mx-auto">
-            <div class="grid grid-cols-12 gap-gutter mb-lg pb-6 border-b border-white/10 mb-8">
-                <div class="col-span-12 lg:col-span-6">
-                    <span class="text-primary-fixed-dim font-label-bold text-label-bold uppercase tracking-widest block mb-xs text-sky-400 text-xs font-bold">Portafolio en Acción</span>
-                    <h2 class="font-headline-lg text-headline-lg text-white text-3xl font-bold">Proyectos y Operaciones Recientes</h2>
-                    <p class="font-body-md text-body-md text-surface-variant opacity-80 text-sm text-slate-300">
-                        Documentamos visualmente nuestra capacidad operativa. Desde transporte de maquinaria pesada hasta logística de contenedores de alta prioridad.
+            <div class="grid grid-cols-12 gap-6 mb-12 pb-6 border-b border-white/10 scroll-reveal">
+                <div class="col-span-12 lg:col-span-6 space-y-2">
+                    <span class="text-electric-cyan font-label-sm text-label-sm uppercase tracking-widest font-semibold">Portafolio en Acción</span>
+                    <h2 class="font-headline-lg text-headline-lg text-white">Operaciones Recientes</h2>
+                    <p class="font-body-md text-body-md opacity-85 text-sm">
+                        Resumen visual de nuestra capacidad logística. Desde el transporte de maquinaria pesada hasta traslados portuarios prioritarios.
                     </p>
                 </div>
             </div>
@@ -66,13 +73,13 @@
             <!-- Simple Responsive Grid functioning as Masonry -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 @foreach($projects as $project)
-                    <div class="group relative overflow-hidden rounded-lg bg-slate-800 shadow-lg aspect-video md:aspect-[4/3]">
+                    <div class="group relative overflow-hidden rounded-sm bg-slate-800 shadow-md aspect-video md:aspect-[4/3] scroll-reveal zoom-in">
                         @if(!empty($project->image))
                             <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="{{ $project->image }}" alt="{{ $project->title }}"/>
                         @endif
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                            <h4 class="font-label-bold text-label-bold text-white font-bold text-sm mb-1">{{ $project->title }}</h4>
-                            <p class="text-label-sm text-surface-variant text-xs text-slate-300">{{ $project->client_or_project }}</p>
+                        <div class="absolute inset-0 bg-gradient-to-t from-ocean-deep/95 via-ocean-deep/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                            <h4 class="font-label-bold text-label-bold text-white font-bold">{{ $project->title }}</h4>
+                            <p class="font-label-sm text-xs text-electric-cyan">{{ $project->client_or_project }}</p>
                         </div>
                     </div>
                 @endforeach
