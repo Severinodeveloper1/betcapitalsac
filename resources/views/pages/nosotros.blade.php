@@ -8,7 +8,7 @@
 <section class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-ocean-deep">
     <div class="absolute inset-0 z-0">
         @if(!empty($page->hero_image))
-            <div class="w-full h-full bg-cover bg-center brightness-40 hero-image-zoom" style="background-image: url('{{ $page->hero_image }}')"></div>
+            <div class="w-full h-full bg-cover bg-center brightness-40 hero-image-zoom" style="background-image: url('{{ str_starts_with($page->hero_image, 'http') ? $page->hero_image : asset('storage/' . $page->hero_image) }}')"></div>
         @else
             <div class="w-full h-full bg-slate-800 hero-image-zoom"></div>
         @endif
@@ -47,7 +47,7 @@
         <!-- Team Photo Banner Card -->
         @if(!empty($page->section_data['team_image']))
             <div class="lg:col-span-7 h-[360px] relative overflow-hidden rounded-sm shadow-sm scroll-reveal slide-right">
-                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" style="background-image: url('{{ $page->section_data['team_image'] }}')"></div>
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" style="background-image: url('{{ str_starts_with($page->section_data['team_image'], 'http') ? $page->section_data['team_image'] : asset('storage/' . $page->section_data['team_image']) }}')"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-ocean-deep/90 via-ocean-deep/10 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <span class="inline-block px-3 py-1 bg-electric-cyan/20 border border-electric-cyan/30 text-electric-cyan font-label-sm text-xs uppercase tracking-widest rounded-sm mb-2">Capital Humano</span>

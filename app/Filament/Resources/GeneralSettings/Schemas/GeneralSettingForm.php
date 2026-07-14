@@ -53,10 +53,12 @@ class GeneralSettingForm
                                 FileUpload::make('site_logo')
                                     ->label('Logotipo del Sitio')
                                     ->image()
+                                    ->disk('public')
                                     ->directory('branding'),
                                 FileUpload::make('site_favicon')
                                     ->label('Favicon del Sitio')
                                     ->image()
+                                    ->disk('public')
                                     ->directory('branding'),
                             ]),
                     ])

@@ -37,6 +37,7 @@ class ProjectForm
                         FileUpload::make('image')
                             ->label('Imagen del Proyecto')
                             ->image()
+                            ->disk('public')
                             ->directory('projects')
                             ->required(),
                         Toggle::make('is_featured')

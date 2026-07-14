@@ -49,6 +49,7 @@ class PageForm
                         FileUpload::make('hero_image')
                             ->label('Imagen de Fondo')
                             ->image()
+                            ->disk('public')
                             ->directory('pages')
                             ->columnSpanFull(),
                         TextInput::make('hero_cta_text')
@@ -59,7 +60,7 @@ class PageForm
                             ->visible(fn($record) => $record?->slug === 'inicio'),
                     ])
                     ->columns(2),
-
+ 
                 // Secciones específicas de la página de Inicio
                 Section::make('Sección Homologación y Excelencia')
                     ->visible(fn($record) => $record?->slug === 'inicio')
@@ -77,6 +78,7 @@ class PageForm
                         FileUpload::make('section_data.homologation_image')
                             ->label('Imagen Lateral')
                             ->image()
+                            ->disk('public')
                             ->directory('pages')
                             ->columnSpanFull(),
                         Repeater::make('section_data.homologation_features')
@@ -144,6 +146,7 @@ class PageForm
                         FileUpload::make('section_data.team_image')
                             ->label('Imagen del Equipo Boardroom')
                             ->image()
+                            ->disk('public')
                             ->directory('pages')
                             ->columnSpanFull(),
                     ]),

@@ -26,6 +26,7 @@ class PartnerForm
                         FileUpload::make('logo')
                             ->label('Logo Corporativo (PNG/SVG)')
                             ->image()
+                            ->disk('public')
                             ->directory('partners'),
                         TextInput::make('sort_order')
                             ->label('Orden de Visualización')

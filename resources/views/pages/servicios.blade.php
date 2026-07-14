@@ -21,7 +21,7 @@
             <div class="relative h-[60vh] min-h-[480px] flex flex-col justify-center overflow-hidden rounded-sm border border-outline-variant shadow-sm scroll-reveal {{ $index % 2 === 0 ? 'slide-left' : 'slide-right' }}">
                 
                 <!-- Background Image Zoom -->
-                <div class="absolute inset-0 bg-cover bg-center hero-image-zoom" style="background-image: url('{{ $service->cover_image }}');"></div>
+                <div class="absolute inset-0 bg-cover bg-center hero-image-zoom" style="background-image: url('{{ str_starts_with($service->cover_image, 'http') ? $service->cover_image : asset('storage/' . $service->cover_image) }}');"></div>
                 <div class="absolute inset-0 bg-gradient-to-r from-ocean-deep/95 via-ocean-deep/60 to-transparent"></div>
                 
                 <div class="relative w-full p-6 md:p-8 text-white z-10">
@@ -61,7 +61,7 @@
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         @foreach($service->evidence_images as $image)
                             <div class="relative overflow-hidden aspect-video rounded-sm shadow-sm group">
-                                <img alt="Operación {{ $service->name }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 cursor-pointer" src="{{ $image }}"/>
+                                <img alt="Operación {{ $service->name }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 cursor-pointer" src="{{ str_starts_with($image, 'http') ? $image : asset('storage/' . $image) }}"/>
                                 <div class="absolute inset-0 bg-ocean-deep/10 opacity-100 group-hover:opacity-0 transition-opacity"></div>
                             </div>
                         @endforeach

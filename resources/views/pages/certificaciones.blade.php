@@ -32,7 +32,7 @@
                 <div class="bg-surface-container-lowest border border-outline-variant p-4 flex flex-col hover:border-transit-blue transition-all duration-300 group rounded-sm scroll-reveal zoom-in">
                     <div class="aspect-[3/4] bg-surface-container-low overflow-hidden relative rounded-sm mb-4">
                         @if(!empty($cert->image))
-                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="{{ $cert->image }}" alt="{{ $cert->title }}"/>
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="{{ str_starts_with($cert->image, 'http') ? $cert->image : asset('storage/' . $cert->image) }}" alt="{{ $cert->title }}"/>
                         @endif
                         <div class="absolute inset-0 bg-ocean-deep/5 mix-blend-multiply pointer-events-none"></div>
                     </div>
@@ -75,7 +75,7 @@
                 @foreach($projects as $project)
                     <div class="group relative overflow-hidden rounded-sm bg-slate-800 shadow-md aspect-video md:aspect-[4/3] scroll-reveal zoom-in">
                         @if(!empty($project->image))
-                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="{{ $project->image }}" alt="{{ $project->title }}"/>
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="{{ str_starts_with($project->image, 'http') ? $project->image : asset('storage/' . $project->image) }}" alt="{{ $project->title }}"/>
                         @endif
                         <div class="absolute inset-0 bg-gradient-to-t from-ocean-deep/95 via-ocean-deep/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                             <h4 class="font-label-bold text-label-bold text-white font-bold">{{ $project->title }}</h4>

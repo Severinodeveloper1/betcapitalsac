@@ -8,7 +8,7 @@
 <section class="relative w-full h-[85vh] overflow-hidden bg-ocean-deep flex items-center">
     <div class="absolute inset-0 z-0">
         @if(!empty($page->hero_image))
-            <div class="w-full h-full bg-cover bg-center brightness-50 hero-image-zoom" style="background-image: url('{{ $page->hero_image }}')"></div>
+            <div class="w-full h-full bg-cover bg-center brightness-50 hero-image-zoom" style="background-image: url('{{ str_starts_with($page->hero_image, 'http') ? $page->hero_image : asset('storage/' . $page->hero_image) }}')"></div>
         @else
             <div class="w-full h-full bg-slate-800 hero-image-zoom"></div>
         @endif
@@ -105,7 +105,7 @@
             
             <div class="lg:col-span-5 h-[420px] relative rounded-sm overflow-hidden shadow-sm scroll-reveal slide-right">
                 @if(!empty($page->section_data['homologation_image']))
-                    <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ $page->section_data['homologation_image'] }}')"></div>
+                    <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ str_starts_with($page->section_data['homologation_image'], 'http') ? $page->section_data['homologation_image'] : asset('storage/' . $page->section_data['homologation_image']) }}')"></div>
                 @else
                     <div class="w-full h-full bg-slate-300"></div>
                 @endif

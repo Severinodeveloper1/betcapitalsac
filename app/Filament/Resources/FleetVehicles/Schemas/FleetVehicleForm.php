@@ -64,11 +64,13 @@ class FleetVehicleForm
                         FileUpload::make('image')
                             ->label('Fotografía de la Unidad')
                             ->image()
+                            ->disk("public")
                             ->directory('fleet')
                             ->required(),
                         FileUpload::make('brochure')
                             ->label('Ficha Técnica / Brochure (PDF)')
                             ->acceptedFileTypes(['application/pdf'])
+                            ->disk('public')
                             ->directory('brochures'),
                         Toggle::make('is_featured')
                             ->label('Destacado en Página Principal')

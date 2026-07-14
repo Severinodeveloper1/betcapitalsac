@@ -62,7 +62,7 @@
                     <!-- Vehicle Image -->
                     <div class="h-56 overflow-hidden relative bg-surface-container">
                         @if(!empty($vehicle->image))
-                            <img class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" src="{{ $vehicle->image }}" alt="{{ $vehicle->name }}"/>
+                            <img class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" src="{{ str_starts_with($vehicle->image, 'http') ? $vehicle->image : asset('storage/' . $vehicle->image) }}" alt="{{ $vehicle->name }}"/>
                         @endif
                         @if(!empty($vehicle->badge))
                             <div class="absolute top-4 right-4 bg-caution-gold/20 border border-caution-gold/40 text-caution-gold px-3 py-1 rounded-sm font-label-sm text-xs flex items-center gap-2 font-semibold bg-amber-500/10">

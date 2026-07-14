@@ -42,11 +42,13 @@ class ServiceForm
                         FileUpload::make('cover_image')
                             ->label('Imagen de Fondo / Portada')
                             ->image()
+                            ->disk('public')
                             ->directory('services')
                             ->required(),
                         FileUpload::make('brochure_file')
                             ->label('Ficha Técnica o Brochure (PDF)')
                             ->acceptedFileTypes(['application/pdf'])
+                            ->disk('public')
                             ->directory('brochures'),
                         FileUpload::make('evidence_images')
                             ->label('Galería de Evidencias (Operaciones y Proyectos)')
@@ -54,6 +56,7 @@ class ServiceForm
                             ->maxFiles(4)
                             ->reorderable()
                             ->image()
+                            ->disk('public')
                             ->directory('services/evidence')
                             ->columnSpanFull(),
                     ])

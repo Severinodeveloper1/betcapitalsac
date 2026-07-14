@@ -35,11 +35,13 @@ class CertificationForm
                         FileUpload::make('image')
                             ->label('Imagen Vista Previa (Documento)')
                             ->image()
+                            ->disk('public')
                             ->directory('certifications')
                             ->required(),
                         FileUpload::make('pdf_file')
                             ->label('Documento PDF Oficial')
                             ->acceptedFileTypes(['application/pdf'])
+                            ->disk('public')
                             ->directory('certifications/pdfs')
                             ->required(),
                         TextInput::make('sort_order')
