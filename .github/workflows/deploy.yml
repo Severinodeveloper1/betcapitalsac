@@ -1,0 +1,31 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USER }}
+          key: ${{ secrets.CPANEL_SSH_KEY }}
+          port: ${{ secrets.CPANEL_PORT }}
+          script: |
+            cd ~/repositories/betcapitalsac
+            git pull origin main
+            export DEPLOYPATH=~/public_html
+            /bin/cp -R . $DEPLOYPATH
+            cd $DEPLOYPATH
+            /usr/local/bin/php -d memory_limit=-1 /usr/local/bin/composer install --no-dev --optimize-autoloader --no-interaction
+            /usr/local/bin/php -d memory_limit=256M artisan config:cache
+            /usr/local/bin/php -d memory_limit=256M artisan route:cache
+            /usr/local/bin/php -d memory_limit=256M artisan view:cache
+            /usr/local/bin/php -d memory_limit=256M artisan migrate --force
+            /usr/local/bin/php -d memory_limit=256M artisan storage:link || true
+            chmod -R 755 $DEPLOYPATH/storage
+            chmod -R 755 $DEPLOYPATH/bootstrap/cache
