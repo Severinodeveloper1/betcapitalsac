@@ -58,3 +58,4 @@ auth.json
 .agent/skills/ui-ux-pro-max/scripts/design_system.py
 .agent/skills/ui-ux-pro-max/scripts/search.py
 .agent/skills/ui-ux-pro-max/SKILL.md
+.vscode/settings.json
