@@ -1,0 +1,25 @@
+name: Deploy to cPanel
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USER }}
+          key: ${{ secrets.CPANEL_SSH_KEY }}
+          port: ${{ secrets.CPANEL_PORT }}
+          script: |
+            cd /home/usuario/repositories/betcapitalsac
+            git pull origin main
+            /bin/cp -R * /home/usuario/public_html/
+            cd /home/usuario/public_html
+            composer install --no-dev --optimize-autoloader
+            php artisan migrate --force
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
