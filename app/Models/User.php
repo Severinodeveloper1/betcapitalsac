@@ -12,11 +12,21 @@ use OwenIt\Auditing\Contracts\Auditable;
 use OwenIt\Auditing\Auditable as AuditableTrait;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 
-class User extends Authenticatable implements Auditable, HasMedia
+class User extends Authenticatable implements Auditable, HasMedia, FilamentUser
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable, HasRoles, AuditableTrait, InteractsWithMedia;
+
+    /**
+     * Determine if the user can access the Filament panel.
+     */
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return $this->hasRole('super_admin') || $this->hasRole('panel_user');
+    }
 
     /**
      * The attributes that are mass assignable.
