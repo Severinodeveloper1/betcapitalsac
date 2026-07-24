@@ -12,8 +12,8 @@ class ListGeneralSettings extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        return [
+        return \App\Models\GeneralSetting::count() === 0 ? [
             CreateAction::make(),
-        ];
+        ] : [];
     }
 }

@@ -22,11 +22,17 @@ class DriverApplicationForm
                         TextInput::make('phone')
                             ->label('Teléfono / WhatsApp')
                             ->disabled(),
+                        TextInput::make('document_type')
+                            ->label('Tipo Documento / RUC')
+                            ->disabled(),
+                        TextInput::make('document_number')
+                            ->label('Nro Documento')
+                            ->disabled(),
                         TextInput::make('license_number')
                             ->label('Número de Licencia')
                             ->disabled(),
                     ])
-                    ->columns(3),
+                    ->columns(2),
 
                 Section::make('Datos del Vehículo')
                     ->schema([

@@ -25,6 +25,23 @@ class ContactMessagesTable
                 TextColumn::make('email')
                     ->label('Correo')
                     ->searchable(),
+                TextColumn::make('phone')
+                    ->label('Teléfono')
+                    ->searchable(),
+                TextColumn::make('type')
+                    ->label('Tipo / Canal')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'general' => 'info',
+                        'accounting' => 'success',
+                        default => 'primary',
+                    })
+                    ->formatStateUsing(fn (string $state): string => match ($state) {
+                        'general' => 'General',
+                        'accounting' => 'Contabilidad',
+                        default => $state,
+                    })
+                    ->sortable(),
                 TextColumn::make('status')
                     ->label('Estado')
                     ->badge()
@@ -47,6 +64,12 @@ class ContactMessagesTable
                         'new' => 'Nuevo',
                         'read' => 'Leído',
                         'archived' => 'Archivado',
+                    ]),
+                SelectFilter::make('type')
+                    ->label('Tipo / Canal')
+                    ->options([
+                        'general' => 'General',
+                        'accounting' => 'Contabilidad',
                     ]),
             ])
             ->recordActions([

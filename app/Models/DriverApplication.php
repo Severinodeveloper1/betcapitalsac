@@ -9,6 +9,8 @@ class DriverApplication extends Model
     protected $fillable = [
         'driver_name',
         'phone',
+        'document_type',
+        'document_number',
         'vehicle_type',
         'vehicle_plate',
         'license_number',

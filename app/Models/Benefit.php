@@ -10,6 +10,7 @@ class Benefit extends Model
         'title',
         'description',
         'icon',
+        'type',
         'sort_order',
     ];
 

@@ -22,6 +22,9 @@ class DriverApplicationsTable
                 TextColumn::make('phone')
                     ->label('Teléfono')
                     ->searchable(),
+                TextColumn::make('document_number')
+                    ->label('Documento/RUC')
+                    ->searchable(),
                 TextColumn::make('vehicle_type')
                     ->label('Vehículo')
                     ->sortable(),

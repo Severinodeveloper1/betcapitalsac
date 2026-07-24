@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Benefits\Schemas;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Select;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -23,6 +24,14 @@ class BenefitForm
                             ->label('Icono (Material Symbol, ej: payments, local_gas_station, account_balance)')
                             ->required()
                             ->default('payments'),
+                        Select::make('type')
+                            ->label('Tipo de Beneficio')
+                            ->options([
+                                'general' => 'General / Transportista',
+                                'accounting' => 'Contabilidad de Transportista',
+                            ])
+                            ->required()
+                            ->default('general'),
                         Textarea::make('description')
                             ->label('Descripción')
                             ->required()

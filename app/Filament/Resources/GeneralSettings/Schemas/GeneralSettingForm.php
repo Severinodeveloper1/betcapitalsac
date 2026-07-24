@@ -61,6 +61,25 @@ class GeneralSettingForm
                                     ->disk('public')
                                     ->directory('branding'),
                             ]),
+                        Tabs\Tab::make('Servicio de Contabilidad')
+                            ->schema([
+                                TextInput::make('accounting_hero_title')
+                                    ->label('Título de Banner de Contabilidad')
+                                    ->maxLength(255),
+                                Textarea::make('accounting_hero_subtitle')
+                                    ->label('Subtítulo de Banner de Contabilidad')
+                                    ->rows(3),
+                                FileUpload::make('accounting_hero_image')
+                                    ->label('Imagen de Fondo de Banner')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('branding'),
+                                FileUpload::make('accounting_form_image')
+                                    ->label('Imagen al Costado del Formulario')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('branding'),
+                            ]),
                     ])
                     ->columnSpanFull(),
             ])->columns(1);

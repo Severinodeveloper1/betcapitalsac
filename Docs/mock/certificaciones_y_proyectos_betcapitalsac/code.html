@@ -1,397 +1,865 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html class="scroll-smooth" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Certificaciones y Proyectos - BETCAPITALSAC</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-surface": "#191c1e",
-                        "secondary-container": "#d5e0f7",
-                        "on-secondary-fixed": "#111c2c",
-                        "on-primary-fixed": "#001b3c",
-                        "secondary-fixed-dim": "#bcc7dd",
-                        "outline": "#737780",
-                        "primary-fixed": "#d5e3ff",
-                        "primary-fixed-dim": "#a7c8ff",
-                        "background": "#f7f9fb",
-                        "surface-tint": "#3a5f94",
-                        "surface-container-highest": "#e0e3e5",
-                        "surface-variant": "#e0e3e5",
-                        "on-primary-fixed-variant": "#1f477b",
-                        "on-primary-container": "#799dd6",
-                        "secondary": "#545f72",
-                        "tertiary-fixed-dim": "#98cbff",
-                        "on-secondary-container": "#586377",
-                        "on-background": "#191c1e",
-                        "primary": "#001e40",
-                        "surface-container": "#eceef0",
-                        "surface-container-high": "#e6e8ea",
-                        "on-secondary": "#ffffff",
-                        "surface-bright": "#f7f9fb",
-                        "surface": "#f7f9fb",
-                        "tertiary-container": "#003659",
-                        "on-secondary-fixed-variant": "#3c475a",
-                        "surface-container-lowest": "#ffffff",
-                        "on-error-container": "#93000a",
-                        "primary-container": "#003366",
-                        "surface-dim": "#d8dadc",
-                        "on-tertiary": "#ffffff",
-                        "inverse-primary": "#a7c8ff",
-                        "error": "#ba1a1a",
-                        "secondary-fixed": "#d8e3fa",
-                        "inverse-surface": "#2d3133",
-                        "inverse-on-surface": "#eff1f3",
-                        "outline-variant": "#c3c6d1",
-                        "tertiary-fixed": "#cfe5ff",
-                        "tertiary": "#002038",
-                        "error-container": "#ffdad6",
-                        "on-primary": "#ffffff",
-                        "surface-container-low": "#f2f4f6",
-                        "on-tertiary-fixed": "#001d33",
-                        "on-tertiary-fixed-variant": "#004a77",
-                        "on-tertiary-container": "#00a2fe",
-                        "on-error": "#ffffff",
-                        "on-surface-variant": "#43474f"
+<html class="scroll-smooth" lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Certificaciones y Proyectos - BET CAPITAL SAC</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            "on-surface": "#191c1e",
+                            "secondary-container": "#d5e0f7",
+                            "on-secondary-fixed": "#111c2c",
+                            "on-primary-fixed": "#001b3c",
+                            "secondary-fixed-dim": "#bcc7dd",
+                            outline: "#737780",
+                            "primary-fixed": "#d5e3ff",
+                            "primary-fixed-dim": "#a7c8ff",
+                            background: "#f7f9fb",
+                            "surface-tint": "#3a5f94",
+                            "surface-container-highest": "#e0e3e5",
+                            "surface-variant": "#e0e3e5",
+                            "on-primary-fixed-variant": "#1f477b",
+                            "on-primary-container": "#799dd6",
+                            secondary: "#545f72",
+                            "tertiary-fixed-dim": "#98cbff",
+                            "on-secondary-container": "#586377",
+                            "on-background": "#191c1e",
+                            primary: "#001e40",
+                            "surface-container": "#eceef0",
+                            "surface-container-high": "#e6e8ea",
+                            "on-secondary": "#ffffff",
+                            "surface-bright": "#f7f9fb",
+                            surface: "#f7f9fb",
+                            "tertiary-container": "#003659",
+                            "on-secondary-fixed-variant": "#3c475a",
+                            "surface-container-lowest": "#ffffff",
+                            "on-error-container": "#93000a",
+                            "primary-container": "#003366",
+                            "surface-dim": "#d8dadc",
+                            "on-tertiary": "#ffffff",
+                            "inverse-primary": "#a7c8ff",
+                            error: "#ba1a1a",
+                            "secondary-fixed": "#d8e3fa",
+                            "inverse-surface": "#2d3133",
+                            "inverse-on-surface": "#eff1f3",
+                            "outline-variant": "#c3c6d1",
+                            "tertiary-fixed": "#cfe5ff",
+                            tertiary: "#002038",
+                            "error-container": "#ffdad6",
+                            "on-primary": "#ffffff",
+                            "surface-container-low": "#f2f4f6",
+                            "on-tertiary-fixed": "#001d33",
+                            "on-tertiary-fixed-variant": "#004a77",
+                            "on-tertiary-container": "#00a2fe",
+                            "on-error": "#ffffff",
+                            "on-surface-variant": "#43474f",
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.125rem",
+                            lg: "0.25rem",
+                            xl: "0.5rem",
+                            full: "0.75rem",
+                        },
+                        spacing: {
+                            xl: "80px",
+                            margin: "32px",
+                            md: "24px",
+                            gutter: "24px",
+                            base: "4px",
+                            sm: "16px",
+                            xs: "8px",
+                            lg: "48px",
+                        },
+                        fontFamily: {
+                            "headline-md": ["Hanken Grotesk"],
+                            "label-sm": ["Hanken Grotesk"],
+                            "label-bold": ["Hanken Grotesk"],
+                            "body-lg": ["Hanken Grotesk"],
+                            "headline-xl": ["Hanken Grotesk"],
+                            "headline-lg-mobile": ["Hanken Grotesk"],
+                            "headline-lg": ["Hanken Grotesk"],
+                            "body-md": ["Hanken Grotesk"],
+                        },
+                        fontSize: {
+                            "headline-md": [
+                                "24px",
+                                { lineHeight: "32px", fontWeight: "600" },
+                            ],
+                            "label-sm": [
+                                "12px",
+                                { lineHeight: "16px", fontWeight: "500" },
+                            ],
+                            "label-bold": [
+                                "14px",
+                                { lineHeight: "20px", fontWeight: "700" },
+                            ],
+                            "body-lg": [
+                                "18px",
+                                { lineHeight: "28px", fontWeight: "400" },
+                            ],
+                            "headline-xl": [
+                                "48px",
+                BET CAPITAL SAC   {
+                                    lineHeight: "56px",
+                                    letterSpacing: "-0.02em",
+                                    fontWeight: "700",
+                                },
+                            ],
+                            "headline-lg-mobile": [
+                                "28px",
+                                { lineHeight: "36px", fontWeight: "600" },
+                            ],
+                            "headline-lg": [
+                                "32px",
+                                { lineHeight: "40px", fontWeight: "600" },
+                            ],
+                            "body-md": [
+                                "16px",
+                                { lineHeight: "24px", fontWeight: "400" },
+                            ],
+                        },
                     },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "xl": "80px",
-                        "margin": "32px",
-                        "md": "24px",
-                        "gutter": "24px",
-                        "base": "4px",
-                        "sm": "16px",
-                        "xs": "8px",
-                        "lg": "48px"
-                    },
-                    "fontFamily": {
-                        "headline-md": ["Hanken Grotesk"],
-                        "label-sm": ["Hanken Grotesk"],
-                        "label-bold": ["Hanken Grotesk"],
-                        "body-lg": ["Hanken Grotesk"],
-                        "headline-xl": ["Hanken Grotesk"],
-                        "headline-lg-mobile": ["Hanken Grotesk"],
-                        "headline-lg": ["Hanken Grotesk"],
-                        "body-md": ["Hanken Grotesk"]
-                    },
-                    "fontSize": {
-                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
-                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
-                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
-                    }
                 },
-            },
-        }
-    </script>
-<style>
-        body { font-family: 'Hanken Grotesk', sans-serif; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-        .masonry-grid { column-count: 1; column-gap: 24px; }
-        @media (min-width: 768px) { .masonry-grid { column-count: 2; } }
-        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
-        .masonry-item { break-inside: avoid; margin-bottom: 24px; }
-        .bg-noise { background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png"); }
-    </style>
-</head>
-<body class="bg-surface-bright text-on-surface">
-<!-- TopNavBar -->
-<header class="bg-surface-container-lowest dark:bg-on-surface border-b border-outline-variant dark:border-outline fixed top-0 w-full z-50">
-<nav class="flex justify-between items-center w-full px-margin py-xs max-w-[1440px] mx-auto">
-<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
-                BETCAPITALSAC
-            </div>
-<div class="hidden md:flex gap-md items-center">
-<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Inicio</a>
-<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Nosotros</a>
-<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Servicios</a>
-<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Trabaja con Nosotros</a>
-<a class="font-label-bold text-label-bold text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1" href="#">Certificaciones</a>
-<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Proyectos</a>
-<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Contacto</a>
-</div>
-<button class="bg-primary-container text-on-primary-container px-md py-xs font-label-bold text-label-bold rounded-lg hover:opacity-90 transition-opacity">
-                Cotizar
-            </button>
-</nav>
-</header>
-<main class="pt-[80px]">
-<!-- Hero Section -->
-<section class="relative h-[400px] flex items-center overflow-hidden bg-primary">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover opacity-40" data-alt="A professional aerial shot of a massive logistics hub with rows of blue and white freight trucks parked in perfect alignment. The scene is captured during the golden hour, casting long shadows and a warm glow over the industrial landscape. The atmosphere conveys efficiency, scale, and high-level corporate logistics management in a modern, clean-cut style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKO-cRqmpd-MPvZl5ZLQj-ZKwN8TQxc3hHF8gdyaUaH8OR4NaK6U93rZapq3OL0TSY4SaQR5Q0WkD5zc5P5Av1ZmTVCyX2YaxF43dp84vXDN1JdvEr0wD3a6qaQVGEBYsvsgV_xNYl_YLWpkvZmmkivqGcQz4RdzEyRBnNwDo_63_FLpaHMS4oo2NzSa6uVoRvZ7B3iRfJ0PagOuz7YzLe_GKS7_8mTYiv1mcIzMMLo2NYvlGAYwHn25Y88egUWhcj-F4mgHX5klqG"/>
-</div>
-<div class="relative z-10 px-margin max-w-[1440px] mx-auto w-full">
-<h1 class="font-headline-xl text-headline-xl text-surface-container-lowest mb-sm max-w-2xl">
-                    Excelencia Operativa y Cumplimiento Normativo
-                </h1>
-<p class="font-body-lg text-body-lg text-primary-fixed-dim max-w-xl">
-                    Respaldamos cada operación con certificaciones internacionales y una trayectoria impecable en proyectos de alta complejidad.
-                </p>
-</div>
-</section>
-<!-- Certificaciones & Repositorio -->
-<section class="py-xl px-margin max-w-[1440px] mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-end mb-lg gap-sm">
-<div>
-<span class="text-primary font-label-bold text-label-bold uppercase tracking-widest block mb-xs">Garantía de Calidad</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface">Certificaciones y Documentación</h2>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
-                    Acceda a nuestro repositorio oficial de documentos. Mantenemos nuestros estándares actualizados para garantizar la seguridad de su carga.
-                </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-<!-- Cert 1 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-sm flex flex-col hover:border-primary transition-colors group">
-<div class="aspect-[3/4] bg-surface-container-high mb-sm overflow-hidden relative">
-<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A high-resolution close-up of an official ODELPE certification document resting on a sleek dark wooden desk. The document features official stamps, holographic security seals, and clean serif typography. The lighting is professional and soft, highlighting the texture of the premium paper and the importance of the legal certification in a corporate setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRi82dGq4sqbvgkYieU9qJrgjQE9XhK0m3-vZhnXMU8uhA2S532WfrESHjPR-7kpV2c-ch0BbvOrl4DgOAL9HaFGn2NPWw5zG2rLHl76kTcVsYUZDtyJdZ82_i3SYSybduRcpd_KTL1rxLxT1EvBPG2XaOOu3Pat5b3t3mUVQ53fy06vBfRwOlPH0hDh2UHY1fiZLHKlUhfJ90WJrXfZOLECfeMNx30Ebl2pxN1NLAMU9GHVrE_4ANagO2a1iV6KNgHTyLxrr26hbW"/>
-</div>
-<h3 class="font-label-bold text-label-bold text-on-surface mb-base">Certificación ODELPE</h3>
-<p class="font-label-sm text-label-sm text-on-surface-variant mb-md">Vigencia: 2024 - 2025</p>
-<button class="mt-auto flex items-center justify-center gap-xs bg-surface-container text-primary py-xs font-label-bold text-label-bold rounded hover:bg-primary hover:text-on-primary transition-all">
-<span class="material-symbols-outlined text-[18px]">download</span>
-                        Descargar PDF
-                    </button>
-</div>
-<!-- Cert 2 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-sm flex flex-col hover:border-primary transition-colors group">
-<div class="aspect-[3/4] bg-surface-container-high mb-sm overflow-hidden relative">
-<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A professional insurance policy document for heavy cargo, featuring a prominent blue shield emblem and clean tabular data. The layout is minimalist and corporate, with 'Seguros de Carga' clearly visible in bold Hanken Grotesk font. The background is a crisp, bright white with subtle blue accents, symbolizing security and trust in logistics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIxgyy9QyKXGJsedYyILXLoIjePrRdmpcEqUhyJXkLQnc6P-3-PQSAKR7lT2U18KWeK8owF6C-X846GL2qkiNL6URWq5G-Nk8skZpfPrFJGA6AJ2Z7vE2bhCpy2Vv58ayC0pGqp0bekW1Y96R3Xd-jE13w8oCj56bxcYyPk64t2ELLvcVLaPnUd35-jOP9JWyGjoykHXvClUAoPbxQUyiBeTG2PpxPoELIcJ97GjnvWoQ2BKWrSJ5_LIvAuSGgeHLvpNQUFVpOZxU2"/>
-</div>
-<h3 class="font-label-bold text-label-bold text-on-surface mb-base">Seguro de Carga Internacional</h3>
-<p class="font-label-sm text-label-sm text-on-surface-variant mb-md">Póliza Global de Cobertura</p>
-<button class="mt-auto flex items-center justify-center gap-xs bg-surface-container text-primary py-xs font-label-bold text-label-bold rounded hover:bg-primary hover:text-on-primary transition-all">
-<span class="material-symbols-outlined text-[18px]">download</span>
-                        Descargar PDF
-                    </button>
-</div>
-<!-- Cert 3 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-sm flex flex-col hover:border-primary transition-colors group">
-<div class="aspect-[3/4] bg-surface-container-high mb-sm overflow-hidden relative">
-<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="An ISO 9001 quality management system certification certificate with a gold embossed seal. The design is elegant and formal, emphasizing global standards of excellence. The document is presented against a neutral grey background with soft cinematic lighting, creating a mood of established authority and professional rigor in the logistics sector." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5Hxvpixi7JIJn8jDSdRv7tTdtQz0_XuPakradhcwmQFVJXgladYOCu11xR6Vy4zubz6MIvTwCerX_HH986duPFaWIk_dizLHJFhAOnVOjTbHZ2U9jmpWQsf5I_I2urdC0jumauJZEfTS7QV7V6rI6_XgdM7FQPChlOLd65LVY3vRosTMhvQGG_pY-3DAuVS-_Ryrxmi6BPSdLXFbEsifnycjfUh-WcalRqHh9OAIIvpFGtE1yO6AlMmDcRvxJy9r43aMbCwyJrtJN"/>
-</div>
-<h3 class="font-label-bold text-label-bold text-on-surface mb-base">ISO 9001:2015</h3>
-<p class="font-label-sm text-label-sm text-on-surface-variant mb-md">Gestión de Calidad Logística</p>
-<button class="mt-auto flex items-center justify-center gap-xs bg-surface-container text-primary py-xs font-label-bold text-label-bold rounded hover:bg-primary hover:text-on-primary transition-all">
-<span class="material-symbols-outlined text-[18px]">download</span>
-                        Descargar PDF
-                    </button>
-</div>
-<!-- Cert 4 -->
-<div class="bg-surface-container-lowest border border-outline-variant p-sm flex flex-col hover:border-primary transition-colors group">
-<div class="aspect-[3/4] bg-surface-container-high mb-sm overflow-hidden relative">
-<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A technical heavy transport permit document showing diagrams of oversized vehicle configurations. The document is detailed with technical specifications and governmental approval stamps. The visual style is industrial and functional, using a palette of white, light grey, and deep blue, reflecting the precision required in specialized freight projects." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9re_6Wmw6Nqq3ib63LaTzsRIqKlJK7dQKhBsZ_pSEohp_ZL92JNwZfYCDci1QCngfhY4-cEHK7-5tlHVtQ4HyT7ZyevccEjHN-f8Cm9QwN4pa5H9lswLUowlkXUcxO0elWyP2xeBvHHTMdh3GYGAFq0XxIoerBFfo2SbGMVu3X9e3iFyVSRykZTMLfr8sBZWKW8jwmV3i32JEMjuoE8RrrxArVewXb_MDyxz77NhwzIeFudRjIvUBEfTE833eJMyD8HW5YuNE0RNX"/>
-</div>
-<h3 class="font-label-bold text-label-bold text-on-surface mb-base">Permiso de Carga Especial</h3>
-<p class="font-label-sm text-label-sm text-on-surface-variant mb-md">MTC - Transporte Pesado</p>
-<button class="mt-auto flex items-center justify-center gap-xs bg-surface-container text-primary py-xs font-label-bold text-label-bold rounded hover:bg-primary hover:text-on-primary transition-all">
-<span class="material-symbols-outlined text-[18px]">download</span>
-                        Descargar PDF
-                    </button>
-</div>
-</div>
-</section>
-<!-- Proyectos Masonry Gallery -->
-<section class="py-xl bg-on-surface text-surface-container-lowest overflow-hidden">
-<div class="px-margin max-w-[1440px] mx-auto">
-<div class="grid grid-cols-12 gap-gutter mb-lg">
-<div class="col-span-12 lg:col-span-6">
-<span class="text-primary-fixed-dim font-label-bold text-label-bold uppercase tracking-widest block mb-xs">Portafolio en Acción</span>
-<h2 class="font-headline-lg text-headline-lg text-white mb-sm">Proyectos y Operaciones Recientes</h2>
-<p class="font-body-md text-body-md text-surface-variant opacity-80">
-                            Documentamos visualmente nuestra capacidad operativa. Desde transporte de maquinaria pesada hasta logística de contenedores de alta prioridad.
-                        </p>
-</div>
-</div>
-<div class="masonry-grid">
-<!-- Masonry Item 1 -->
-<div class="masonry-item group relative overflow-hidden">
-<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A dramatic low-angle shot of a heavy-duty Volvo truck carrying a massive industrial turbine through a mountain pass. The truck is blue and silver, matching the BETCAPITALSAC corporate identity. The background shows rugged terrain under a clear blue sky. The lighting is sharp, emphasizing the power and scale of the transport operation in a high-contrast industrial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI_uyFBTidm9HyX7IQ39bBOalimaONn8gFq6MpUIVUaxis-zA7yd0by8afGJ9GhT2HsrnPgq4htgtyDdfuigO1aqTWCrNWC5gN2_M7cVJvqzju8RYlSc-Y_qm57D-Ch8RYgGsNpTqmiSM93YyUwQSLFJdIWI2JjhQhmzQS2BWJou2__ELZkZPKnudC7cN6TpRnd9nYmGqsgvG_ABnPp6nZC1EBNvpbjqtK8O9483falDS-X813CKKwBBEec5ur-fUdyHGi_q3eOozq"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-md">
-<h4 class="font-label-bold text-label-bold text-white">Transporte de Turbinas Hidráulicas</h4>
-<p class="text-label-sm text-surface-variant">Proyecto: Central Eléctrica Mantaro</p>
-</div>
-</div>
-<!-- Masonry Item 2 -->
-<div class="masonry-item group relative overflow-hidden">
-<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A wide-angle view of a logistics yard at dusk, featuring dozens of shipping containers with the 'MAERSK' logo prominently displayed in light blue. In the foreground, a BETCAPITALSAC flatbed truck is being loaded by a large yellow reach stacker. The scene is lit by towering stadium lights, creating a high-energy, industrial atmosphere focused on global supply chain efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0mNJ1rLKJDeY3wMrMwYQLAaH6UsEe2-NLURIirGxXu25-n4Wx92MxNP4jcYoX9NYEuRHZgcFDzsta3lg7hVwZNxpbp5aAUVHlYqQrVPEkAXDw35_iFtKEH6bwGNJ_WmtxdYicQ5n8RBNcOqincQEEbVRhu550H2Zv_bHI_gmQGNVm86l26UmSe0yvCUzPAxfiYd2Co825ZuFsVM6myar4GsMriWVtgroC-4Mowq57a9hikVhpLpda7VxuSwgXUT1YjEIj8jcTKZws"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-md">
-<h4 class="font-label-bold text-label-bold text-white">Consolidación Maersk Line</h4>
-<p class="text-label-sm text-surface-variant">Operación: Puerto del Callao</p>
-</div>
-</div>
-<!-- Masonry Item 3 -->
-<div class="masonry-item group relative overflow-hidden">
-<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A sleek, modern Freightliner truck parked in a clean, brightly lit corporate warehouse. The truck's chrome details reflect the surrounding high-tech facility. The composition is clean and minimalist, highlighting the impeccable maintenance and professional presentation of the BETCAPITALSAC fleet. The color palette is dominated by deep blues, greys, and crisp white highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAs4ETTi8zn6PQ6iV4M0myeIt31f6fwDDf1cPwHCpfB0DQWj2v_O0t2xOrsSnnUMsJvihlp-4IKVQ4Rmaz0EKtXsyLqeE_L5JiUoKO6griXxzh1bXpz0RgUaGD_jNRvTt1IVKlTEtMczxQOW0dfY8OlDs_FLj7ZQCjxY1f2ysGi8DxJnivDQfZ4329WvHP7D_BHFHYtQ3gqzGadngB6TzkX63cYMYsnFeRxTD1Nqb4aD6lt1twsSlIja5TaJ5I73lp2ddd-FkugRKM"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-md">
-<h4 class="font-label-bold text-label-bold text-white">Mantenimiento de Flota Premium</h4>
-<p class="text-label-sm text-surface-variant">Estándar: Seguridad Total</p>
-</div>
-</div>
-<!-- Masonry Item 4 -->
-<div class="masonry-item group relative overflow-hidden">
-<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="An action shot of a cargo convoy moving across a coastal highway at sunrise. The lead truck, branded with the BETCAPITALSAC logo, is silhouetted against a vibrant orange and pink sky. The ocean is visible in the distance. The image uses a long exposure to create a sense of motion and kinetic energy, symbolizing the constant flow of goods in a globalized economy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnbt24ShzrqtV4YHhwtrvMRzPOkmhbXLeQyEzMEIwemjgnE9wmL8IvKJm9qY7Cw4Ev5g0osXxJTZILyjnL_kxqu8jzY5q1iykZZ-ywilx1lD-Z2m9T2pwFgmdy6auqZp9c-gdwRF_TrDW6JIDf5f6x_piF9VhO46YADCj_VqVBVMnxbZhWrXdzRsMXovxVa1xmWjBwFSgqHWSXSEK7Vvx1Ntho_bsRFkpjlGZgSVDBWZbUkYiXrrFN2MgahLSGKCOWrifHR3k5fuXm"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-md">
-<h4 class="font-label-bold text-label-bold text-white">Ruta Panamericana Norte</h4>
-<p class="text-label-sm text-surface-variant">Operación: Confort Logístico</p>
-</div>
-</div>
-<!-- Masonry Item 5 -->
-<div class="masonry-item group relative overflow-hidden">
-<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A high-density logistics list on a digital screen, showing tracking numbers and delivery statuses for international shipments. In the blurred background, a logistics manager is seen reviewing a route on a large map. The lighting is cool-toned and professional, emphasizing the technology-driven approach of modern freight management for high-value corporate clients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7tD1hqCW7eag1aUc_5p8I4MwL0hH5icMOOQHdY81nu8v8R1waGNWY2aM0tTToBs2kDZdV9EC5qXwLXBNth2rgo23Ck_cYPYdkKVtNQ_WVJnvBve1sg2nL4-5XPvWQBarttIkQvkE_IbEXcITLX97Se_NP0IzOORm3jb_ak0hKKXg9r0VqmqT8rkb3Qel8OjUA4BIDe8AAowpnCaIr1qyq9BcwjT4ZyMNhZP-P9aq4_PLaFJwYxku7Y3VPi5uTyXk52NlR2_N9g_jW"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-md">
-<h4 class="font-label-bold text-label-bold text-white">Seguimiento en Tiempo Real</h4>
-<p class="text-label-sm text-surface-variant">Proyecto: Control Digital 24/7</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Muro de Confianza / Logos -->
-<section class="py-xl bg-surface-container-lowest border-y border-outline-variant overflow-hidden relative">
-<div class="absolute inset-0 opacity-5 pointer-events-none grayscale flex items-center justify-around flex-wrap p-xl">
-<img class="w-32 h-32 object-contain" data-alt="The iconic Maersk logo, a seven-pointed white star inside a light blue square, rendered as a subtle background watermark in a high-end corporate UI design. The style is minimalist and clean, representing the strategic partnership and trust between BETCAPITALSAC and global shipping leaders." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi4-TEuBpL-hZtuRdVduB3SaAebv3DWx1eTrXvWM70WAnM-cXOjbwgMOxr0Dl2KuGSnlf7L42prk-lf6hA-YZG04uh6dNZO7MVKPdecqFo38dLbvt330LRaXInXQ6tq7hTZyS3ZVjcft6ufChY3Kr9XjUkXDWJqKXewgyjORsuDeojMLalfqrF8tE-LeXpIiIPyrRbhZ7lI001lMMg5N_c_7nTRe_EL57AgS-qQ8IeinYt6z28jkxKWV1Jo-RKqg1VzsKbe07txp5G"/>
-<img class="w-32 h-32 object-contain" data-alt="The MSC Mediterranean Shipping Company logo, featuring a stylized yellow and black anchor, displayed as a faint industrial watermark. The branding is integrated into a clean, modern interface, signifying a professional network of international logistics collaborators." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6HIv431TQG3UweMh8r8lfhaCznMzJm-00sbMWTkxTJiQ2j6l2uTTpqpmHPsQXbp0z1csGAW04EG5FupfxzFLgpZnbOLgxTu1QcQ_y5s5EO_DUbuZtRLOQo7_2xU-IsISDlPp-wwtFcUzJgujWeQOMxjk7pdUuSzGZxcGJNnOjrJ9JEXg46N93Q3mrCfoWRRgvMKJt3BgzekypIlQ4SNChoQ1CwYD9VwNe8kXF3xeMWR-0Eaav_GMKZ7U9hK_D95vO4HSnp6y5CUaY"/>
-<img class="w-32 h-32 object-contain" data-alt="The Hapag-Lloyd logo, an abstract orange and white graphic, presented as a subtle background element. The composition is balanced and professional, symbolizing high-level corporate integrity and world-class shipping standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRHlorv-p1OSYMvSokyPagFC3420Kvk3IMlX3O0LuM-NwI8101GsOB0nSlPDJ7cmUFHHpCv1GRT3L1X_vQQ6cXzdQuQuwmX2AaW48xuVDY5IP4ae2uTSdcxr9kjNH0THwpXBrwFOHOsAClpZUEReg3ZsSFAXETpVPG5l3kGiV4QzHUiG9EhCQMQiRIs6PR0ZI9xsXCRoe08LaDDSPE_kUp20oRzCEnh1cnYICkjgJ1pxTc6GYQHktXESrPF57xFx8HjAEka0O-BDTC"/>
-</div>
-<div class="px-margin max-w-[1440px] mx-auto relative z-10 text-center">
-<h3 class="font-label-bold text-label-bold text-primary uppercase tracking-[0.2em] mb-lg">Socios Estratégicos que confían en nosotros</h3>
-<div class="flex flex-wrap justify-center items-center gap-xl opacity-60 hover:opacity-100 transition-opacity duration-500">
-<img class="h-12 w-auto grayscale hover:grayscale-0 transition-all" data-alt="A clean, vector-style logo of a major global shipping line like Maersk, presented in its signature light blue and white. The logo is displayed in high resolution with crisp edges, sitting on a neutral grey background that emphasizes professional corporate branding and logistics leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF3nrEyfUdrPiHtd5oon_FD0eAJkwX4rtRUrm-zaRZasuivxNZrQhMRrDH2JH0Lp7-LV-DRMiYImfrhGYtyLWpATYcgf-Ojel_hyJzPZ1Pp_c1dNjEKi7qnNNRxx2NFEG1kZBaGrc6yNZ4j5eAtWxSUaxZVsmCdwzQx1PL0tRS-vU1uV8jevl01zZ5cB0gDMX82rMl2kaQzbl6QDUV0VzwFswGWh7A8wew9ZkDAbRd1DUDPtBoHgds2NfkNVe5Qw2cM4GnJYUn8gOS"/>
-<img class="h-10 w-auto grayscale hover:grayscale-0 transition-all" data-alt="A professional corporate logo of a heavy machinery manufacturer like Caterpillar, in its bold yellow and black colors. The logo is sharp and centered, representing the industrial cargo and specialized transport projects handled by BETCAPITALSAC with precision and expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbFI1ZasMX6G2MEnjoVqtMc1kVdAl4BoNk09EQNvRDMdp0ti2brE8__BT9CCiJ3UbMq32Z3xM7KQ-QBHUS3hNs71XyeHjYTB7Bx5X_46Zk0dWsEZk5ADf4VaD_L6uG3o1Yv4SIZ_3vfnv-X7G5wf06TSZZ7Mb6PA_9mqFYqq1GOdfB6iUR7PIOiLWn_DBDDDI4yjJKF9FtJfttiOz3BdArfftJIdG2YTTr8uFB504_6Prk0VkaevQXCcFNmG7iQAA2TOKIC6j8UPLr"/>
-<img class="h-14 w-auto grayscale hover:grayscale-0 transition-all" data-alt="The logo of a prominent South American mining company, featuring earthy tones and bold industrial typography. This visual element represents the heavy-duty logistics projects BETCAPITALSAC executes in challenging terrains and high-stakes environments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfo3INxlHSSgauy4USZF2u7ECT98jPA4pRVc5_idFReTurMTgrfX2GZ19CjNEcCS-1XKLX7ZBdmR85zWmUkDUlycyVh5T3pspjs3BVj9EjyMEmESrPERzE4FnYhRD0GUYpbhzqTv6V0stTzryaedoWqVTkx_tZ4Rp4_lKLKSnaRoeasH747C3IbP9ld7rhK0nPZlJkRH-TJ_p_Cd8rXN6a7dbA_9YRGKO6WPmTT09aCaxFrH3FkOySVlElDOZb69hvCqQHYG7x0j4j"/>
-<img class="h-8 w-auto grayscale hover:grayscale-0 transition-all" data-alt="A minimalist logo for a global freight forwarding agency, using clean sans-serif typography and a stylized globe icon in deep navy blue. The design communicates global reach, connectivity, and the seamless integration of supply chain services." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0raxXm7Dq9BiAGPDbTe8y6lfdtdqzjV_4z1GkkimtZkFtBRkIAORjWjOKkTW1M7vHTJfpcrK_jYwuD2SIgPtzheDIyciKAtCTfLMxGW7f92bmOBduhgc4IKJ0ib3lHpNP5dh00J7GVJdECqaeiNlBQh-xrO_KSJs2EV_3pT-BTTucn-J35Ug64skpcLe8CMQhspBnibfZxyHKGmcFdPbBMZLZz97pnLnLRosj46h2umem-gqExmy92uQwcwU1eJRnazX4zsapodUR"/>
-</div>
-</div>
-</section>
-<!-- Route Component (Brand Identity) -->
-<section class="py-xl px-margin max-w-[1440px] mx-auto">
-<div class="bg-surface-container-high p-lg rounded-xl border border-outline-variant">
-<h3 class="font-headline-md text-headline-md text-primary mb-lg text-center">Trazabilidad de Nuestra Trayectoria</h3>
-<div class="relative flex justify-between items-center max-w-4xl mx-auto py-md">
-<!-- Line -->
-<div class="absolute top-1/2 left-0 w-full h-[2px] bg-outline-variant -translate-y-1/2"></div>
-<div class="absolute top-1/2 left-0 w-3/4 h-[2px] bg-primary-container -translate-y-1/2"></div>
-<!-- Step 1 -->
-<div class="relative z-10 flex flex-col items-center">
-<div class="w-10 h-10 bg-primary-container text-white rounded-full flex items-center justify-center mb-xs border-4 border-surface-container-high">
-<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
-</div>
-<span class="font-label-bold text-label-bold text-primary">Fundación</span>
-</div>
-<!-- Step 2 -->
-<div class="relative z-10 flex flex-col items-center">
-<div class="w-10 h-10 bg-primary-container text-white rounded-full flex items-center justify-center mb-xs border-4 border-surface-container-high">
-<span class="material-symbols-outlined text-[20px]">verified</span>
-</div>
-<span class="font-label-bold text-label-bold text-primary">Certificación</span>
-</div>
-<!-- Step 3 (Active) -->
-<div class="relative z-10 flex flex-col items-center scale-110">
-<div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mb-xs border-4 border-surface-container-high shadow-lg">
-<span class="material-symbols-outlined text-[24px]">local_shipping</span>
-</div>
-<span class="font-label-bold text-label-bold text-primary">Expansión Flota</span>
-</div>
-<!-- Step 4 -->
-<div class="relative z-10 flex flex-col items-center">
-<div class="w-10 h-10 bg-outline-variant text-on-surface-variant rounded-full flex items-center justify-center mb-xs border-4 border-surface-container-high">
-<span class="material-symbols-outlined text-[20px]">public</span>
-</div>
-<span class="font-label-bold text-label-bold text-on-surface-variant">Líder Regional</span>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-on-surface dark:bg-surface-container-lowest border-t border-outline text-surface-variant mt-xl">
-<div class="grid grid-cols-12 gap-gutter px-margin py-lg w-full max-w-[1440px] mx-auto">
-<div class="col-span-12 lg:col-span-4 mb-md lg:mb-0">
-<div class="font-headline-lg text-headline-lg font-bold text-surface-container-lowest dark:text-primary mb-sm">
-                    BETCAPITALSAC
+            };
+        </script>
+        <style>
+            body {
+                font-family: "Hanken Grotesk", sans-serif;
+            }
+            .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
+            }
+            .masonry-grid {
+                column-count: 1;
+                column-gap: 24px;
+            }
+            @media (min-width: 768px) {
+                .masonry-grid {
+                    column-count: 2;
+                }
+            }
+            @media (min-width: 1024px) {
+                .masonry-grid {
+                    column-count: 3;
+                }
+            }
+            .masonry-item {
+                break-inside: avoid;
+                margin-bottom: 24px;
+            }
+            .bg-noise {
+                background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+            }
+        </style>
+    </head>
+    <body class="bg-surface-bright text-on-surface">
+        <!-- TopNavBar -->
+        <header
+            class="bg-surface-container-lowest dark:bg-on-surface border-b border-outline-variant dark:border-outline fixed top-0 w-full z-50"
+        >
+            <nav
+                class="flex justify-between items-center w-full px-margin py-xs max-w-[1440px] mx-auto"
+            >
+                <div
+                    class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim"
+                >
+                    BET CAPITAL SAC
                 </div>
-<p class="font-body-md text-body-md opacity-80 max-w-sm">
-                    Soluciones integrales en transporte pesado y logística de alta precisión. Innovando el futuro de la cadena de suministro.
-                </p>
-</div>
-<div class="col-span-6 lg:col-span-2">
-<h4 class="font-label-bold text-label-bold text-white mb-md">Navegación</h4>
-<ul class="flex flex-col gap-xs">
-<li><a class="font-label-sm text-label-sm hover:text-primary-fixed-dim transition-colors" href="#">Inicio</a></li>
-<li><a class="font-label-sm text-label-sm hover:text-primary-fixed-dim transition-colors" href="#">Servicios</a></li>
-<li><a class="font-label-sm text-label-sm hover:text-primary-fixed-dim transition-colors" href="#">Proyectos</a></li>
-</ul>
-</div>
-<div class="col-span-6 lg:col-span-2">
-<h4 class="font-label-bold text-label-bold text-white mb-md">Soporte</h4>
-<ul class="flex flex-col gap-xs">
-<li><a class="font-label-sm text-label-sm hover:text-primary-fixed-dim transition-colors" href="#">Contacto</a></li>
-<li><a class="font-label-sm text-label-sm hover:text-primary-fixed-dim transition-colors" href="#">Privacidad</a></li>
-<li><a class="font-label-sm text-label-sm hover:text-primary-fixed-dim transition-colors" href="#">Términos</a></li>
-</ul>
-</div>
-<div class="col-span-12 lg:col-span-4">
-<h4 class="font-label-bold text-label-bold text-white mb-md">Sede Central</h4>
-<p class="font-label-sm text-label-sm opacity-80 mb-sm">Av. Logística Industrial 450, Callao, Lima, Perú.</p>
-<div class="flex gap-sm">
-<a class="w-10 h-10 bg-surface-container-highest/10 rounded-full flex items-center justify-center hover:bg-primary-container transition-colors" href="#">
-<span class="material-symbols-outlined">share</span>
-</a>
-<a class="w-10 h-10 bg-surface-container-highest/10 rounded-full flex items-center justify-center hover:bg-primary-container transition-colors" href="#">
-<span class="material-symbols-outlined">mail</span>
-</a>
-</div>
-</div>
-<div class="col-span-12 border-t border-outline-variant/20 pt-md mt-md flex flex-col md:flex-row justify-between items-center gap-sm">
-<p class="font-label-sm text-label-sm opacity-60">© 2024 BETCAPITALSAC. Todos los derechos reservados.</p>
-<div class="flex gap-md">
-<a class="font-label-sm text-label-sm opacity-60 hover:underline" href="#">Libro de Reclamaciones</a>
-<a class="font-label-sm text-label-sm opacity-60 hover:underline" href="#">Mapa del Sitio</a>
-</div>
-</div>
-</div>
-</footer>
-<!-- SideNavBar (WhatsApp Support) -->
-<a class="fixed bottom-8 right-8 z-[100] group" href="https://wa.me/yournumber">
-<div class="bg-tertiary-container text-on-tertiary-container rounded-full p-4 shadow-lg hover:scale-110 transition-transform duration-300 relative">
-<div class="absolute inset-0 bg-on-tertiary-container/20 rounded-full animate-ping opacity-75"></div>
-<span class="material-symbols-outlined text-[32px] relative z-10">chat</span>
-</div>
-<div class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white px-md py-xs rounded-lg shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-<span class="font-label-bold text-label-bold text-primary">¿Necesitas ayuda? Chatea con nosotros</span>
-</div>
-</a>
-<script>
-        // Micro-interactions and subtle effects
-        document.querySelectorAll('.masonry-item').forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                const img = item.querySelector('img');
-                img.style.filter = 'brightness(0.7) contrast(1.1)';
+                <div class="hidden md:flex gap-md items-center">
+                    <a
+                        class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200"
+                        href="#"
+                        >Inicio</a
+                    >
+                    <a
+                        class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200"
+                        href="#"
+                        >Nosotros</a
+                    >
+                    <a
+                        class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200"
+                        href="#"
+                        >Servicios</a
+                    >
+                    <a
+                        class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200"
+                        href="#"
+                        >Trabaja con Nosotros</a
+                    >
+                    <a
+                        class="font-label-bold text-label-bold text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1"
+                        href="#"
+                        >Certificaciones</a
+                    >
+                    <a
+                        class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200"
+                        href="#"
+                        >Proyectos</a
+                    >
+                    <a
+                        class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200"
+                        href="#"
+                        >Contacto</a
+                    >
+                </div>
+                <button
+                    class="bg-primary-container text-on-primary-container px-md py-xs font-label-bold text-label-bold rounded-lg hover:opacity-90 transition-opacity"
+                >
+                    Cotizar
+                </button>
+            </nav>
+        </header>
+        <main class="pt-[80px]">
+            <!-- Hero Section -->
+            <section
+                class="relative h-[400px] flex items-center overflow-hidden bg-primary"
+            >
+                <div class="absolute inset-0 z-0">
+                    <img
+                        class="w-full h-full object-cover opacity-40"
+                        data-alt="A professional aerial shot of a massive logistics hub with rows of blue and white freight trucks parked in perfect alignment. The scene is captured during the golden hour, casting long shadows and a warm glow over the industrial landscape. The atmosphere conveys efficiency, scale, and high-level corporate logistics management in a modern, clean-cut style."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKO-cRqmpd-MPvZl5ZLQj-ZKwN8TQxc3hHF8gdyaUaH8OR4NaK6U93rZapq3OL0TSY4SaQR5Q0WkD5zc5P5Av1ZmTVCyX2YaxF43dp84vXDN1JdvEr0wD3a6qaQVGEBYsvsgV_xNYl_YLWpkvZmmkivqGcQz4RdzEyRBnNwDo_63_FLpaHMS4oo2NzSa6uVoRvZ7B3iRfJ0PagOuz7YzLe_GKS7_8mTYiv1mcIzMMLo2NYvlGAYwHn25Y88egUWhcj-F4mgHX5klqG"
+                    />
+                </div>
+                <div
+                    class="relative z-10 px-margin max-w-[1440px] mx-auto w-full"
+                >
+                    <h1
+                        class="font-headline-xl text-headline-xl text-surface-container-lowest mb-sm max-w-2xl"
+                    >
+                        Excelencia Operativa y Cumplimiento Normativo
+                    </h1>
+                    <p
+                        class="font-body-lg text-body-lg text-primary-fixed-dim max-w-xl"
+                    >
+                        Respaldamos cada operación con certificaciones
+                        internacionales y una trayectoria impecable en proyectos
+                        de alta complejidad.
+                    </p>
+                </div>
+            </section>
+            <!-- Certificaciones & Repositorio -->
+            <section class="py-xl px-margin max-w-[1440px] mx-auto">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-end mb-lg gap-sm"
+                >
+                    <div>
+                        <span
+                            class="text-primary font-label-bold text-label-bold uppercase tracking-widest block mb-xs"
+                            >Garantía de Calidad</span
+                        >
+                        <h2
+                            class="font-headline-lg text-headline-lg text-on-surface"
+                        >
+                            Certificaciones y Documentación
+                        </h2>
+                    </div>
+                    <p
+                        class="font-body-md text-body-md text-on-surface-variant max-w-md"
+                    >
+                        Acceda a nuestro repositorio oficial de documentos.
+                        Mantenemos nuestros estándares actualizados para
+                        garantizar la seguridad de su carga.
+                    </p>
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter"
+                >
+                    <!-- Cert 1 -->
+                    <div
+                        class="bg-surface-container-lowest border border-outline-variant p-sm flex flex-col hover:border-primary transition-colors group"
+                    >
+                        <div
+                            class="aspect-[3/4] bg-surface-container-high mb-sm overflow-hidden relative"
+                        >
+                            <img
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                data-alt="A high-resolution close-up of an official ODELPE certification document resting on a sleek dark wooden desk. The document features official stamps, holographic security seals, and clean serif typography. The lighting is professional and soft, highlighting the texture of the premium paper and the importance of the legal certification in a corporate setting."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRi82dGq4sqbvgkYieU9qJrgjQE9XhK0m3-vZhnXMU8uhA2S532WfrESHjPR-7kpV2c-ch0BbvOrl4DgOAL9HaFGn2NPWw5zG2rLHl76kTcVsYUZDtyJdZ82_i3SYSybduRcpd_KTL1rxLxT1EvBPG2XaOOu3Pat5b3t3mUVQ53fy06vBfRwOlPH0hDh2UHY1fiZLHKlUhfJ90WJrXfZOLECfeMNx30Ebl2pxN1NLAMU9GHVrE_4ANagO2a1iV6KNgHTyLxrr26hbW"
+                            />
+                        </div>
+                        <h3
+                            class="font-label-bold text-label-bold text-on-surface mb-base"
+                        >
+                            Certificación ODELPE
+                        </h3>
+                        <p
+                            class="font-label-sm text-label-sm text-on-surface-variant mb-md"
+                        >
+                            Vigencia: 2024 - 2025
+                        </p>
+                        <button
+                            class="mt-auto flex items-center justify-center gap-xs bg-surface-container text-primary py-xs font-label-bold text-label-bold rounded hover:bg-primary hover:text-on-primary transition-all"
+                        >
+                            <span class="material-symbols-outlined text-[18px]"
+                                >download</span
+                            >
+                            Descargar PDF
+                        </button>
+                    </div>
+                    <!-- Cert 2 -->
+                    <div
+                        class="bg-surface-container-lowest border border-outline-variant p-sm flex flex-col hover:border-primary transition-colors group"
+                    >
+                        <div
+                            class="aspect-[3/4] bg-surface-container-high mb-sm overflow-hidden relative"
+                        >
+                            <img
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                data-alt="A professional insurance policy document for heavy cargo, featuring a prominent blue shield emblem and clean tabular data. The layout is minimalist and corporate, with 'Seguros de Carga' clearly visible in bold Hanken Grotesk font. The background is a crisp, bright white with subtle blue accents, symbolizing security and trust in logistics."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIxgyy9QyKXGJsedYyILXLoIjePrRdmpcEqUhyJXkLQnc6P-3-PQSAKR7lT2U18KWeK8owF6C-X846GL2qkiNL6URWq5G-Nk8skZpfPrFJGA6AJ2Z7vE2bhCpy2Vv58ayC0pGqp0bekW1Y96R3Xd-jE13w8oCj56bxcYyPk64t2ELLvcVLaPnUd35-jOP9JWyGjoykHXvClUAoPbxQUyiBeTG2PpxPoELIcJ97GjnvWoQ2BKWrSJ5_LIvAuSGgeHLvpNQUFVpOZxU2"
+                            />
+                        </div>
+                        <h3
+                            class="font-label-bold text-label-bold text-on-surface mb-base"
+                        >
+                            Seguro de Carga Internacional
+                        </h3>
+                        <p
+                            class="font-label-sm text-label-sm text-on-surface-variant mb-md"
+                        >
+                            Póliza Global de Cobertura
+                        </p>
+                        <button
+                            class="mt-auto flex items-center justify-center gap-xs bg-surface-container text-primary py-xs font-label-bold text-label-bold rounded hover:bg-primary hover:text-on-primary transition-all"
+                        >
+                            <span class="material-symbols-outlined text-[18px]"
+                                >download</span
+                            >
+                            Descargar PDF
+                        </button>
+                    </div>
+                    <!-- Cert 3 -->
+                    <div
+                        class="bg-surface-container-lowest border border-outline-variant p-sm flex flex-col hover:border-primary transition-colors group"
+                    >
+                        <div
+                            class="aspect-[3/4] bg-surface-container-high mb-sm overflow-hidden relative"
+                        >
+                            <img
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                data-alt="An ISO 9001 quality management system certification certificate with a gold embossed seal. The design is elegant and formal, emphasizing global standards of excellence. The document is presented against a neutral grey background with soft cinematic lighting, creating a mood of established authority and professional rigor in the logistics sector."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5Hxvpixi7JIJn8jDSdRv7tTdtQz0_XuPakradhcwmQFVJXgladYOCu11xR6Vy4zubz6MIvTwCerX_HH986duPFaWIk_dizLHJFhAOnVOjTbHZ2U9jmpWQsf5I_I2urdC0jumauJZEfTS7QV7V6rI6_XgdM7FQPChlOLd65LVY3vRosTMhvQGG_pY-3DAuVS-_Ryrxmi6BPSdLXFbEsifnycjfUh-WcalRqHh9OAIIvpFGtE1yO6AlMmDcRvxJy9r43aMbCwyJrtJN"
+                            />
+                        </div>
+                        <h3
+                            class="font-label-bold text-label-bold text-on-surface mb-base"
+                        >
+                            ISO 9001:2015
+                        </h3>
+                        <p
+                            class="font-label-sm text-label-sm text-on-surface-variant mb-md"
+                        >
+                            Gestión de Calidad Logística
+                        </p>
+                        <button
+                            class="mt-auto flex items-center justify-center gap-xs bg-surface-container text-primary py-xs font-label-bold text-label-bold rounded hover:bg-primary hover:text-on-primary transition-all"
+                        >
+                            <span class="material-symbols-outlined text-[18px]"
+                                >download</span
+                            >
+                            Descargar PDF
+                        </button>
+                    </div>
+                    <!-- Cert 4 -->
+                    <div
+                        class="bg-surface-container-lowest border border-outline-variant p-sm flex flex-col hover:border-primary transition-colors group"
+                    >
+                        <div
+                            class="aspect-[3/4] bg-surface-container-high mb-sm overflow-hidden relative"
+                        >
+                            <img
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                data-alt="A technical heavy transport permit document showing diagrams of oversized vehicle configurations. The document is detailed with technical specifications and governmental approval stamps. The visual style is industrial and functional, using a palette of white, light grey, and deep blue, reflecting the precision required in specialized freight projects."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9re_6Wmw6Nqq3ib63LaTzsRIqKlJK7dQKhBsZ_pSEohp_ZL92JNwZfYCDci1QCngfhY4-cEHK7-5tlHVtQ4HyT7ZyevccEjHN-f8Cm9QwN4pa5H9lswLUowlkXUcxO0elWyP2xeBvHHTMdh3GYGAFq0XxIoerBFfo2SbGMVu3X9e3iFyVSRykZTMLfr8sBZWKW8jwmV3i32JEMjuoE8RrrxArVewXb_MDyxz77NhwzIeFudRjIvUBEfTE833eJMyD8HW5YuNE0RNX"
+                            />
+                        </div>
+                        <h3
+                            class="font-label-bold text-label-bold text-on-surface mb-base"
+                        >
+                            Permiso de Carga Especial
+                        </h3>
+                        <p
+                            class="font-label-sm text-label-sm text-on-surface-variant mb-md"
+                        >
+                            MTC - Transporte Pesado
+                        </p>
+                        <button
+                            class="mt-auto flex items-center justify-center gap-xs bg-surface-container text-primary py-xs font-label-bold text-label-bold rounded hover:bg-primary hover:text-on-primary transition-all"
+                        >
+                            <span class="material-symbols-outlined text-[18px]"
+                                >download</span
+                            >
+                            Descargar PDF
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- Proyectos Masonry Gallery -->
+            <section
+                class="py-xl bg-on-surface text-surface-container-lowest overflow-hidden"
+            >
+                <div class="px-margin max-w-[1440px] mx-auto">
+                    <div class="grid grid-cols-12 gap-gutter mb-lg">
+                        <div class="col-span-12 lg:col-span-6">
+                            <span
+                                class="text-primary-fixed-dim font-label-bold text-label-bold uppercase tracking-widest block mb-xs"
+                                >Portafolio en Acción</span
+                            >
+                            <h2
+                                class="font-headline-lg text-headline-lg text-white mb-sm"
+                            >
+                                Proyectos y Operaciones Recientes
+                            </h2>
+                            <p
+                                class="font-body-md text-body-md text-surface-variant opacity-80"
+                            >
+                                Documentamos visualmente nuestra capacidad
+                                operativa. Desde transporte de maquinaria pesada
+                                hasta logística de contenedores de alta
+                                prioridad.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="masonry-grid">
+                        <!-- Masonry Item 1 -->
+                        <div
+                            class="masonry-item group relative overflow-hidden"
+                        >
+                            <img
+                                class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                                data-alt="A dramatic low-angle shot of a heavy-duty Volvo truck carrying a massive industrial turbine through a mountain pass. The truck is blue and silver, matching the BET CAPITAL SAC corporate identity. The background shows rugged terrain under a clear blue sky. The lighting is sharp, emphasizing the power and scale of the transport operation in a high-contrast industrial style."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI_uyFBTidm9HyX7IQ39bBOalimaONn8gFq6MpUIVUaxis-zA7yd0by8afGJ9GhT2HsrnPgq4htgtyDdfuigO1aqTWCrNWC5gN2_M7cVJvqzju8RYlSc-Y_qm57D-Ch8RYgGsNpTqmiSM93YyUwQSLFJdIWI2JjhQhmzQS2BWJou2__ELZkZPKnudC7cN6TpRnd9nYmGqsgvG_ABnPp6nZC1EBNvpbjqtK8O9483falDS-X813CKKwBBEec5ur-fUdyHGi_q3eOozq"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-md"
+                            >
+                                <h4
+                                    class="font-label-bold text-label-bold text-white"
+                                >
+                                    Transporte de Turbinas Hidráulicas
+                                </h4>
+                                <p class="text-label-sm text-surface-variant">
+                                    Proyecto: Central Eléctrica Mantaro
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Masonry Item 2 -->
+                        <div
+                            class="masonry-item group relative overflow-hidden"
+                        >
+                            <img
+                                class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                                data-alt="A wide-angle view of a logistics yard at dusk, featuring dozens of shipping containers with the 'MAERSK' logo prominently displayed in light blue. In the foreground, a BET CAPITAL SAC flatbed truck is being loaded by a large yellow reach stacker. The scene is lit by towering stadium lights, creating a high-energy, industrial atmosphere focused on global supply chain efficiency."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0mNJ1rLKJDeY3wMrMwYQLAaH6UsEe2-NLURIirGxXu25-n4Wx92MxNP4jcYoX9NYEuRHZgcFDzsta3lg7hVwZNxpbp5aAUVHlYqQrVPEkAXDw35_iFtKEH6bwGNJ_WmtxdYicQ5n8RBNcOqincQEEbVRhu550H2Zv_bHI_gmQGNVm86l26UmSe0yvCUzPAxfiYd2Co825ZuFsVM6myar4GsMriWVtgroC-4Mowq57a9hikVhpLpda7VxuSwgXUT1YjEIj8jcTKZws"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-md"
+                            >
+                                <h4
+                                    class="font-label-bold text-label-bold text-white"
+                                >
+                                    Consolidación Maersk Line
+                                </h4>
+                                <p class="text-label-sm text-surface-variant">
+                                    Operación: Puerto del Callao
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Masonry Item 3 -->
+                        <div
+                            class="masonry-item group relative overflow-hidden"
+                        >
+                            <img
+                                class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                                data-alt="A sleek, modern Freightliner truck parked in a clean, brightly lit corporate warehouse. The truck's chrome details reflect the surrounding high-tech facility. The composition is clean and minimalist, highlighting the impeccable maintenance and professional presentation of the BET CAPITAL SAC fleet. The color palette is dominated by deep blues, greys, and crisp white highlights."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAs4ETTi8zn6PQ6iV4M0myeIt31f6fwDDf1cPwHCpfB0DQWj2v_O0t2xOrsSnnUMsJvihlp-4IKVQ4Rmaz0EKtXsyLqeE_L5JiUoKO6griXxzh1bXpz0RgUaGD_jNRvTt1IVKlTEtMczxQOW0dfY8OlDs_FLj7ZQCjxY1f2ysGi8DxJnivDQfZ4329WvHP7D_BHFHYtQ3gqzGadngB6TzkX63cYMYsnFeRxTD1Nqb4aD6lt1twsSlIja5TaJ5I73lp2ddd-FkugRKM"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-md"
+                            >
+                                <h4
+                                    class="font-label-bold text-label-bold text-white"
+                                >
+                                    Mantenimiento de Flota Premium
+                                </h4>
+                                <p class="text-label-sm text-surface-variant">
+                                    Estándar: Seguridad Total
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Masonry Item 4 -->
+                        <div
+                            class="masonry-item group relative overflow-hidden"
+                        >
+                            <img
+                                class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                                data-alt="An action shot of a cargo convoy moving across a coastal highway at sunrise. The lead truck, branded with the BET CAPITAL SAC logo, is silhouetted against a vibrant orange and pink sky. The ocean is visible in the distance. The image uses a long exposure to create a sense of motion and kinetic energy, symbolizing the constant flow of goods in a globalized economy."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnbt24ShzrqtV4YHhwtrvMRzPOkmhbXLeQyEzMEIwemjgnE9wmL8IvKJm9qY7Cw4Ev5g0osXxJTZILyjnL_kxqu8jzY5q1iykZZ-ywilx1lD-Z2m9T2pwFgmdy6auqZp9c-gdwRF_TrDW6JIDf5f6x_piF9VhO46YADCj_VqVBVMnxbZhWrXdzRsMXovxVa1xmWjBwFSgqHWSXSEK7Vvx1Ntho_bsRFkpjlGZgSVDBWZbUkYiXrrFN2MgahLSGKCOWrifHR3k5fuXm"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-md"
+                            >
+                                <h4
+                                    class="font-label-bold text-label-bold text-white"
+                                >
+                                    Ruta Panamericana Norte
+                                </h4>
+                                <p class="text-label-sm text-surface-variant">
+                                    Operación: Confort Logístico
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Masonry Item 5 -->
+                        <div
+                            class="masonry-item group relative overflow-hidden"
+                        >
+                            <img
+                                class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                                data-alt="A high-density logistics list on a digital screen, showing tracking numbers and delivery statuses for international shipments. In the blurred background, a logistics manager is seen reviewing a route on a large map. The lighting is cool-toned and professional, emphasizing the technology-driven approach of modern freight management for high-value corporate clients."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7tD1hqCW7eag1aUc_5p8I4MwL0hH5icMOOQHdY81nu8v8R1waGNWY2aM0tTToBs2kDZdV9EC5qXwLXBNth2rgo23Ck_cYPYdkKVtNQ_WVJnvBve1sg2nL4-5XPvWQBarttIkQvkE_IbEXcITLX97Se_NP0IzOORm3jb_ak0hKKXg9r0VqmqT8rkb3Qel8OjUA4BIDe8AAowpnCaIr1qyq9BcwjT4ZyMNhZP-P9aq4_PLaFJwYxku7Y3VPi5uTyXk52NlR2_N9g_jW"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-md"
+                            >
+                                <h4
+                                    class="font-label-bold text-label-bold text-white"
+                                >
+                                    Seguimiento en Tiempo Real
+                                </h4>
+                                <p class="text-label-sm text-surface-variant">
+                                    Proyecto: Control Digital 24/7
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Muro de Confianza / Logos -->
+            <section
+                class="py-xl bg-surface-container-lowest border-y border-outline-variant overflow-hidden relative"
+            >
+                <div
+                    class="absolute inset-0 opacity-5 pointer-events-none grayscale flex items-center justify-around flex-wrap p-xl"
+                >
+                    <img
+                        class="w-32 h-32 object-contain"
+                        data-alt="The iconic Maersk logo, a seven-pointed white star inside a light blue square, rendered as a subtle background watermark in a high-end corporate UI design. The style is minimalist and clean, representing the strategic partnership and trust between BET CAPITAL SAC and global shipping leaders."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi4-TEuBpL-hZtuRdVduB3SaAebv3DWx1eTrXvWM70WAnM-cXOjbwgMOxr0Dl2KuGSnlf7L42prk-lf6hA-YZG04uh6dNZO7MVKPdecqFo38dLbvt330LRaXInXQ6tq7hTZyS3ZVjcft6ufChY3Kr9XjUkXDWJqKXewgyjORsuDeojMLalfqrF8tE-LeXpIiIPyrRbhZ7lI001lMMg5N_c_7nTRe_EL57AgS-qQ8IeinYt6z28jkxKWV1Jo-RKqg1VzsKbe07txp5G"
+                    />
+                    <img
+                        class="w-32 h-32 object-contain"
+                        data-alt="The MSC Mediterranean Shipping Company logo, featuring a stylized yellow and black anchor, displayed as a faint industrial watermark. The branding is integrated into a clean, modern interface, signifying a professional network of international logistics collaborators."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6HIv431TQG3UweMh8r8lfhaCznMzJm-00sbMWTkxTJiQ2j6l2uTTpqpmHPsQXbp0z1csGAW04EG5FupfxzFLgpZnbOLgxTu1QcQ_y5s5EO_DUbuZtRLOQo7_2xU-IsISDlPp-wwtFcUzJgujWeQOMxjk7pdUuSzGZxcGJNnOjrJ9JEXg46N93Q3mrCfoWRRgvMKJt3BgzekypIlQ4SNChoQ1CwYD9VwNe8kXF3xeMWR-0Eaav_GMKZ7U9hK_D95vO4HSnp6y5CUaY"
+                    />
+                    <img
+                        class="w-32 h-32 object-contain"
+                        data-alt="The Hapag-Lloyd logo, an abstract orange and white graphic, presented as a subtle background element. The composition is balanced and professional, symbolizing high-level corporate integrity and world-class shipping standards."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRHlorv-p1OSYMvSokyPagFC3420Kvk3IMlX3O0LuM-NwI8101GsOB0nSlPDJ7cmUFHHpCv1GRT3L1X_vQQ6cXzdQuQuwmX2AaW48xuVDY5IP4ae2uTSdcxr9kjNH0THwpXBrwFOHOsAClpZUEReg3ZsSFAXETpVPG5l3kGiV4QzHUiG9EhCQMQiRIs6PR0ZI9xsXCRoe08LaDDSPE_kUp20oRzCEnh1cnYICkjgJ1pxTc6GYQHktXESrPF57xFx8HjAEka0O-BDTC"
+                    />
+                </div>
+                <div
+                    class="px-margin max-w-[1440px] mx-auto relative z-10 text-center"
+                >
+                    <h3
+                        class="font-label-bold text-label-bold text-primary uppercase tracking-[0.2em] mb-lg"
+                    >
+                        Socios Estratégicos que confían en nosotros
+                    </h3>
+                    <div
+                        class="flex flex-wrap justify-center items-center gap-xl opacity-60 hover:opacity-100 transition-opacity duration-500"
+                    >
+                        <img
+                            class="h-12 w-auto grayscale hover:grayscale-0 transition-all"
+                            data-alt="A clean, vector-style logo of a major global shipping line like Maersk, presented in its signature light blue and white. The logo is displayed in high resolution with crisp edges, sitting on a neutral grey background that emphasizes professional corporate branding and logistics leadership."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF3nrEyfUdrPiHtd5oon_FD0eAJkwX4rtRUrm-zaRZasuivxNZrQhMRrDH2JH0Lp7-LV-DRMiYImfrhGYtyLWpATYcgf-Ojel_hyJzPZ1Pp_c1dNjEKi7qnNNRxx2NFEG1kZBaGrc6yNZ4j5eAtWxSUaxZVsmCdwzQx1PL0tRS-vU1uV8jevl01zZ5cB0gDMX82rMl2kaQzbl6QDUV0VzwFswGWh7A8wew9ZkDAbRd1DUDPtBoHgds2NfkNVe5Qw2cM4GnJYUn8gOS"
+                        />
+                        <img
+                            class="h-10 w-auto grayscale hover:grayscale-0 transition-all"
+                            data-alt="A professional corporate logo of a heavy machinery manufacturer like Caterpillar, in its bold yellow and black colors. The logo is sharp and centered, representing the industrial cargo and specialized transport projects handled by BET CAPITAL SAC with precision and expertise."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbFI1ZasMX6G2MEnjoVqtMc1kVdAl4BoNk09EQNvRDMdp0ti2brE8__BT9CCiJ3UbMq32Z3xM7KQ-QBHUS3hNs71XyeHjYTB7Bx5X_46Zk0dWsEZk5ADf4VaD_L6uG3o1Yv4SIZ_3vfnv-X7G5wf06TSZZ7Mb6PA_9mqFYqq1GOdfB6iUR7PIOiLWn_DBDDDI4yjJKF9FtJfttiOz3BdArfftJIdG2YTTr8uFB504_6Prk0VkaevQXCcFNmG7iQAA2TOKIC6j8UPLr"
+                        />
+                        <img
+                            class="h-14 w-auto grayscale hover:grayscale-0 transition-all"
+                            data-alt="The logo of a prominent South American mining company, featuring earthy tones and bold industrial typography. This visual element represents the heavy-duty logistics projects BET CAPITAL SAC executes in challenging terrains and high-stakes environments."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfo3INxlHSSgauy4USZF2u7ECT98jPA4pRVc5_idFReTurMTgrfX2GZ19CjNEcCS-1XKLX7ZBdmR85zWmUkDUlycyVh5T3pspjs3BVj9EjyMEmESrPERzE4FnYhRD0GUYpbhzqTv6V0stTzryaedoWqVTkx_tZ4Rp4_lKLKSnaRoeasH747C3IbP9ld7rhK0nPZlJkRH-TJ_p_Cd8rXN6a7dbA_9YRGKO6WPmTT09aCaxFrH3FkOySVlElDOZb69hvCqQHYG7x0j4j"
+                        />
+                        <img
+                            class="h-8 w-auto grayscale hover:grayscale-0 transition-all"
+                            data-alt="A minimalist logo for a global freight forwarding agency, using clean sans-serif typography and a stylized globe icon in deep navy blue. The design communicates global reach, connectivity, and the seamless integration of supply chain services."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0raxXm7Dq9BiAGPDbTe8y6lfdtdqzjV_4z1GkkimtZkFtBRkIAORjWjOKkTW1M7vHTJfpcrK_jYwuD2SIgPtzheDIyciKAtCTfLMxGW7f92bmOBduhgc4IKJ0ib3lHpNP5dh00J7GVJdECqaeiNlBQh-xrO_KSJs2EV_3pT-BTTucn-J35Ug64skpcLe8CMQhspBnibfZxyHKGmcFdPbBMZLZz97pnLnLRosj46h2umem-gqExmy92uQwcwU1eJRnazX4zsapodUR"
+                        />
+                    </div>
+                </div>
+            </section>
+            <!-- Route Component (Brand Identity) -->
+            <section class="py-xl px-margin max-w-[1440px] mx-auto">
+                <div
+                    class="bg-surface-container-high p-lg rounded-xl border border-outline-variant"
+                >
+                    <h3
+                        class="font-headline-md text-headline-md text-primary mb-lg text-center"
+                    >
+                        Trazabilidad de Nuestra Trayectoria
+                    </h3>
+                    <div
+                        class="relative flex justify-between items-center max-w-4xl mx-auto py-md"
+                    >
+                        <!-- Line -->
+                        <div
+                            class="absolute top-1/2 left-0 w-full h-[2px] bg-outline-variant -translate-y-1/2"
+                        ></div>
+                        <div
+                            class="absolute top-1/2 left-0 w-3/4 h-[2px] bg-primary-container -translate-y-1/2"
+                        ></div>
+                        <!-- Step 1 -->
+                        <div class="relative z-10 flex flex-col items-center">
+                            <div
+                                class="w-10 h-10 bg-primary-container text-white rounded-full flex items-center justify-center mb-xs border-4 border-surface-container-high"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[20px]"
+                                    >assignment_turned_in</span
+                                >
+                            </div>
+                            <span
+                                class="font-label-bold text-label-bold text-primary"
+                                >Fundación</span
+                            >
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="relative z-10 flex flex-col items-center">
+                            <div
+                                class="w-10 h-10 bg-primary-container text-white rounded-full flex items-center justify-center mb-xs border-4 border-surface-container-high"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[20px]"
+                                    >verified</span
+                                >
+                            </div>
+                            <span
+                                class="font-label-bold text-label-bold text-primary"
+                                >Certificación</span
+                            >
+                        </div>
+                        <!-- Step 3 (Active) -->
+                        <div
+                            class="relative z-10 flex flex-col items-center scale-110"
+                        >
+                            <div
+                                class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mb-xs border-4 border-surface-container-high shadow-lg"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[24px]"
+                                    >local_shipping</span
+                                >
+                            </div>
+                            <span
+                                class="font-label-bold text-label-bold text-primary"
+                                >Expansión Flota</span
+                            >
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="relative z-10 flex flex-col items-center">
+                            <div
+                                class="w-10 h-10 bg-outline-variant text-on-surface-variant rounded-full flex items-center justify-center mb-xs border-4 border-surface-container-high"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[20px]"
+                                    >public</span
+                                >
+                            </div>
+                            <span
+                                class="font-label-bold text-label-bold text-on-surface-variant"
+                                >Líder Regional</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer
+            class="bg-on-surface dark:bg-surface-container-lowest border-t border-outline text-surface-variant mt-xl"
+        >
+            <div
+                class="grid grid-cols-12 gap-gutter px-margin py-lg w-full max-w-[1440px] mx-auto"
+            >
+                <div class="col-span-12 lg:col-span-4 mb-md lg:mb-0">
+                    <div
+                        class="font-headline-lg text-headline-lg font-bold text-surface-container-lowest dark:text-primary mb-sm"
+                    >
+                        BET CAPITAL SAC
+                    </div>
+                    <p class="font-body-md text-body-md opacity-80 max-w-sm">
+                        Soluciones integrales en transporte pesado y logística
+                        de alta precisión. Innovando el futuro de la cadena de
+                        suministro.
+                    </p>
+                </div>
+                <div class="col-span-6 lg:col-span-2">
+                    <h4
+                        class="font-label-bold text-label-bold text-white mb-md"
+                    >
+                        Navegación
+                    </h4>
+                    <ul class="flex flex-col gap-xs">
+                        <li>
+                            <a
+                                class="font-label-sm text-label-sm hover:text-primary-fixed-dim transition-colors"
+                                href="#"
+                                >Inicio</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="font-label-sm text-label-sm hover:text-primary-fixed-dim transition-colors"
+                                href="#"
+                                >Servicios</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="font-label-sm text-label-sm hover:text-primary-fixed-dim transition-colors"
+                                href="#"
+                                >Proyectos</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-span-6 lg:col-span-2">
+                    <h4
+                        class="font-label-bold text-label-bold text-white mb-md"
+                    >
+                        Soporte
+                    </h4>
+                    <ul class="flex flex-col gap-xs">
+                        <li>
+                            <a
+                                class="font-label-sm text-label-sm hover:text-primary-fixed-dim transition-colors"
+                                href="#"
+                                >Contacto</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="font-label-sm text-label-sm hover:text-primary-fixed-dim transition-colors"
+                                href="#"
+                                >Privacidad</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="font-label-sm text-label-sm hover:text-primary-fixed-dim transition-colors"
+                                href="#"
+                                >Términos</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-span-12 lg:col-span-4">
+                    <h4
+                        class="font-label-bold text-label-bold text-white mb-md"
+                    >
+                        Sede Central
+                    </h4>
+                    <p class="font-label-sm text-label-sm opacity-80 mb-sm">
+                        Av. Logística Industrial 450, Callao, Lima, Perú.
+                    </p>
+                    <div class="flex gap-sm">
+                        <a
+                            class="w-10 h-10 bg-surface-container-highest/10 rounded-full flex items-center justify-center hover:bg-primary-container transition-colors"
+                            href="#"
+                        >
+                            <span class="material-symbols-outlined">share</span>
+                        </a>
+                        <a
+                            class="w-10 h-10 bg-surface-container-highest/10 rounded-full flex items-center justify-center hover:bg-primary-container transition-colors"
+                            href="#"
+                        >
+                            <span class="material-symbols-outlined">mail</span>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="col-span-12 border-t border-outline-variant/20 pt-md mt-md flex flex-col md:flex-row justify-between items-center gap-sm"
+                >
+                    <p class="font-label-sm text-label-sm opacity-60">
+                        © 2024 BET CAPITAL SAC. Todos los derechos reservados.
+                    </p>
+                    <div class="flex gap-md">
+                        <a
+                            class="font-label-sm text-label-sm opacity-60 hover:underline"
+                            href="#"
+                            >Libro de Reclamaciones</a
+                        >
+                        <a
+                            class="font-label-sm text-label-sm opacity-60 hover:underline"
+                            href="#"
+                            >Mapa del Sitio</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- SideNavBar (WhatsApp Support) -->
+        <a
+            class="fixed bottom-8 right-8 z-[100] group"
+            href="https://wa.me/yournumber"
+        >
+            <div
+                class="bg-tertiary-container text-on-tertiary-container rounded-full p-4 shadow-lg hover:scale-110 transition-transform duration-300 relative"
+            >
+                <div
+                    class="absolute inset-0 bg-on-tertiary-container/20 rounded-full animate-ping opacity-75"
+                ></div>
+                <span
+                    class="material-symbols-outlined text-[32px] relative z-10"
+                    >chat</span
+                >
+            </div>
+            <div
+                class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white px-md py-xs rounded-lg shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none"
+            >
+                <span class="font-label-bold text-label-bold text-primary"
+                    >¿Necesitas ayuda? Chatea con nosotros</span
+                >
+            </div>
+        </a>
+        <script>
+            // Micro-interactions and subtle effects
+            document.querySelectorAll(".masonry-item").forEach((item) => {
+                item.addEventListener("mouseenter", () => {
+                    const img = item.querySelector("img");
+                    img.style.filter = "brightness(0.7) contrast(1.1)";
+                });
+                item.addEventListener("mouseleave", () => {
+                    const img = item.querySelector("img");
+                    img.style.filter = "none";
+                });
             });
-            item.addEventListener('mouseleave', () => {
-                const img = item.querySelector('img');
-                img.style.filter = 'none';
-            });
-        });
-    </script>
-</body></html>
+        </script>
+    </body>
+</html>

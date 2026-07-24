@@ -17,5 +17,9 @@ class GeneralSetting extends Model
         'site_favicon',
         'seo_title',
         'seo_description',
+        'accounting_hero_title',
+        'accounting_hero_subtitle',
+        'accounting_hero_image',
+        'accounting_form_image',
     ];
 }

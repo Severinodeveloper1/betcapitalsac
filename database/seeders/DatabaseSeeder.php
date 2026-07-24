@@ -47,8 +47,12 @@ class DatabaseSeeder extends Seeder
             'whatsapp_number' => '+51 912345678',
             'office_hours' => 'Lunes - Viernes: 8:00 AM - 6:00 PM | Sábados: 9:00 AM - 1:00 PM',
             'map_iframe_url' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.8845610738605!2d-77.1147573!3d-12.0169115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cb48bb2081cf%3A0xe54d588523efec9a!2sAv.%20Elmer%20Faucett%2C%20Callao!5e0!3m2!1ses!2spe!4v1700000000000',
-            'seo_title' => 'BETCAPITALSAC - Logística de Carga Pesada',
+            'seo_title' => 'BET CAPITAL SAC - Logística de Carga Pesada',
             'seo_description' => 'Especialistas en transporte intermodal y soluciones de cadena de suministro con los más altos estándares de seguridad y eficiencia operativa nacional.',
+            'accounting_hero_title' => 'Servicios Contables Especializados para Transportistas',
+            'accounting_hero_subtitle' => 'Ofrecemos soporte tributario y financiero integral para conductores y empresas de carga pesada, garantizando tranquilidad y cumplimiento con la SUNAT.',
+            'accounting_hero_image' => 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200',
+            'accounting_form_image' => 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600',
         ]);
 
         // 4. Seed de Páginas Estáticas (Inicio, Nosotros)
@@ -76,7 +80,7 @@ class DatabaseSeeder extends Seeder
             'slug' => 'nosotros',
             'title' => 'Nosotros',
             'hero_title' => 'Más que Logística, Impulsamos tu Crecimiento',
-            'hero_subtitle' => 'Desde 2022, BETCAPITALSAC redefine el transporte pesado en el Perú con integridad, precisión técnica y un compromiso inquebrantable con la excelencia operativa.',
+            'hero_subtitle' => 'Desde 2022, BET CAPITAL SAC redefine el transporte pesado en el Perú con integridad, precisión técnica y un compromiso inquebrantable con la excelencia operativa.',
             'hero_image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCp9taJPV3KMiK_vu0nVnMoZrY109zHM7NCkjJjR3x9-rT7glIUekcibBYlaesDKJUP_qswCdEu3Pm4Zn6wb-2l6Z9-DNAmwH26faannaJEI68zG2gyQoPKj41jXZnAnBCP-5w4EPmeyiYHIb2M8XneIL87UPBs3LHNA13dtddEsNkbRGqp7cuVvZ_NsHATc8gQG-E_qVGMmCm8ay82vFYa4WpB5B81969v__SZ55MTPkv8AT-wsI-JDDZf2pzOJJ3613QU21tcHXOm',
             'section_data' => [
                 'mission_title' => 'Misión',
@@ -249,6 +253,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Pagos al Contado',
             'description' => 'Garantizamos liquidez inmediata para su operación con ciclos de pago ágiles y transparentes que respetan su esfuerzo.',
             'icon' => 'payments',
+            'type' => 'general',
             'sort_order' => 1,
         ]);
 
@@ -256,6 +261,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Adelantos de Viáticos',
             'description' => 'No detenga su ruta. Ofrecemos adelantos estratégicos para combustible y gastos operativos antes de iniciar el servicio.',
             'icon' => 'local_gas_station',
+            'type' => 'general',
             'sort_order' => 2,
         ]);
 
@@ -263,7 +269,115 @@ class DatabaseSeeder extends Seeder
             'title' => 'Soporte Contable',
             'description' => 'Asesoría especializada para transportistas, ayudándole a mantener su documentación en orden y optimizar su gestión fiscal.',
             'icon' => 'account_balance',
+            'type' => 'general',
             'sort_order' => 3,
+        ]);
+
+        // Beneficios de Contabilidad para Transportistas
+        Benefit::create([
+            'title' => 'Gestión de Detracciones',
+            'description' => 'Controlamos y optimizamos sus depósitos SPOT para evitar contingencias con la SUNAT y asegurar liquidez.',
+            'icon' => 'payments',
+            'type' => 'accounting',
+            'sort_order' => 1,
+        ]);
+
+        Benefit::create([
+            'title' => 'Declaraciones Mensuales',
+            'description' => 'Elaboración y presentación oportuna de sus obligaciones tributarias (IGV-Renta) bajo el régimen que le corresponda.',
+            'icon' => 'assignment',
+            'type' => 'accounting',
+            'sort_order' => 2,
+        ]);
+
+        Benefit::create([
+            'title' => 'Asesoría Tributaria 24/7',
+            'description' => 'Un equipo de contadores especializados en el sector transportes disponible para resolver sus consultas y guiarlo.',
+            'icon' => 'support_agent',
+            'type' => 'accounting',
+            'sort_order' => 3,
+        ]);
+
+        // 12. Seed de Páginas Restantes (Servicios, Flota, Certificaciones, Contacto)
+        \App\Models\Page::create([
+            'slug' => 'servicios',
+            'title' => 'Servicios',
+            'hero_title' => 'Soluciones Logísticas de Carga Pesada a Nivel Nacional',
+            'hero_subtitle' => 'Brindamos servicios integrados con altos estándares de seguridad y eficiencia operativa en puertos y carretera.',
+            'hero_image' => 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200',
+        ]);
+
+        \App\Models\Page::create([
+            'slug' => 'flota',
+            'title' => 'Nuestra Flota',
+            'hero_title' => 'Flota Moderna con Monitoreo GPS y Control de Seguridad 24/7',
+            'hero_subtitle' => 'Contamos con unidades especializadas listas para operar en los principales terminales portuarios del país.',
+            'hero_image' => 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=1200',
+        ]);
+
+        \App\Models\Page::create([
+            'slug' => 'certificaciones',
+            'title' => 'Certificaciones',
+            'hero_title' => 'Excelencia Operativa y Cumplimiento Normativo',
+            'hero_subtitle' => 'Respaldamos cada operación con certificaciones internacionales y una trayectoria impecable en proyectos de alta complejidad.',
+            'hero_image' => 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200',
+        ]);
+
+        \App\Models\Page::create([
+            'slug' => 'contacto',
+            'title' => 'Contacto',
+            'hero_title' => 'Canales de Atención y Soporte Directo',
+            'hero_subtitle' => 'Conéctese con nuestro equipo comercial o solicite soporte contable especializado.',
+            'hero_image' => 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200',
+        ]);
+
+        // 13. Seed de Documentos Legales (Términos y Privacidad)
+        \App\Models\LegalDocument::create([
+            'title' => '1. Aceptación de los Términos',
+            'slug' => 'terms-aceptacion',
+            'type' => 'terms',
+            'sort_order' => 1,
+            'content' => 'Al acceder y utilizar el sitio web de BET CAPITAL SAC, usted acepta y se compromete a cumplir con los presentes Términos de Servicio. Si no está de acuerdo con alguna parte de los términos, no debe utilizar nuestros servicios.',
+        ]);
+
+        \App\Models\LegalDocument::create([
+            'title' => '2. Uso Autorizado de la Plataforma',
+            'slug' => 'terms-uso',
+            'type' => 'terms',
+            'sort_order' => 2,
+            'content' => 'Nuestra plataforma está destinada a proporcionar información sobre transporte de carga pesada y cotizaciones. Queda prohibido cualquier uso indebido, hackeo o intento de interrupción de los servidores.',
+        ]);
+
+        \App\Models\LegalDocument::create([
+            'title' => '3. Limitación de Responsabilidad',
+            'slug' => 'terms-responsabilidad',
+            'type' => 'terms',
+            'sort_order' => 3,
+            'content' => 'BET CAPITAL SAC realiza sus mayores esfuerzos para asegurar la disponibilidad del sitio web. No nos hacemos responsables por daños indirectos derivados del uso o imposibilidad de uso del portal.',
+        ]);
+
+        \App\Models\LegalDocument::create([
+            'title' => '1. Recolección de Datos Personales',
+            'slug' => 'privacy-recoleccion',
+            'type' => 'privacy',
+            'sort_order' => 1,
+            'content' => 'Recopilamos información personal a través de nuestros formularios (nombre, teléfono, correo electrónico, RUC/Documentos) únicamente con fines comerciales, de soporte contable o evaluación de transportistas.',
+        ]);
+
+        \App\Models\LegalDocument::create([
+            'title' => '2. Uso y Finalidad de la Información',
+            'slug' => 'privacy-finalidad',
+            'type' => 'privacy',
+            'sort_order' => 2,
+            'content' => 'Los datos personales recopilados se tratan de conformidad con la Ley N° 29733 (Ley de Protección de Datos Personales en Perú). No vendemos ni compartimos sus datos con terceros sin autorización explícita.',
+        ]);
+
+        \App\Models\LegalDocument::create([
+            'title' => '3. Derechos ARCO',
+            'slug' => 'privacy-arco',
+            'type' => 'privacy',
+            'sort_order' => 3,
+            'content' => 'Usted puede ejercer sus derechos de Acceso, Rectificación, Cancelación y Oposición (ARCO) enviando una solicitud formal a nuestro correo electrónico: contacto@betcapitalsac.com.',
         ]);
     }
 }

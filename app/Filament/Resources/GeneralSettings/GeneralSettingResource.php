@@ -32,7 +32,7 @@ class GeneralSettingResource extends Resource
 
     public static function canCreate(): bool
     {
-        return false;
+        return GeneralSetting::count() === 0;
     }
 
     public static function form(Schema $schema): Schema

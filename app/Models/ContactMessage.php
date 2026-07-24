@@ -10,7 +10,9 @@ class ContactMessage extends Model
         'name',
         'company',
         'email',
+        'phone',
         'message',
+        'type',
         'status',
         'notes',
     ];

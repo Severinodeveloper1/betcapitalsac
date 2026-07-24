@@ -25,6 +25,16 @@ class ContactMessageForm
                         TextInput::make('email')
                             ->label('Correo Electrónico')
                             ->disabled(),
+                        TextInput::make('phone')
+                            ->label('Teléfono')
+                            ->disabled(),
+                        Select::make('type')
+                            ->label('Canal / Tipo')
+                            ->options([
+                                'general' => 'Contacto General',
+                                'accounting' => 'Contabilidad para Transportista',
+                            ])
+                            ->disabled(),
                         Textarea::make('message')
                             ->label('Mensaje')
                             ->disabled()

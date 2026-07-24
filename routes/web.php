@@ -12,3 +12,9 @@ Route::get('/contacto', [PageController::class, 'contacto'])->name('contacto');
 
 Route::post('/contacto/mensaje', [PageController::class, 'submitMensaje'])->name('contacto.mensaje');
 Route::post('/contacto/postulacion', [PageController::class, 'submitPostulacion'])->name('contacto.postulacion');
+
+Route::get('/terminos', [PageController::class, 'terminos'])->name('terminos');
+Route::get('/privacidad', [PageController::class, 'privacidad'])->name('privacidad');
+Route::get('/libro-de-reclamaciones', [PageController::class, 'reclamaciones'])->name('reclamos');
+Route::post('/libro-de-reclamaciones', [PageController::class, 'submitReclamacion'])->name('reclamos.submit');
+Route::get('/documentacion', [PageController::class, 'documentacion'])->name('documentacion');
