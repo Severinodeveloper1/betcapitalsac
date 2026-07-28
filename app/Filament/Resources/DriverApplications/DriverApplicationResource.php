@@ -18,9 +18,9 @@ class DriverApplicationResource extends Resource
 {
     protected static ?string $model = DriverApplication::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClipboardDocumentCheck;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserPlus;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Solicitudes';
+    protected static string|\UnitEnum|null $navigationGroup = 'Bandeja de Entrada';
 
     protected static ?string $navigationLabel = 'Postulaciones';
 

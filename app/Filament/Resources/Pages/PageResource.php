@@ -20,15 +20,15 @@ class PageResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentText;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Páginas';
+    protected static string|\UnitEnum|null $navigationGroup = 'Sitio Web';
 
-    protected static ?string $navigationLabel = 'Contenido de Páginas';
+    protected static ?string $navigationLabel = 'Páginas';
 
     protected static ?string $modelLabel = 'Página';
 
-    protected static ?string $pluralModelLabel = 'Contenido de Páginas';
+    protected static ?string $pluralModelLabel = 'Páginas';
 
-    protected static ?int $navigationSort = 2;
+    protected static ?int $navigationSort = 1;
 
     public static function canCreate(): bool
     {

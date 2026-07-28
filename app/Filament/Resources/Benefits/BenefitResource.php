@@ -20,7 +20,7 @@ class BenefitResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedSparkles;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Logística';
+    protected static string|\UnitEnum|null $navigationGroup = 'Sitio Web';
 
     protected static ?string $navigationLabel = 'Beneficios';
 
@@ -28,7 +28,7 @@ class BenefitResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Beneficios';
 
-    protected static ?int $navigationSort = 7;
+    protected static ?int $navigationSort = 4;
 
     public static function form(Schema $schema): Schema
     {

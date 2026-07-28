@@ -20,7 +20,7 @@ class ServiceResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBriefcase;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Logística';
+    protected static string|\UnitEnum|null $navigationGroup = 'Sitio Web';
 
     protected static ?string $navigationLabel = 'Servicios';
 
@@ -28,7 +28,7 @@ class ServiceResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Servicios';
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 2;
 
     public static function form(Schema $schema): Schema
     {

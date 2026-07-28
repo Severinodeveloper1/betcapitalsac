@@ -18,15 +18,15 @@ class LegalDocumentResource extends Resource
 {
     protected static ?string $model = LegalDocument::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentText;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedScale;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Configuración';
+    protected static string|\UnitEnum|null $navigationGroup = 'Configuración y Legal';
 
-    protected static ?string $navigationLabel = 'Términos y Privacidad';
+    protected static ?string $navigationLabel = 'Documentos Legales';
 
     protected static ?string $modelLabel = 'Cláusula Legal';
 
-    protected static ?string $pluralModelLabel = 'Términos y Privacidad';
+    protected static ?string $pluralModelLabel = 'Documentos Legales';
 
     protected static ?int $navigationSort = 3;
 

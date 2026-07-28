@@ -17,17 +17,17 @@ class ClaimResource extends Resource
 {
     protected static ?string $model = Claim::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClipboardDocumentCheck;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedExclamationTriangle;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Soporte';
+    protected static string|\UnitEnum|null $navigationGroup = 'Bandeja de Entrada';
 
-    protected static ?string $navigationLabel = 'Libro Reclamaciones';
+    protected static ?string $navigationLabel = 'Libro de Reclamaciones';
 
     protected static ?string $modelLabel = 'Reclamación';
 
     protected static ?string $pluralModelLabel = 'Libro de Reclamaciones';
 
-    protected static ?int $navigationSort = 2;
+    protected static ?int $navigationSort = 3;
 
     public static function canCreate(): bool
     {

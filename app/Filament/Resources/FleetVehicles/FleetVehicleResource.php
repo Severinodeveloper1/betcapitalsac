@@ -20,9 +20,9 @@ class FleetVehicleResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedTruck;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Logística';
+    protected static string|\UnitEnum|null $navigationGroup = 'Logística y Flota';
 
-    protected static ?string $navigationLabel = 'Flota de Vehículos';
+    protected static ?string $navigationLabel = 'Vehículos';
 
     protected static ?string $modelLabel = 'Vehículo de Flota';
 

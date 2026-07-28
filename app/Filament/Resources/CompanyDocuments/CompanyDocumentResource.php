@@ -20,15 +20,15 @@ class CompanyDocumentResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedFolderArrowDown;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Soporte';
+    protected static string|\UnitEnum|null $navigationGroup = 'Configuración y Legal';
 
-    protected static ?string $navigationLabel = 'Documentación';
+    protected static ?string $navigationLabel = 'Documentos de Empresa';
 
     protected static ?string $modelLabel = 'Documento';
 
     protected static ?string $pluralModelLabel = 'Documentos';
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 2;
 
     public static function form(Schema $schema): Schema
     {

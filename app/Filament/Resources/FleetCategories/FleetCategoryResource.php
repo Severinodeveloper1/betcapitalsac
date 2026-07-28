@@ -20,9 +20,9 @@ class FleetCategoryResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedFolder;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Logística';
+    protected static string|\UnitEnum|null $navigationGroup = 'Logística y Flota';
 
-    protected static ?string $navigationLabel = 'Categorías de Flota';
+    protected static ?string $navigationLabel = 'Categorías';
 
     protected static ?string $modelLabel = 'Categoría de Flota';
 

@@ -20,7 +20,7 @@ class PartnerResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBuildingOffice2;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Logística';
+    protected static string|\UnitEnum|null $navigationGroup = 'Sitio Web';
 
     protected static ?string $navigationLabel = 'Aliados Estratégicos';
 

@@ -20,7 +20,7 @@ class CertificationResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedShieldCheck;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Logística';
+    protected static string|\UnitEnum|null $navigationGroup = 'Sitio Web';
 
     protected static ?string $navigationLabel = 'Certificaciones';
 

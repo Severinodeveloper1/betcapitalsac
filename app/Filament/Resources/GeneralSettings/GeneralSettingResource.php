@@ -20,7 +20,7 @@ class GeneralSettingResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Configuración';
+    protected static string|\UnitEnum|null $navigationGroup = 'Configuración y Legal';
 
     protected static ?string $navigationLabel = 'Ajustes Generales';
 
