@@ -17,6 +17,10 @@ use App\Models\Claim;
 use App\Models\LegalDocument;
 use App\Models\CompanyDocument;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMessageMail;
+use App\Mail\DriverApplicationMail;
+use App\Mail\ClaimMail;
 
 class PageController extends Controller
 {
@@ -106,7 +110,14 @@ class PageController extends Controller
             'type' => 'required|in:general,accounting',
         ]);
 
-        ContactMessage::create($validated);
+        $message = ContactMessage::create($validated);
+
+        try {
+            $adminEmail = GeneralSetting::value('email') ?? 'contacto@betcapitalsac.com';
+            Mail::to($adminEmail)->send(new ContactMessageMail($message));
+        } catch (\Exception $e) {
+            logger()->error('Error enviando correo de contacto: ' . $e->getMessage());
+        }
 
         $successKey = $validated['type'] === 'accounting' ? 'success_message_accounting' : 'success_message';
         return back()->with($successKey, 'Su mensaje ha sido enviado con éxito. Nos pondremos en contacto pronto.');
@@ -125,7 +136,14 @@ class PageController extends Controller
             'vehicle_year' => 'required|string|max:4',
         ]);
 
-        DriverApplication::create($validated);
+        $application = DriverApplication::create($validated);
+
+        try {
+            $adminEmail = GeneralSetting::value('email') ?? 'contacto@betcapitalsac.com';
+            Mail::to($adminEmail)->send(new DriverApplicationMail($application));
+        } catch (\Exception $e) {
+            logger()->error('Error enviando correo de postulación: ' . $e->getMessage());
+        }
 
         return back()->with('success_postulacion', 'Su postulación ha sido enviada exitosamente para evaluación técnica.');
     }
@@ -177,6 +195,14 @@ class PageController extends Controller
         $validated['claim_number'] = sprintf('RECL-%d-%04d', $year, $count);
 
         $claim = Claim::create($validated);
+
+        try {
+            $adminEmail = GeneralSetting::value('email') ?? 'contacto@betcapitalsac.com';
+            Mail::to($adminEmail)->send(new ClaimMail($claim, 'admin'));
+            Mail::to($claim->email)->send(new ClaimMail($claim, 'customer'));
+        } catch (\Exception $e) {
+            logger()->error('Error enviando correos de reclamación: ' . $e->getMessage());
+        }
 
         return redirect()->route('reclamos')->with('success_claim', "Su reclamación ha sido registrada bajo el código: {$claim->claim_number}. De acuerdo a ley, responderemos en un plazo máximo de 15 días hábiles.");
     }
