@@ -105,9 +105,14 @@ class PageController extends Controller
             'name' => 'required|string|max:255',
             'company' => 'nullable|string|max:255',
             'email' => 'required|email|max:255',
-            'phone' => 'required|string|max:255',
+            'phone' => ['required', 'string', 'regex:/^\+?[0-9\s\-()]{7,15}$/'],
             'message' => 'required|string',
             'type' => 'required|in:general,accounting',
+        ], [
+            'phone.regex' => 'El teléfono debe contener entre 7 y 15 dígitos y solo puede incluir números, espacios, guiones y paréntesis.',
+            'email.email' => 'Ingrese una dirección de correo electrónico válida.',
+            'name.required' => 'El nombre completo es requerido.',
+            'message.required' => 'El mensaje o requerimiento es requerido.',
         ]);
 
         $message = ContactMessage::create($validated);
@@ -127,13 +132,39 @@ class PageController extends Controller
     {
         $validated = $request->validate([
             'driver_name' => 'required|string|max:255',
-            'phone' => 'required|string|max:255',
-            'document_type' => 'required|string|max:255',
-            'document_number' => 'required|string|max:255',
+            'phone' => ['required', 'string', 'regex:/^\+?[0-9\s\-()]{7,15}$/'],
+            'document_type' => 'required|in:DNI,RUC,CE',
+            'document_number' => [
+                'required',
+                'string',
+                function ($attribute, $value, $fail) use ($request) {
+                    $type = $request->input('document_type');
+                    if ($type === 'DNI') {
+                        if (!preg_match('/^\d{8}$/', $value)) {
+                            $fail('El DNI debe tener exactamente 8 dígitos numéricos.');
+                        }
+                    } elseif ($type === 'RUC') {
+                        if (!preg_match('/^(10|15|17|20)\d{9}$/', $value) || strlen($value) !== 11) {
+                            $fail('El RUC debe comenzar con 10, 15, 17 o 20 y tener exactamente 11 dígitos numéricos.');
+                        }
+                    } elseif ($type === 'CE') {
+                        if (!preg_match('/^[a-zA-Z0-9]{8,12}$/', $value)) {
+                            $fail('El Carnet de Extranjería debe tener entre 8 y 12 caracteres alfanuméricos.');
+                        }
+                    }
+                }
+            ],
             'vehicle_type' => 'required|string|max:255',
             'vehicle_plate' => 'required|string|max:255',
             'license_number' => 'required|string|max:255',
             'vehicle_year' => 'required|string|max:4',
+        ], [
+            'phone.regex' => 'El teléfono debe contener entre 7 y 15 dígitos y solo puede incluir números, espacios, guiones y paréntesis.',
+            'document_type.in' => 'El tipo de documento seleccionado no es válido.',
+            'driver_name.required' => 'El nombre completo es requerido.',
+            'vehicle_plate.required' => 'La placa del vehículo es requerida.',
+            'license_number.required' => 'La licencia de conducir es requerida.',
+            'vehicle_year.required' => 'El año del vehículo es requerido.',
         ]);
 
         $application = DriverApplication::create($validated);
@@ -172,13 +203,36 @@ class PageController extends Controller
     {
         $validated = $request->validate([
             'fullname' => 'required|string|max:255',
-            'document_type' => 'required|string|max:255',
-            'document_number' => 'required|string|max:255',
+            'document_type' => 'required|in:DNI,RUC,CE,PASAPORTE',
+            'document_number' => [
+                'required',
+                'string',
+                function ($attribute, $value, $fail) use ($request) {
+                    $type = $request->input('document_type');
+                    if ($type === 'DNI') {
+                        if (!preg_match('/^\d{8}$/', $value)) {
+                            $fail('El DNI debe tener exactamente 8 dígitos numéricos.');
+                        }
+                    } elseif ($type === 'RUC') {
+                        if (!preg_match('/^(10|15|17|20)\d{9}$/', $value) || strlen($value) !== 11) {
+                            $fail('El RUC debe comenzar con 10, 15, 17 o 20 y tener exactamente 11 dígitos numéricos.');
+                        }
+                    } elseif ($type === 'CE') {
+                        if (!preg_match('/^[a-zA-Z0-9]{8,12}$/', $value)) {
+                            $fail('El Carnet de Extranjería debe tener entre 8 y 12 caracteres alfanuméricos.');
+                        }
+                    } elseif ($type === 'PASAPORTE') {
+                        if (!preg_match('/^[a-zA-Z0-9]{6,12}$/', $value)) {
+                            $fail('El Pasaporte debe tener entre 6 y 12 caracteres alfanuméricos.');
+                        }
+                    }
+                }
+            ],
             'address' => 'required|string|max:255',
             'department' => 'required|string|max:255',
             'province' => 'required|string|max:255',
             'district' => 'required|string|max:255',
-            'phone' => 'required|string|max:255',
+            'phone' => ['required', 'string', 'regex:/^\+?[0-9\s\-()]{7,15}$/'],
             'email' => 'required|email|max:255',
             'parent_name' => 'nullable|string|max:255',
             'item_type' => 'required|in:producto,servicio',
@@ -187,6 +241,17 @@ class PageController extends Controller
             'claim_type' => 'required|in:reclamacion,queja',
             'claim_details' => 'required|string',
             'consumer_request' => 'required|string',
+        ], [
+            'phone.regex' => 'El teléfono debe contener entre 7 y 15 dígitos y solo puede incluir números, espacios, guiones y paréntesis.',
+            'email.email' => 'Ingrese una dirección de correo electrónico válida.',
+            'fullname.required' => 'El nombre completo o razón social es requerido.',
+            'address.required' => 'El domicilio es requerido.',
+            'department.required' => 'El departamento es requerido.',
+            'province.required' => 'La provincia es requerida.',
+            'district.required' => 'El distrito es requerido.',
+            'item_description.required' => 'La descripción del producto o servicio es requerida.',
+            'claim_details.required' => 'El detalle del reclamo o queja es requerido.',
+            'consumer_request.required' => 'El pedido o solución solicitada es requerido.',
         ]);
 
         // Generar número correlativo

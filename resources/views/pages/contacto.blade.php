@@ -93,35 +93,55 @@
                     </div>
                 @endif
 
-                <form action="{{ route('contacto.mensaje') }}" method="POST" class="space-y-6">
+                <form id="contact-general-form" action="{{ route('contacto.mensaje') }}" method="POST" class="space-y-6">
                     @csrf
                     <input type="hidden" name="type" value="general">
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="space-y-[2px]">
-                            <label class="font-label-bold text-label-bold text-on-surface">Nombre Completo</label>
-                            <input name="name" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Juan Pérez" type="text" value="{{ old('name') }}" />
+                            <label class="font-label-bold text-label-bold text-on-surface" for="contact-general-name">Nombre Completo</label>
+                            <input id="contact-general-name" name="name" required class="w-full p-2.5 bg-surface-gray border @error('name') @if(old('type') === 'general' || !old('type')) border-red-500 focus:border-red-500 @else border-outline-variant @endif @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Juan Pérez" type="text" value="{{ old('name') }}" />
+                            @if(old('type') === 'general' || !old('type'))
+                                @error('name')
+                                    <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                                @enderror
+                            @endif
                         </div>
                         <div class="space-y-[2px]">
-                            <label class="font-label-bold text-label-bold text-on-surface">Empresa</label>
-                            <input name="company" class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Razón Social" type="text" value="{{ old('company') }}" />
+                            <label class="font-label-bold text-label-bold text-on-surface" for="contact-general-company">Empresa</label>
+                            <input id="contact-general-company" name="company" class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Razón Social" type="text" value="{{ old('company') }}" />
                         </div>
                     </div>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="space-y-[2px]">
-                            <label class="font-label-bold text-label-bold text-on-surface">Correo Electrónico</label>
-                            <input name="email" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="usuario@empresa.com" type="email" value="{{ old('email') }}" />
+                            <label class="font-label-bold text-label-bold text-on-surface" for="contact-general-email">Correo Electrónico</label>
+                            <input id="contact-general-email" name="email" required class="w-full p-2.5 bg-surface-gray border @error('email') @if(old('type') === 'general' || !old('type')) border-red-500 focus:border-red-500 @else border-outline-variant @endif @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="usuario@empresa.com" type="email" value="{{ old('email') }}" />
+                            @if(old('type') === 'general' || !old('type'))
+                                @error('email')
+                                    <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                                @enderror
+                            @endif
                         </div>
                         <div class="space-y-[2px]">
-                            <label class="font-label-bold text-label-bold text-on-surface">Teléfono / Celular</label>
-                            <input name="phone" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Ej: +51 987654321" type="tel" value="{{ old('phone') }}" />
+                            <label class="font-label-bold text-label-bold text-on-surface" for="contact-general-phone">Teléfono / Celular</label>
+                            <input id="contact-general-phone" name="phone" required class="w-full p-2.5 bg-surface-gray border @error('phone') @if(old('type') === 'general' || !old('type')) border-red-500 focus:border-red-500 @else border-outline-variant @endif @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Ej: +51 987654321" type="tel" value="{{ old('phone') }}" />
+                            @if(old('type') === 'general' || !old('type'))
+                                @error('phone')
+                                    <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                                @enderror
+                            @endif
                         </div>
                     </div>
 
                     <div class="space-y-[2px]">
-                        <label class="font-label-bold text-label-bold text-on-surface">Mensaje / Requerimiento</label>
-                        <textarea name="message" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Describa el origen, destino y tipo de carga..." rows="4">{{ old('message') }}</textarea>
+                        <label class="font-label-bold text-label-bold text-on-surface" for="contact-general-message">Mensaje / Requerimiento</label>
+                        <textarea id="contact-general-message" name="message" required class="w-full p-2.5 bg-surface-gray border @error('message') @if(old('type') === 'general' || !old('type')) border-red-500 focus:border-red-500 @else border-outline-variant @endif @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Describa el origen, destino y tipo de carga..." rows="4">{{ old('message') }}</textarea>
+                        @if(old('type') === 'general' || !old('type'))
+                            @error('message')
+                                <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                            @enderror
+                        @endif
                     </div>
                     
                     <button class="shimmer-btn w-full bg-transit-blue text-white font-label-bold text-label-bold py-3 rounded-sm hover:bg-transit-blue/90 transition-colors" type="submit">Enviar Consulta</button>
@@ -201,35 +221,55 @@
                     </div>
                 @endif
 
-                <form action="{{ route('contacto.mensaje') }}" method="POST" class="space-y-6">
+                <form id="contact-accounting-form" action="{{ route('contacto.mensaje') }}" method="POST" class="space-y-6">
                     @csrf
                     <input type="hidden" name="type" value="accounting">
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="space-y-[2px]">
-                            <label class="font-label-bold text-label-bold text-on-surface">Nombre Completo</label>
-                            <input name="name" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Juan Pérez" type="text" value="{{ old('name') }}" />
+                            <label class="font-label-bold text-label-bold text-on-surface" for="contact-accounting-name">Nombre Completo</label>
+                            <input id="contact-accounting-name" name="name" required class="w-full p-2.5 bg-surface-gray border @error('name') @if(old('type') === 'accounting') border-red-500 focus:border-red-500 @else border-outline-variant @endif @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Juan Pérez" type="text" value="{{ old('name') }}" />
+                            @if(old('type') === 'accounting')
+                                @error('name')
+                                    <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                                @enderror
+                            @endif
                         </div>
                         <div class="space-y-[2px]">
-                            <label class="font-label-bold text-label-bold text-on-surface">Empresa / Razón Social</label>
-                            <input name="company" class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Ej: Transportes SAC" type="text" value="{{ old('company') }}" />
+                            <label class="font-label-bold text-label-bold text-on-surface" for="contact-accounting-company">Empresa / Razón Social</label>
+                            <input id="contact-accounting-company" name="company" class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Ej: Transportes SAC" type="text" value="{{ old('company') }}" />
                         </div>
                     </div>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="space-y-[2px]">
-                            <label class="font-label-bold text-label-bold text-on-surface">Correo Electrónico</label>
-                            <input name="email" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="usuario@empresa.com" type="email" value="{{ old('email') }}" />
+                            <label class="font-label-bold text-label-bold text-on-surface" for="contact-accounting-email">Correo Electrónico</label>
+                            <input id="contact-accounting-email" name="email" required class="w-full p-2.5 bg-surface-gray border @error('email') @if(old('type') === 'accounting') border-red-500 focus:border-red-500 @else border-outline-variant @endif @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="usuario@empresa.com" type="email" value="{{ old('email') }}" />
+                            @if(old('type') === 'accounting')
+                                @error('email')
+                                    <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                                @enderror
+                            @endif
                         </div>
                         <div class="space-y-[2px]">
-                            <label class="font-label-bold text-label-bold text-on-surface">Teléfono / Celular</label>
-                            <input name="phone" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Ej: +51 987654321" type="tel" value="{{ old('phone') }}" />
+                            <label class="font-label-bold text-label-bold text-on-surface" for="contact-accounting-phone">Teléfono / Celular</label>
+                            <input id="contact-accounting-phone" name="phone" required class="w-full p-2.5 bg-surface-gray border @error('phone') @if(old('type') === 'accounting') border-red-500 focus:border-red-500 @else border-outline-variant @endif @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Ej: +51 987654321" type="tel" value="{{ old('phone') }}" />
+                            @if(old('type') === 'accounting')
+                                @error('phone')
+                                    <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                                @enderror
+                            @endif
                         </div>
                     </div>
 
                     <div class="space-y-[2px]">
-                        <label class="font-label-bold text-label-bold text-on-surface">Consulta Contable</label>
-                        <textarea name="message" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Indique sus dudas sobre detracciones, regímenes tributarios, declaraciones..." rows="4">{{ old('message') }}</textarea>
+                        <label class="font-label-bold text-label-bold text-on-surface" for="contact-accounting-message">Consulta Contable</label>
+                        <textarea id="contact-accounting-message" name="message" required class="w-full p-2.5 bg-surface-gray border @error('message') @if(old('type') === 'accounting') border-red-500 focus:border-red-500 @else border-outline-variant @endif @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Indique sus dudas sobre detracciones, regímenes tributarios, declaraciones..." rows="4">{{ old('message') }}</textarea>
+                        @if(old('type') === 'accounting')
+                            @error('message')
+                                <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                            @enderror
+                        @endif
                     </div>
                     
                     <button class="shimmer-btn w-full bg-transit-blue text-white font-label-bold text-label-bold py-3 rounded-sm hover:bg-transit-blue/90 transition-colors" type="submit">Enviar Solicitud Contable</button>
@@ -269,42 +309,82 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('contacto.postulacion') }}" method="POST" class="space-y-4">
+                        <form id="driver-application-form" action="{{ route('contacto.postulacion') }}" method="POST" class="space-y-4">
                             @csrf
                             <p class="font-label-bold text-label-bold text-ocean-deep border-l-2 border-transit-blue pl-2 font-semibold">
                                 Datos Personales
                             </p>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <input name="driver_name" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Nombre completo" type="text" value="{{ old('driver_name') }}" />
-                                <input name="phone" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Teléfono / WhatsApp" type="tel" value="{{ old('phone') }}" />
+                                <div class="space-y-[2px]">
+                                    <input id="driver-name" name="driver_name" required class="w-full p-2.5 bg-surface-gray border @error('driver_name') border-red-500 focus:border-red-500 @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Nombre completo" type="text" value="{{ old('driver_name') }}" />
+                                    @error('driver_name')
+                                        <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="space-y-[2px]">
+                                    <input id="driver-phone" name="phone" required class="w-full p-2.5 bg-surface-gray border @error('phone') border-red-500 focus:border-red-500 @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Teléfono / WhatsApp" type="tel" value="{{ old('phone') }}" />
+                                    @error('phone')
+                                        <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                                    @enderror
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <select name="document_type" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm border-0 border-b-2">
-                                    <option value="">Tipo de Documento</option>
-                                    <option value="DNI" {{ old('document_type') === 'DNI' ? 'selected' : '' }}>DNI (Documento Nacional de Identidad)</option>
-                                    <option value="RUC" {{ old('document_type') === 'RUC' ? 'selected' : '' }}>RUC (Registro Único de Contribuyentes)</option>
-                                    <option value="CE" {{ old('document_type') === 'CE' ? 'selected' : '' }}>Carnet de Extranjería</option>
-                                </select>
-                                <input name="document_number" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Número de Documento / RUC" type="text" value="{{ old('document_number') }}" />
+                                <div class="space-y-[2px]">
+                                    <select id="driver-doc-type" name="document_type" required class="w-full p-2.5 bg-surface-gray border @error('document_type') border-red-500 focus:border-red-500 @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm border-0 border-b-2">
+                                        <option value="">Tipo de Documento</option>
+                                        <option value="DNI" {{ old('document_type') === 'DNI' ? 'selected' : '' }}>DNI (Documento Nacional de Identidad)</option>
+                                        <option value="RUC" {{ old('document_type') === 'RUC' ? 'selected' : '' }}>RUC (Registro Único de Contribuyentes)</option>
+                                        <option value="CE" {{ old('document_type') === 'CE' ? 'selected' : '' }}>Carnet de Extranjería</option>
+                                    </select>
+                                    @error('document_type')
+                                        <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="space-y-[2px]">
+                                    <input id="driver-doc-number" name="document_number" required class="w-full p-2.5 bg-surface-gray border @error('document_number') border-red-500 focus:border-red-500 @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Número de Documento / RUC" type="text" value="{{ old('document_number') }}" />
+                                    @error('document_number')
+                                        <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                                    @enderror
+                                </div>
                             </div>
 
                             <p class="font-label-bold text-label-bold text-ocean-deep border-l-2 border-transit-blue pl-2 font-semibold pt-4">
                                 Especificaciones Vehiculares
                             </p>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <select name="vehicle_type" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm border-0 border-b-2">
-                                    <option value="">Tipo de Vehículo</option>
-                                    <option {{ old('vehicle_type') === 'Furgón' ? 'selected' : '' }}>Furgón</option>
-                                    <option {{ old('vehicle_type') === 'Plataforma' ? 'selected' : '' }}>Plataforma</option>
-                                    <option {{ old('vehicle_type') === 'Cisternas' ? 'selected' : '' }}>Cisternas</option>
-                                    <option {{ old('vehicle_type') === 'Cama Baja' ? 'selected' : '' }}>Cama Baja</option>
-                                </select>
-                                <input name="vehicle_plate" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Placa del Vehículo" type="text" value="{{ old('vehicle_plate') }}" />
+                                <div class="space-y-[2px]">
+                                    <select id="driver-vehicle-type" name="vehicle_type" required class="w-full p-2.5 bg-surface-gray border @error('vehicle_type') border-red-500 focus:border-red-500 @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm border-0 border-b-2">
+                                        <option value="">Tipo de Vehículo</option>
+                                        <option {{ old('vehicle_type') === 'Furgón' ? 'selected' : '' }}>Furgón</option>
+                                        <option {{ old('vehicle_type') === 'Plataforma' ? 'selected' : '' }}>Plataforma</option>
+                                        <option {{ old('vehicle_type') === 'Cisternas' ? 'selected' : '' }}>Cisternas</option>
+                                        <option {{ old('vehicle_type') === 'Cama Baja' ? 'selected' : '' }}>Cama Baja</option>
+                                    </select>
+                                    @error('vehicle_type')
+                                        <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="space-y-[2px]">
+                                    <input id="driver-vehicle-plate" name="vehicle_plate" required class="w-full p-2.5 bg-surface-gray border @error('vehicle_plate') border-red-500 focus:border-red-500 @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Placa del Vehículo" type="text" value="{{ old('vehicle_plate') }}" />
+                                    @error('vehicle_plate')
+                                        <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                                    @enderror
+                                </div>
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <input name="license_number" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Licencia de Conducir" type="text" value="{{ old('license_number') }}" />
-                                <input name="vehicle_year" required class="w-full p-2.5 bg-surface-gray border border-outline-variant focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Año del Vehículo" type="text" value="{{ old('vehicle_year') }}" />
+                                <div class="space-y-[2px]">
+                                    <input id="driver-license-number" name="license_number" required class="w-full p-2.5 bg-surface-gray border @error('license_number') border-red-500 focus:border-red-500 @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Licencia de Conducir" type="text" value="{{ old('license_number') }}" />
+                                    @error('license_number')
+                                        <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="space-y-[2px]">
+                                    <input id="driver-vehicle-year" name="vehicle_year" required class="w-full p-2.5 bg-surface-gray border @error('vehicle_year') border-red-500 focus:border-red-500 @else border-outline-variant @enderror focus:border-transit-blue focus:outline-none transition-all text-sm rounded-sm" placeholder="Año del Vehículo" type="text" value="{{ old('vehicle_year') }}" />
+                                    @error('vehicle_year')
+                                        <span class="text-red-500 text-xs mt-1 block font-semibold">{{ $message }}</span>
+                                    @enderror
+                                </div>
                             </div>
                             
                             <button class="shimmer-btn w-full bg-transit-blue text-white font-label-bold text-label-bold py-3 rounded-sm hover:bg-transit-blue/90 transition-colors mt-4 uppercase tracking-wider font-semibold text-xs" type="submit">Enviar Postulación</button>
@@ -398,5 +478,78 @@
                 }, 300);
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Validar teléfonos en tiempo real (solo permitir dígitos, espacios, guiones, más y paréntesis)
+            const phoneInputs = document.querySelectorAll('input[type="tel"]');
+            phoneInputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    const originalVal = this.value;
+                    const cleanedVal = originalVal.replace(/[^0-9\s\-+()]/g, '');
+                    if (originalVal !== cleanedVal) {
+                        this.value = cleanedVal;
+                    }
+                });
+            });
+
+            // 2. Formatear y validar campos de documento condicionalmente
+            function setupDocumentValidation(selectEl, numberInputEl) {
+                if (!selectEl || !numberInputEl) return;
+
+                function updateRules(clearInput = true) {
+                    const docType = selectEl.value;
+                    if (clearInput) {
+                        numberInputEl.value = ''; 
+                    }
+
+                    if (docType === 'DNI') {
+                        numberInputEl.setAttribute('maxlength', '8');
+                        numberInputEl.setAttribute('placeholder', '8 dígitos (Solo números)');
+                        numberInputEl.setAttribute('inputmode', 'numeric');
+                        numberInputEl.setAttribute('pattern', '[0-9]{8}');
+                    } else if (docType === 'RUC') {
+                        numberInputEl.setAttribute('maxlength', '11');
+                        numberInputEl.setAttribute('placeholder', '11 dígitos (Empieza con 10, 15, 17, 20)');
+                        numberInputEl.setAttribute('inputmode', 'numeric');
+                        numberInputEl.setAttribute('pattern', '[0-9]{11}');
+                    } else if (docType === 'CE') {
+                        numberInputEl.setAttribute('maxlength', '12');
+                        numberInputEl.setAttribute('placeholder', '8 a 12 caracteres (Alfanumérico)');
+                        numberInputEl.removeAttribute('inputmode');
+                        numberInputEl.removeAttribute('pattern');
+                    } else {
+                        numberInputEl.setAttribute('maxlength', '20');
+                        numberInputEl.setAttribute('placeholder', 'Número de Documento');
+                        numberInputEl.removeAttribute('inputmode');
+                        numberInputEl.removeAttribute('pattern');
+                    }
+                }
+
+                selectEl.addEventListener('change', function() {
+                    updateRules(true);
+                });
+                
+                numberInputEl.addEventListener('input', function() {
+                    const docType = selectEl.value;
+                    if (docType === 'DNI' || docType === 'RUC') {
+                        // Solo dígitos
+                        this.value = this.value.replace(/[^0-9]/g, '');
+                    } else {
+                        // Alfanumérico
+                        this.value = this.value.replace(/[^a-zA-Z0-9]/g, '');
+                    }
+                });
+
+                // Si ya tiene un valor inicial, aplicar reglas sin borrar
+                if (selectEl.value) {
+                    updateRules(false);
+                }
+            }
+
+            setupDocumentValidation(
+                document.getElementById('driver-doc-type'),
+                document.getElementById('driver-doc-number')
+            );
+        });
     </script>
 @endsection
